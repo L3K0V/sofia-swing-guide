@@ -1,80 +1,108 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://api.sofiafest.com
 
-# studio-swing
+# sofia-swing API
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Sofia-Swing is an API that allows for retrieveing information about swing dance events.
 
-## Questions Collection [/questions]
+## Events [/events]
 
-### List All Questions [GET]
+### List all events [GET]
 
 + Response 200 (application/json)
 
         [
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
+                "id": 1,
+                "from_date": "2015-08-05T08:40:51.620Z",
+                "to_date": "2015-08-10T08:40:51.620Z",
+                "name": "Sofia Swing Dance Festival",
+                "description": "The biggest swing dance event in Bulgaria.",
+                "organiser_id": 5,
+                "country_code": "BUL",
+                "city": "Sofia"
+            },
+            
+            {
+                "id": 2,
+                "from_date": "2015-09-05T08:40:51.620Z",
+                "to_date": "2015-09-10T08:40:51.620Z",
+                "name": "Veliko Tarnovo Swing Dance Festival",
+                "description": "History meets dance",
+                "organiser_id": 7,
+                "country_code": "BUL",
+                "city": "Veliko Tarnovo"
             }
         ]
 
-### Create a New Question [POST]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+## People [/people]
 
-+ Request (application/json)
+### List all people for a given event [GET /people/{event_id}]
+
++ Parameters
+    + event_id (number) - The id of the event
+
++ Response 200 (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
+            "event_id": 20,
+            "people": [
+                {
+                    "id": 1,
+                    "userId": 5,
+                    "firstName": "Britney",
+                    "lastName": "Spears"
+                },
+                {
+                    "id": 2,
+                    "userId": 10,
+                    "firstName": "Lady",
+                    "lastName": "Gaga"
+                },
+                {
+                    "id": 3,
+                    "userId": 15,
+                    "firstName": "Ivan",
+                    "lastName": "Ivanov"
+                },
+                {
+                    "id": 4,
+                    "userId": 50,
+                    "firstName": "Spas",
+                    "lastName": "Spasov"
+                }
             ]
         }
 
-+ Response 201 (application/json)
+## Posts [/posts]
 
-    + Headers
+### List all posts for a given user [GET /posts/{user_id}]
 
-            Location: /questions/2
++ Parameters
+    + user_id (number) - The id of the given user
 
-    + Body
++ Response 200 (application/json)
 
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
+        {
+            "user_id": 20,
+            
+            [
+                {
+                    "id": 1,
+                    "title": "Next teaching couple",
+                    "text": "Dax and Sarah are our next superstart couple.",
+                    "urls": "http://example1.com;http://example2.com",
+                    "unread": true
+                },
+                
+                {
+                    "id": 2,
+                    "title": "Hot Sugar Band are coming",
+                    "text": "The amazing hot sugar band are coming to Sofia.",
+                    "urls": "http://example1.com;http://example2.com",
+                    "unread": false
+                }
+            ]
+        }
+        
