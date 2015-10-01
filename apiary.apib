@@ -41,6 +41,29 @@ All API calls for listing events must provide the `id` of the organisation that 
             }
         ]
 
+### Create a new event [POST]
+
++ from_date - Starting date of the festival
++ to_date - End date of the festival
++ name - The name of the festival
++ country_code - The country code of the hosting country
++ city - The city of the festival
+
++ Parameters
+    + o_id (number) - The organisation's id.
+
++ Request (application/json)
+
+            {
+                "from_date": "2015-09-05T08:40:51.620Z",
+                "to_date": "2015-09-10T08:40:51.620Z",
+                "name": "Veliko Tarnovo Swing Dance Festival",
+                "description": "History meets dance",
+                "country_code": "BUL",
+                "city": "Veliko Tarnovo"
+            }
+
++ Response 201
 
 ### List all people for a given event [GET /events/{event_id}/people]
 
@@ -78,35 +101,3 @@ All API calls for listing events must provide the `id` of the organisation that 
                 }
             ]
         }
-
-## Posts [/posts]
-
-### List all posts for a given user [GET /posts/{user_id}]
-
-+ Parameters
-    + user_id (number) - The id of the given user
-
-+ Response 200 (application/json)
-
-        {
-            "user_id": 20,
-            
-            [
-                {
-                    "id": 1,
-                    "title": "Next teaching couple",
-                    "text": "Dax and Sarah are our next superstart couple.",
-                    "urls": "http://example1.com;http://example2.com",
-                    "unread": true
-                },
-                
-                {
-                    "id": 2,
-                    "title": "Hot Sugar Band are coming",
-                    "text": "The amazing hot sugar band are coming to Sofia.",
-                    "urls": "http://example1.com;http://example2.com",
-                    "unread": false
-                }
-            ]
-        }
-        
