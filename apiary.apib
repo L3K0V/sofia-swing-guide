@@ -78,12 +78,14 @@ All API calls for listing events must provide the `id` of the organisation that 
 + Response 200 (application/json)
 
             {
-                "from_date": "2015-09-05T08:40:51.620Z",
-                "to_date": "2015-09-10T08:40:51.620Z",
-                "name": "Veliko Tarnovo Swing Dance Festival",
-                "description": "History meets dance",
+                "id": 1,
+                "from_date": "2015-08-05T08:40:51.620Z",
+                "to_date": "2015-08-10T08:40:51.620Z",
+                "name": "Sofia Swing Dance Festival",
+                "description": "The biggest swing dance event in Bulgaria.",
+                "organiser_id": 5,
                 "country_code": "BUL",
-                "city": "Veliko Tarnovo"
+                "city": "Sofia"
             }
 
 ### List all people for a given event [GET /orgs/{o_id}/events/{e_id}/people]
