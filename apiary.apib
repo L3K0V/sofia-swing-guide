@@ -8,12 +8,10 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 
 ## Events [/orgs/{o_id}/events]
 
-All API calls for listing events must provide the `id` of the organisation that owns the events.
-
-### List all events [GET]
-
 + Parameters
     + o_id (number) - The organisation's id
+
+### List all events [GET]
 
 + Response 200 (application/json)
 
@@ -43,14 +41,12 @@ All API calls for listing events must provide the `id` of the organisation that 
 
 ### Create a new event [POST]
 
-+ from_date - Starting date of the festival
-+ to_date - End date of the festival
-+ name - The name of the festival
-+ country_code - The country code of the hosting country
-+ city - The city of the festival
-
-+ Parameters
-    + o_id (number) - The organisation's id
++ Attributes
+    + from_date - Starting date of the festival
+    + to_date - End date of the festival
+    + name - The name of the festival
+    + country_code - The country code of the hosting country
+    + city - The city of the festival
 
 + Request (application/json)
 
@@ -69,11 +65,14 @@ All API calls for listing events must provide the `id` of the organisation that 
 
             Location: /orgs/20/events/5
 
-### Get the data for a given event [GET /orgs/{o_id}/events/{e_id}]
+
+##Event [/orgs/{o_id}/events/{e_id}]
 
 + Parameters
     + o_id (number) - The organisation's id
     + e_id (number) - The id of the event
+
+### Get the data for an event [GET]
 
 + Response 200 (application/json)
 
@@ -88,11 +87,44 @@ All API calls for listing events must provide the `id` of the organisation that 
                 "city": "Sofia"
             }
 
-### List all people for a given event [GET /orgs/{o_id}/events/{e_id}/people]
+### Update an event [PUT]
+
++ Attributes
+    + from_date - Starting date of the festival
+    + to_date - End date of the festival
+    + name - The name of the festival
+    + country_code - The country code of the hosting country
+    + city - The city of the festival
+
++ Request (application/json)
+
+            {
+                "from_date": "2015-09-05T08:40:51.620Z",
+                "to_date": "2015-09-10T08:40:51.620Z",
+                "name": "Veliko Tarnovo Swing Dance Festival",
+                "description": "History meets dance",
+                "country_code": "BUL",
+                "city": "Veliko Tarnovo"
+            }
+
++ Response 200
+
+    + Headers
+
+            Location: /orgs/20/events/5
+
+
+### Delete an event [DELETE]
++ Response 204
+
+
+## Event People [/orgs/{o_id}/events/{e_id}/people]
 
 + Parameters
     + o_id (number) - The organisation's id
     + e_id (number) - The id of the event
+
+### List all people for an event [GET]
 
 + Response 200 (application/json)
 
@@ -101,27 +133,80 @@ All API calls for listing events must provide the `id` of the organisation that 
             "people": [
                 {
                     "id": 1,
-                    "userId": 5,
-                    "firstName": "Britney",
-                    "lastName": "Spears"
+                    "user_id": 5,
+                    "first_name": "Britney",
+                    "last_name": "Spears"
                 },
                 {
                     "id": 2,
-                    "userId": 10,
-                    "firstName": "Lady",
-                    "lastName": "Gaga"
+                    "user_id": 10,
+                    "first_name": "Lady",
+                    "last_name": "Gaga"
                 },
                 {
                     "id": 3,
-                    "userId": 15,
-                    "firstName": "Ivan",
-                    "lastName": "Ivanov"
+                    "user_id": 15,
+                    "first_name": "Ivan",
+                    "last_name": "Ivanov"
                 },
                 {
                     "id": 4,
-                    "userId": 50,
-                    "firstName": "Spas",
-                    "lastName": "Spasov"
+                    "user_id": 50,
+                    "first_name": "Spas",
+                    "last_name": "Spasov"
                 }
             ]
         }
+
+### Add a person to an event [POST]
+
++ Attributes
+    + id (number) - The person's
+
++ Request (application/json)
+
+        { "id": 5 }
+
++ Response 201
+
+    + Headers
+    
+            Location: /orgs/1/events/20/people/30
+
+## Event Person [/orgs/{o_id}/events/{e_id}/people/{p_id}]
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+    + p_id (number) - The person's id
+
+### Get the data for a person at an event [GET]
+
++ Response 200 (appplication/json)
+
+        {
+                    "id": 3,
+                    "user_id": 15,
+                    "first_name": "Ivan",
+                    "last_name": "Ivanov"
+        }
+                 
+### Update the event-specific data for a person [PUT]
+
++ Attributes
+    + type - The type of the person at this event.
+    
++ Request (application/json)
+
+        {
+                    "type": "STUDENT"
+        }
+        
++ Response 200
+
+    + Headers
+
+            Location: /orgs/20/events/5/people/10
+
+### Remove a person from an event [DELETE]
+
++ Response 204
