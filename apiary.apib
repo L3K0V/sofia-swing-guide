@@ -69,6 +69,23 @@ All API calls for listing events must provide the `id` of the organisation that 
 
             Location: /orgs/20/events/5
 
+### Get the data for a given event [GET /orgs/{o_id}/events/{e_id}]
+
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The id of the event
+
++ Response 200 (application/json)
+
+            {
+                "from_date": "2015-09-05T08:40:51.620Z",
+                "to_date": "2015-09-10T08:40:51.620Z",
+                "name": "Veliko Tarnovo Swing Dance Festival",
+                "description": "History meets dance",
+                "country_code": "BUL",
+                "city": "Veliko Tarnovo"
+            }
+
 ### List all people for a given event [GET /orgs/{o_id}/events/{e_id}/people]
 
 + Parameters
