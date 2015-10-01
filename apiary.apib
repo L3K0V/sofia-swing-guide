@@ -13,7 +13,7 @@ All API calls for listing events must provide the `id` of the organisation that 
 ### List all events [GET]
 
 + Parameters
-    + o_id (number) - The organisation's id.
+    + o_id (number) - The organisation's id
 
 + Response 200 (application/json)
 
@@ -50,7 +50,7 @@ All API calls for listing events must provide the `id` of the organisation that 
 + city - The city of the festival
 
 + Parameters
-    + o_id (number) - The organisation's id.
+    + o_id (number) - The organisation's id
 
 + Request (application/json)
 
@@ -69,10 +69,11 @@ All API calls for listing events must provide the `id` of the organisation that 
 
             Location: /orgs/20/events/5
 
-### List all people for a given event [GET /events/{event_id}/people]
+### List all people for a given event [GET /orgs/{o_id}/events/{e_id}/people]
 
 + Parameters
-    + event_id (number) - The id of the event
+    + o_id (number) - The organisation's id
+    + e_id (number) - The id of the event
 
 + Response 200 (application/json)
 
