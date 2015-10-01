@@ -5,9 +5,15 @@ HOST: http://api.sofiafest.com
 
 Sofia-Swing is an API that allows for retrieveing information about swing dance events.
 
-## Events [/events]
+
+## Events [/orgs/{o_id}/events]
+
+All API calls for listing events must provide the `id` of the organisation that owns the events.
 
 ### List all events [GET]
+
++ Parameters
+    + o_id (number) - The organisation's id.
 
 + Response 200 (application/json)
 
@@ -36,9 +42,7 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
         ]
 
 
-## People [/people]
-
-### List all people for a given event [GET /people/{event_id}]
+### List all people for a given event [GET /events/{event_id}/people]
 
 + Parameters
     + event_id (number) - The id of the event
