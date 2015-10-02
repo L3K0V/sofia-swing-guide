@@ -608,3 +608,25 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 
 ### Delete a post for an event [DELETE]
 + Response 204
+
+
+## Competitions [/orgs/{o_id}/events/{e_id}/competitions]
+
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+    
+### List all competitions for an event [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "name": "Strictly Lindy",
+                "type": "COUPLES",
+                "description": "Registrations accepted as couples only."
+                "photo": "...binary data for the photo..."
+            }
+        ]
+        
