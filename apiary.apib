@@ -109,10 +109,6 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 
 + Response 200
 
-    + Headers
-
-            Location: /orgs/20/events/5
-
 
 ### Delete an event [DELETE]
 + Response 204
@@ -203,10 +199,6 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
         
 + Response 200
 
-    + Headers
-
-            Location: /orgs/20/events/5/people/10
-
 ### Remove a person from an event [DELETE]
 
 + Response 204
@@ -291,16 +283,16 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 
     + Headers
 
-            Location: /orgs/20/events/5/tracks/1
+            Location: /orgs/20/events/5/tracks/10
             
 
 ## Track [/orgs/{o_id}/events/{e_id}/tracks/{t_id}]
-
-### Get the data for a track at an event [GET]
 + Parameters
     + o_id (number) - The organisation's id
     + e_id (number) - The event's id
     + t_id (number) - The track's id
+
+### Get the data for a track at an event [GET]
 
 + Response 200 (application/json)
 
@@ -325,5 +317,33 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
                         ]
         }
 
+### Update a track at an event [PUT]
 
++ Attributes
+    + id - The track's id
+    + name - The track's name
+    + type - The track's type - for couples or individuals
+    + rank - The difficulty of the track.
+    + capacity - The maximum number of people allowed to register for the track
+    
++ Request (application/json)
+
+        {
+                "id": 10
+                "name": "Tap",
+                "type": "IND",
+                "levels":
+                        [
+                            {
+                                "rank": 3,
+                                "capacity": 15
+                            },
+                            {
+                                "rank": 4,
+                                "capacity": 15
+                            }
+                        ]
+        }
+        
++ Response 200
 
