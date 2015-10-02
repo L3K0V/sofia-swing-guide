@@ -448,11 +448,11 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 + Response 204
 
 
-## Waiting List [/orgs/{o_id}/events/{e_id}/tracks/{t_id}/waitinglist{?level_rank}]
+## Waiting List [/orgs/{o_id}/events/{e_id}/waitinglist{?t_id}{?level_rank}]
 + Parameters
     + o_id (number) - The organisation's id
     + e_id (number) - The event's id
-    + t_id (number) - The tracks's id
+    + t_id (number, optional) - The tracks's id
     + level_rank (number, optional) - The difficulty of the level
 
 ### List all the entries in the waiting list for a track at an event [GET]
@@ -463,9 +463,53 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
             {
                 "id": 1,
                 "registration_id": 10,
-                "porson_id": 20,
-                "role": leader,
+                "person_id": 20,
+                "role": "LEADER",
                 "level_rank": 3,
                 "date": "2015-06-04T08:40:51.620Z"
+            },
+            {
+                "id": 2,
+                "registration_id": 12,
+                "person_id": 25,
+                "role": "FOLLOWER",
+                "level_rank": 3,
+                "date": "2015-04-04T08:40:51.620Z"
             }
         ]
+
+### Add a new entry to the waiting list for a track at an event [POST]
+
++ Attributes
+    + registration_id - The registration's id
+    
++ Request (application/json)
+
+        { "registration_id": 1 }
+        
++ Response 201
+
+    + Headers
+            
+            Location: /orgs/20/events/5/tracks/3/waitinglist/10
+            
+
+## Waiting List Etry [/orgs/{o_id}/events/{e_id}/waitinglist/{w_id}]
+
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+    + w_id (number) - The waiting list entry's id
+
+### Get the data for a waiting list entry at an event [GET]
+
++ Response 200 (application/json)
+
+        {
+                "id": 2,
+                "registration_id": 12,
+                "person_id": 25,
+                "role": "FOLLOWER",
+                "level_rank": 3,
+                "date": "2015-04-04T08:40:51.620Z"
+        }
