@@ -443,3 +443,29 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
         }
         
 + Response 200
+
+### Delete a registration for an event [DELETE]
++ Response 204
+
+
+## Waiting List [/orgs/{o_id}/events/{e_id}/tracks/{t_id}/waitinglist{?level_rank}]
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+    + t_id (number) - The tracks's id
+    + level_rank (number, optional) - The difficulty of the level
+
+### List all the entries in the waiting list for a track at an event [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "registration_id": 10,
+                "porson_id": 20,
+                "role": leader,
+                "level_rank": 3,
+                "date": "2015-06-04T08:40:51.620Z"
+            }
+        ]
