@@ -679,3 +679,22 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
                 "description": "Individual registrations accepted"
                 "photo": "...binary data for the photo..."
         }
+        
+### Update a competition at an event [PUT]
+
++ Attributes
+    + name - The competition's name
+    + type - The competition's type
+    + description - Additional info for the competition
+    + photo - Photo for the competition
+    
++ Request (application/json)
+
+        {
+                "name": "Solo Jazz",
+                "type": "IND",
+                "description": "Individual registrations accepted"
+                "photo": "...binary data for the photo..."
+        }
+        
++ Response 200
