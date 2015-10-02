@@ -425,5 +425,21 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
                 "date": "2015-06-04T08:40:51.620Z"
         }
 
+### Update a registration for an event [PUT]
 
++ Attributes
+    + track_id (number) - The track's id
+    + level_rank (number) - The difficulty of the level
+    + person_id (number) - The id of the person, who is registering
+    + role - The role of the person (leader or follower)
 
++ Request (application/json)
+
+        {
+                "track_id": 10,
+                "level_rank": 3,
+                "person_id": 20,
+                "role": "LEADER"
+        }
+        
++ Response 200
