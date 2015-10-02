@@ -292,3 +292,38 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
     + Headers
 
             Location: /orgs/20/events/5/tracks/1
+            
+
+## Track [/orgs/{o_id}/events/{e_id}/tracks/{t_id}]
+
+### Get the data for a track at an event [GET]
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+    + t_id (number) - The track's id
+
++ Response 200 (application/json)
+
+        {
+                "id": 1,
+                "name": "Lindy Hop",
+                "type": "COUPLES",
+                "levels":
+                        [
+                            {
+                                "rank": 2,
+                                "capacity": 30
+                            },
+                            {
+                                "rank": 3,
+                                "capacity": 30
+                            },
+                            {
+                                "rank": 4,
+                                "capacity": 20
+                            }
+                        ]
+        }
+
+
+
