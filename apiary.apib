@@ -586,3 +586,22 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
                     "urls": "http://example1.com;http://example2.com",
                     "unread": false
         }
+        
+### Update the data for a post at an event [PUT]
+
++ Attributes
+    + title - The post's title
+    + text - The post's content
+    + urls - The URLs, referenced in the post
+    + unread - The UNREAD status of the post for the given person
+    
++ Request (application/json)
+
+        {
+                    "title": "Hot Sugar Band are coming",
+                    "text": "The amazing hot sugar band are coming to Sofia.",
+                    "urls": "http://example1.com;http://example2.com",
+                    "unread": true
+        }
+        
++ Response 200
