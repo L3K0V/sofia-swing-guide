@@ -403,3 +403,27 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
     + Headers
 
             Location: /orgs/20/events/5/registrations/3
+
+
+## Registration [/orgs/{o_id}/events/{e_id}/registrations/{r_id}]
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+    + r_id (number) - The registration's id
+
+### Get the data for a registration [GET]
+
++ Response 200 (application/json)
+
+        {
+                "id": 2,
+                "track_id": 10,
+                "level_rank": 3,
+                "person_id": 25,
+                "role": "FOLLOWER",
+                "status": "AWAITING_PAYMENT",
+                "date": "2015-06-04T08:40:51.620Z"
+        }
+
+
+
