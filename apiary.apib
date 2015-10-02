@@ -246,7 +246,7 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
             {
                 "id": 2,
                 "name": "Solo Jazz",
-                "type": "SINGLE",
+                "type": "IND",
                 "levels":
                         [
                             {
@@ -261,4 +261,34 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
             }
         ]
 
+### Add a new track to an event [POST]
 
++ Attributes
+    + name - The track's name
+    + type - The track's type - for couples or individuals
+    + rank - The difficulty of the track.
+    + capacity - The maximum number of people allowed to register for the track
+    
++ Request (application/json)
+
+        {
+                "name": "Tap",
+                "type": "IND",
+                "levels":
+                        [
+                            {
+                                "rank": 3
+                                "capacity": 15
+                            },
+                            {
+                                "rank": 4
+                                "capacity": 15
+                            }
+                        ]
+        }
+        
++ Response 200
+
+    + Headers
+
+            Location: /orgs/20/events/5/tracks/1
