@@ -210,3 +210,55 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 ### Remove a person from an event [DELETE]
 
 + Response 204
+
+
+## Tracks [/orgs/{o_id}/events/{e_id}/tracks]
+
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+
+### List all tracks for an event [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "name": "Lindy Hop",
+                "type": "COUPLES",
+                "levels":
+                        [
+                            {
+                                "rank": 2
+                                "capacity": 30
+                            },
+                            {
+                                "rank": 3
+                                "capacity": 30
+                            },
+                            {
+                                "rank": 4
+                                "capacity": 20
+                            }
+                        ]
+            },
+            {
+                "id": 2,
+                "name": "Solo Jazz",
+                "type": "SINGLE",
+                "levels":
+                        [
+                            {
+                                "rank": 3
+                                "capacity": 30
+                            },
+                            {
+                                "rank": 4
+                                "capacity": 20
+                            }
+                        ]
+            }
+        ]
+
+
