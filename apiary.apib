@@ -518,11 +518,12 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 + Response 204
 
 
-## Posts [/orgs/{o_id}/events/{e_id}/posts]
+## Posts [/orgs/{o_id}/events/{e_id}/posts{?person_id}]
 
 + Parameters
     + o_id (number) - The organisation's id
     + e_id (number) - The event's id
+    + person_id (number, optional) - The peron's id, for whom to retrieve UNREAD status
     
 ### List all posts for an event [GET]
 
@@ -545,3 +546,43 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
                 }
         ]
 
+### Add a new post to an event [POST]
+
++ Attributes
+    + title - The post's title
+    + text - The post's content
+    + urls - The URLs, referenced in the post
+    
++ Request (application/json)
+
+        {
+                    "title": "Next teaching couple",
+                    "text": "Dax and Sarah are our next superstart couple.",
+                    "urls": "http://example1.com;http://example2.com"
+        }
+        
++ Response 201
+
+    + Headers
+        
+            Loction: /orgs/20/events/5/posts/1
+        
+## Post [/orgs/{o_id}/events/{e_id}/posts/{p_id}{?person_id}]
+
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+    + p_id (number) - The post's id
+    + person_id (number, optional) - The peron's id, for whom to retrieve UNREAD status
+
+### Get the data for a post at an event [GET]
+
++ Response 200 (application/json)
+
+        {
+                    "id": 2,
+                    "title": "Hot Sugar Band are coming",
+                    "text": "The amazing hot sugar band are coming to Sofia.",
+                    "urls": "http://example1.com;http://example2.com",
+                    "unread": false
+        }
