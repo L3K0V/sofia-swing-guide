@@ -615,7 +615,7 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 + Parameters
     + o_id (number) - The organisation's id
     + e_id (number) - The event's id
-    
+
 ### List all competitions for an event [GET]
 
 + Response 200 (application/json)
@@ -659,3 +659,23 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
     + Headers
     
             Location: /orgs/20/events/5/competitions/3
+   
+            
+## Competition [/orgs/{o_id}/events/{e_id}/competitions/{c_id}]
+
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+    + c_id (number) - The competition's id
+
+### Get the data for a competition at an event [GET]
+
++ Response 200 (application/json)
+
+        {
+                "id": 3
+                "name": "Solo Jazz",
+                "type": "IND",
+                "description": "Individual registrations accepted"
+                "photo": "...binary data for the photo..."
+        }
