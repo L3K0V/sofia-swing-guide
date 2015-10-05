@@ -10,6 +10,12 @@ class EventSerializer(serializers.ModelSerializer):
 
 
 class EventPersonSerializer(serializers.ModelSerializer):
+
+    type = serializers.ChoiceField(
+        choices=EventPerson.PERSON_TYPE,
+        style={'base_template': 'radio.html', 'inline': 'true'}
+    )
+
     class Meta:
         model = EventPerson
         fields = ('id', 'person', 'event', 'type')
