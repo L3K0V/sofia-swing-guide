@@ -18,10 +18,11 @@ from django.contrib import admin
 
 from rest_framework.routers import DefaultRouter
 
-from api.events.views import EventViewSet
+from api.events.views import EventViewSet, EventPersonViewSet
 
 router = DefaultRouter()
 router.register(r'events', EventViewSet)
+router.register(r'people', EventPersonViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),

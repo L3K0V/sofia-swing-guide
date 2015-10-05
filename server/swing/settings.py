@@ -39,7 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_countries',
     'rest_framework',
-    'api.events'
+    'api.members',
+    'api.events',
 )
 
 MIDDLEWARE_CLASSES = (
