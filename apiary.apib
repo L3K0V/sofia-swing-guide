@@ -701,3 +701,104 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 
 ### Remove a competition from an event [DELETE]
 + Response 204
+
+
+## Guide [/orgs/{o_id}/events/{e_id}/guide]
+
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+
+### List all guide items for an event [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "name": "NDK"
+                "lat: 42.690297,
+                "lon": 23.311744,
+                "info": "This is where the workshops will take place.",
+                "opening_hours": ["09:00-12:00", "13:00-19:00"]
+            },
+            {
+                "id": 2,
+                "name": "Bar Alcohol"
+                "lat: 42.690297,
+                "lon": 23.321744,
+                "info": "This is where the parties will take place.",
+                "opening_hours": ["19:00-03:00"]
+            }
+        ]
+
+
+### Add a new guide item to an event [POST]
+
++ Attributes
+    + name - The name of the place.
+    + lat (number) - The latitude of the location
+    + lon (number) - The longitude of the location
+    + info - Additional info for the place
+    + opening_hours - When does the place is open
+
++ Request (application/json)
+
+        {
+                "name": "NDK"
+                "lat: 42.690297,
+                "lon": 23.311744,
+                "info": "This is where the workshops will take place.",
+                "opening_hours": ["09:00-12:00", "13:00-19:00"]
+        }
+        
++ Response 201
+
+    + Headers
+            
+            Location: /orgs/20/events/5/tracks/3/waitinglist/10
+
+
+## Guide Item [/orgs/{o_id}/events/{e_id}/guide/{g_id}]
+
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+    + g_id (number) - The guide item's id
+
+### Get the data for a guide item at an event [GET]
+
++ Response 200 (application/json)
+
+        {
+                "id": 1,
+                "name": "NDK"
+                "lat: 42.690297,
+                "lon": 23.311744,
+                "info": "This is where the workshops will take place.",
+                "opening_hours": ["09:00-12:00", "13:00-19:00"]
+        }
+        
+### Update a guide item [PUT]
+
++ Attributes
+    + name - The name of the place.
+    + lat (number) - The latitude of the location
+    + lon (number) - The longitude of the location
+    + info - Additional info for the place
+    + opening_hours - When does the place is open
+    
++ Request (appliation/json)
+
+        {
+                "name": "NDK"
+                "lat: 42.690297,
+                "lon": 23.311744,
+                "info": "This is where the workshops will take place.",
+                "opening_hours": ["09:00-12:00", "13:00-19:00"]
+        }
+        
++ Response 200
+
+### Remove a guide item from an event [DELETE]
++ Response 204
