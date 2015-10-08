@@ -1,4 +1,4 @@
-# sofia-swing-guide
+# sofia-swing-guide [![Stories In Progress](https://badge.waffle.io/L3K0V/sofia-swing-guide.png?label=status:inprogress&title=In Progress)](https://waffle.io/L3K0V/sofia-swing-guide)
 
 Quick install guide
 ```
