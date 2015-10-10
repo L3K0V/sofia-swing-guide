@@ -28,8 +28,12 @@ router.register(r'events', EventViewSet, base_name='events')
 event_router = routers.NestedSimpleRouter(router, r'events', lookup='event')
 event_router.register(r'tracks', EventTrackViewSet, base_name='tracks')
 
+tracks_router = routers.NestedSimpleRouter(event_router, r'tracks', lookup='track')
+tracks_router.register(r'levels', EventTrackLevelViewSet, base_name='levels')
+
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^', include(event_router.urls)),
+    url(r'^', include(tracks_router.urls)),
     url(r'^admin/', include(admin.site.urls)),
 ]

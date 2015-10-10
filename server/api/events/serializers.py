@@ -34,6 +34,10 @@ class EventTrackSerializer(serializers.ModelSerializer):
 
 
 class EventTrackLevelSerializer(serializers.ModelSerializer):
+        def create(self, validated_data):
+            t = EventTrack.objects.get(pk=self.context.get('track_pk'))
+            return EventTrackLevel.objects.create(track=t, **validated_data)
+
         class Meta:
             model = EventTrackLevel
-            fields = ('id', 'name', 'capacity', 'level', 'track')
+            fields = ('id', 'capacity', 'level')

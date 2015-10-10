@@ -31,7 +31,7 @@ class EventTrack(models.Model):
         (INDIVIDUALS, 'Individuals')
     )
 
-    name = models.CharField(max_length=64, blank=False, null=False)
+    name = models.CharField(max_length=64, blank=False, null=False, unique=True)
     type = models.CharField(max_length=1, choices=TRACK_TYPE, default=COUPLES)
     event = models.ForeignKey('Event', related_name='tracks')
 
@@ -55,7 +55,6 @@ class EventTrackLevel(models.Model):
         (ADVANCED_PLUS, 'Advanced Plus')
     )
 
-    name = models.CharField(max_length=64)
     capacity = models.PositiveSmallIntegerField(blank=False)
     track = models.ForeignKey('EventTrack', related_name='levels')
     level = models.CharField(max_length=2, choices=TRACK_LEVEL, default=BEGINNER)

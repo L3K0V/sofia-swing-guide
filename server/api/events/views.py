@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 
 from rest_framework import viewsets
 from rest_framework import response
@@ -44,10 +45,29 @@ class EventTrackViewSet(viewsets.ModelViewSet):
     def retrieve(self, request, pk=None, event_pk=None):
         queryset = EventTrack.objects.filter(pk=pk, event=event_pk)
         track = get_object_or_404(queryset, pk=pk)
-        serializer = EventTrackSerializer(assignment, context={'request': request})
+        serializer = EventTrackSerializer(track, context={'request': request})
         return response.Response(serializer.data)
 
 
 class EventTrackLevelViewSet(viewsets.ModelViewSet):
     queryset = EventTrackLevel.objects.all()
     serializer_class = EventTrackLevelSerializer
+
+    def create(self, request, event_pk=None, track_pk=None):
+        context = {'request': request, 'event_pk': event_pk, 'track_pk': track_pk}
+        serializer = EventTrackLevelSerializer(context=context, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return response.Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def list(self, request, event_pk=None, track_pk=None):
+        queryset = EventTrackLevel.objects.filter(track__event=event_pk, track=track_pk)
+        serializer = EventTrackLevelSerializer(queryset, many=True, context={'request': request})
+        return response.Response(serializer.data)
+
+    def retrieve(self, request, pk=None, event_pk=None, track_pk=None):
+        queryset = EventTrackLevel.objects.filter(pk=pk, track__event=event_pk, track=track_pk)
+        level = get_object_or_404(queryset, pk=pk)
+        serializer = EventTrackLevelSerializer(level, context={'request': request})
+        return response.Response(serializer.data)
