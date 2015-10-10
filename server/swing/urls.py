@@ -18,15 +18,18 @@ from django.contrib import admin
 
 from rest_framework.routers import DefaultRouter
 
+from rest_framework_nested import routers
+
 from api.events.views import EventViewSet, EventPersonViewSet, EventTrackViewSet, EventTrackLevelViewSet
 
-router = DefaultRouter()
-router.register(r'events', EventViewSet)
-router.register(r'people', EventPersonViewSet)
-router.register(r'tracks', EventTrackViewSet)
-router.register(r'levels', EventTrackLevelViewSet)
+router = routers.DefaultRouter()
+router.register(r'events', EventViewSet, base_name='events')
+
+event_router = routers.NestedSimpleRouter(router, r'events', lookup='event')
+event_router.register(r'tracks', EventTrackViewSet, base_name='tracks')
 
 urlpatterns = [
     url(r'^', include(router.urls)),
+    url(r'^', include(event_router.urls)),
     url(r'^admin/', include(admin.site.urls)),
 ]

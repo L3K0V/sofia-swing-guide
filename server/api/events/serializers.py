@@ -5,8 +5,9 @@ from api.events.models import Event, EventPerson, EventTrack, EventTrackLevel
 
 class EventSerializer(serializers.ModelSerializer):
     class Meta:
+        depth = 1
         model = Event
-        fields = ('id', 'name', 'description', 'country', 'city', 'from_date', 'to_date')
+        fields = ('id', 'name', 'description', 'country', 'city', 'from_date', 'to_date', 'tracks')
 
 
 class EventPersonSerializer(serializers.ModelSerializer):
@@ -22,6 +23,10 @@ class EventPersonSerializer(serializers.ModelSerializer):
 
 
 class EventTrackSerializer(serializers.ModelSerializer):
+        def create(self, validated_data):
+            e = Event.objects.get(pk=self.context.get('event_pk'))
+            return EventTrack.objects.create(event=e, **validated_data)
+
         class Meta:
             depth = 1
             model = EventTrack

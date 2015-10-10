@@ -13,7 +13,6 @@ class Event(models.Model):
     city = models.CharField(max_length=32, blank=True, null=False)
 
     people = models.ManyToManyField('members.Person', through='EventPerson', through_fields=('event', 'person'), related_name='events')
-    tracks = models.ManyToManyField('EventTrack', related_name='events')
 
     from_date = models.DateTimeField()
     to_date = models.DateTimeField()
@@ -34,6 +33,7 @@ class EventTrack(models.Model):
 
     name = models.CharField(max_length=64, blank=False, null=False)
     type = models.CharField(max_length=1, choices=TRACK_TYPE, default=COUPLES)
+    event = models.ForeignKey('Event', related_name='tracks')
 
     def __str__(self):
         return '{} ({})'.format(self.name, self.type)
