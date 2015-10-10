@@ -716,7 +716,7 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
         [
             {
                 "id": 1,
-                "name": "NDK"
+                "name": "NDK",
                 "lat": 42.690297,
                 "lon": 23.311744,
                 "info": "This is where the workshops will take place.",
@@ -724,7 +724,7 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
             },
             {
                 "id": 2,
-                "name": "Bar Alcohol"
+                "name": "Bar Alcohol",
                 "lat": 42.690297,
                 "lon": 23.321744,
                 "info": "This is where the parties will take place.",
@@ -745,7 +745,7 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 + Request (application/json)
 
         {
-                "name": "NDK"
+                "name": "NDK",
                 "lat": 42.690297,
                 "lon": 23.311744,
                 "info": "This is where the workshops will take place.",
@@ -772,7 +772,7 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 
         {
                 "id": 1,
-                "name": "NDK"
+                "name": "NDK",
                 "lat": 42.690297,
                 "lon": 23.311744,
                 "info": "This is where the workshops will take place.",
@@ -791,7 +791,7 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 + Request (appliation/json)
 
         {
-                "name": "NDK"
+                "name": "NDK",
                 "lat": 42.690297,
                 "lon": 23.311744,
                 "info": "This is where the workshops will take place.",
@@ -802,3 +802,56 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 
 ### Remove a guide item from an event [DELETE]
 + Response 204
+
+
+## Schedule [/orgs/{o_id}/events/{e_id}/schedule]
+
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+
+### List all schedule items for an event [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "type": "CLASS",
+                "hours": "10:00-11:00",
+                "level": "INT",
+                "track": "Lindy Hop",
+                "people": ["Dax Hock", "Sarah Breck"]
+            },
+            {
+                "id": 1,
+                "type": "PARTY",
+                "hours": "09:00-03:00"
+            }
+        ]
+        
+### Add a new schedule item for an event [POST]
+
++ Attributes
+    + type - The type of the item (class, party, etc...)
+    + hours - The time interval for the item.
+    + level - The level of the item if it is a class
+    + track - The track of the item if it is a class
+    + people - The hosts of the item (if it is a class, these are the teachers)
+    
++ Request (application/json)
+
+        {
+                "type": "CLASS",
+                "hours": "10:00-11:00",
+                "level": "ADV",
+                "track": "Lindy Hop",
+                "people": ["Yavor Kunchev", "Lilia Zla"]
+        }
+    
++ Response 201
+
+    + Headers
+            
+            Location: /orgs/20/events/5/tracks/3/schedule/3
+            
