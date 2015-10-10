@@ -854,4 +854,48 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
     + Headers
             
             Location: /orgs/20/events/5/tracks/3/schedule/3
-            
+
+
+## Schedule Item [/orgs/{o_id}/events/{e_id}/schedule/{s_id}]
+
++ Parameters
+    + o_id (number) - The organisation's id
+    + e_id (number) - The event's id
+    + s_id (number) - The schedule item's id
+
+### Get the info for a schedule item [GET]
+
++ Response 200 (application/json)
+
+        {
+                "id": 1,
+                "type": "CLASS",
+                "hours": "10:00-11:00",
+                "level": "INT",
+                "track": "Lindy Hop",
+                "people": ["Dax Hock", "Sarah Breck"]
+        }
+
+### Update a schedule item [PUT]
+
++ Attributes
+    + type - The type of the item (class, party, etc...)
+    + hours - The time interval for the item.
+    + level - The level of the item if it is a class
+    + track - The track of the item if it is a class
+    + people - The hosts of the item (if it is a class, these are the teachers)
+    
++ Request (application/json)
+
+        {
+                "type": "CLASS",
+                "hours": "10:00-11:00",
+                "level": "INT",
+                "track": "Lindy Hop",
+                "people": ["Dax Hock", "Sarah Breck"]
+        }
+
++ Response 200
+
+### Delete a schedule item [DELETE]
++ Response 204
