@@ -950,3 +950,36 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
     + Headers
             
             Location: /users/3
+
+
+## User [/users/{u_id}]
+
++ Parameters
+    + u_id - The user's id
+
+### Get the user's data [GET]
+
++ Response 200 (application/json)
+
+        {
+            "id": 2,
+            "username": "asencho",
+            "first_name": "Asen",
+            "last_name": "Lekov",
+            "email": "al@al.al",
+            "country_code": "BG"
+        }
+        
+### Update the user's data [PUT]
+
++ Attributes
+    + username - The user's username
+    + first_name - The user's first name
+    + last_name - The user's last name
+    + email - The user's email
+    + country_code - The user's home country county code
+    
++ Response 200
+
+### Delete a user [DELETE]
++ Response 204
