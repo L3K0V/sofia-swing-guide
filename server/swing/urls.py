@@ -25,10 +25,11 @@ from api.guide.views import GuideItemViewSet
 
 router = routers.DefaultRouter()
 router.register(r'events', EventViewSet, base_name='events')
-router.register(r'guide', GuideItemViewSet)
+
 
 event_router = routers.NestedSimpleRouter(router, r'events', lookup='event')
 event_router.register(r'tracks', EventTrackViewSet, base_name='tracks')
+event_router.register(r'guide', GuideItemViewSet, base_name='guide')
 
 tracks_router = routers.NestedSimpleRouter(event_router, r'tracks', lookup='track')
 tracks_router.register(r'levels', EventTrackLevelViewSet, base_name='levels')
