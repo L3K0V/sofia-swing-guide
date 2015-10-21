@@ -39,8 +39,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django_countries',
     'rest_framework',
+    'rest_framework_gis',
     'api.members',
     'api.events',
+    'api.guide',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,10 +82,12 @@ WSGI_APPLICATION = 'swing.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.contrib.gis.db.backends.spatialite',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+SPATIALITE_LIBRARY_PATH = '/usr/local/lib/mod_spatialite.dylib'
 
 
 # Internationalization
