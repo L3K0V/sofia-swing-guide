@@ -22,14 +22,16 @@ from rest_framework_nested import routers
 
 from api.events.views import EventViewSet, EventPersonViewSet, EventTrackViewSet, EventTrackLevelViewSet
 from api.guide.views import GuideItemViewSet
+from api.competitions.views import CompetitionViewSet
 
 router = routers.DefaultRouter()
 router.register(r'events', EventViewSet, base_name='events')
 
 
 event_router = routers.NestedSimpleRouter(router, r'events', lookup='event')
-event_router.register(r'tracks', EventTrackViewSet, base_name='tracks')
-event_router.register(r'guide', GuideItemViewSet, base_name='guide')
+event_router.register(r'tracks', EventTrackViewSet, base_name='track')
+event_router.register(r'guides', GuideItemViewSet, base_name='guide')
+event_router.register(r'competitions', CompetitionViewSet, base_name='competition')
 
 tracks_router = routers.NestedSimpleRouter(event_router, r'tracks', lookup='track')
 tracks_router.register(r'levels', EventTrackLevelViewSet, base_name='levels')
