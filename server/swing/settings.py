@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'api.members',
     'api.events',
     'api.guide',
+    'api.competitions'
 )
 
 MIDDLEWARE_CLASSES = (
