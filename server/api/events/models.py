@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.gis.db import models as gis_model
 
 from django_countries.fields import CountryField
 
@@ -83,3 +84,33 @@ class EventPerson(models.Model):
 
     class Meta:
         unique_together = ('event', 'person')
+
+
+class ScheduleItem(gis_model.Model):
+
+    PARTY = 'P'
+    MAIN_CLASS = 'M'
+    TASTER_CLASS = 'T'
+    OTHER_ACTIVITY = 'A'
+
+    SCHEDULE_TYPE = (
+        (PARTY, 'Party'),
+        (MAIN_CLASS, 'Main class'),
+        (TASTER_CLASS, 'Taster class'),
+        (OTHER_ACTIVITY, 'Other activity')
+    )
+
+    event_track_level = models.ForeignKey('EventTrackLevel', related_name='schedule')
+    type = models.CharField(max_length=1, choices=SCHEDULE_TYPE, default=PARTY)
+
+    address = models.CharField(max_length=255)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    point = gis_model.PointField()
+
+
+class OpeningHours(gis_model.Model):
+    description = models.TextField()
+    schedule_item = models.ForeignKey('ScheduleItem', related_name='hours')
+    from_datetime = models.DateTimeField()
+    to_datetime = models.DateTimeField()

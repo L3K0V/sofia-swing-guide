@@ -16,11 +16,9 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from rest_framework.routers import DefaultRouter
-
 from rest_framework_nested import routers
 
-from api.events.views import EventViewSet, EventPersonViewSet, EventTrackViewSet, EventTrackLevelViewSet
+from api.events.views import EventViewSet, EventTrackViewSet, EventTrackLevelViewSet, ScheduleItemViewSet
 from api.guide.views import GuideItemViewSet
 from api.competitions.views import CompetitionViewSet
 
@@ -36,9 +34,13 @@ event_router.register(r'competitions', CompetitionViewSet, base_name='competitio
 tracks_router = routers.NestedSimpleRouter(event_router, r'tracks', lookup='track')
 tracks_router.register(r'levels', EventTrackLevelViewSet, base_name='levels')
 
+levels_router = routers.NestedSimpleRouter(tracks_router, r'levels', lookup='level')
+levels_router.register(r'schedule', ScheduleItemViewSet, base_name='shedule')
+
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^', include(event_router.urls)),
     url(r'^', include(tracks_router.urls)),
+    url(r'^', include(levels_router.urls)),
     url(r'^admin/', include(admin.site.urls)),
 ]

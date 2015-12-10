@@ -12,6 +12,6 @@ class GuideItemSerializer(GeoFeatureModelSerializer):
     class Meta:
         depth = 1
         model = GuideItem
-        geo_field = "point"
+        geo_field = 'point'
         id_field = False
         fields = ('id', 'name', 'description', 'address', 'city', 'state', 'hours')
