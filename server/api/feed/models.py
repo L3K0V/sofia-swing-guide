@@ -2,6 +2,8 @@ from django.db import models
 
 
 class FeedItem(models.Model):
+    event = models.ForeignKey('events.Event', related_name='feed')
+
     title = models.CharField(max_length=64)
     text = models.TextField(max_length=8096)
 

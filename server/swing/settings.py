@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'rest_framework_gis',
     'api.members',
     'api.events',
+    'api.feed',
     'api.guide',
     'api.competitions'
 )
