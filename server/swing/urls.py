@@ -21,9 +21,11 @@ from rest_framework_nested import routers
 from api.events.views import EventViewSet, EventTrackViewSet, EventTrackLevelViewSet, ScheduleItemViewSet
 from api.guide.views import GuideItemViewSet
 from api.competitions.views import CompetitionViewSet
+from api.feed.views import FeedViewSet
 
 router = routers.DefaultRouter()
 router.register(r'events', EventViewSet, base_name='events')
+router.register(r'feed', FeedViewSet, base_name='feeds')
 
 
 event_router = routers.NestedSimpleRouter(router, r'events', lookup='event')

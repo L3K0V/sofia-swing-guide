@@ -1,3 +1,17 @@
 from django.db import models
 
-# Create your models here.
+
+class FeedItem(models.Model):
+    title = models.CharField(max_length=64)
+    text = models.TextField(max_length=8096)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    cover = models.FileField()
+
+    urls = models.ManyToManyField('FeedItemUrl')
+
+
+class FeedItemUrl(models.Model):
+    url = models.URLField()
