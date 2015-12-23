@@ -50,4 +50,9 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
         mDataset = dataset;
         notifyDataSetChanged();
     }
+
+    public void add(String item) {
+        mDataset.add(item);
+        notifyDataSetChanged();
+    }
 }

@@ -34,10 +34,12 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, SwipeRefreshLayout.OnRefreshListener {
 
     private int previousTotal = 0;
-    private boolean loading = true;
+    private boolean loading = false;
     private int visibleThreshold = 5;
     private FeedAdapter adapter;
     int firstVisibleItem, visibleItemCount, totalItemCount;
+
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     private JobManager jobManager;
 
@@ -56,8 +58,6 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-
-                jobManager.addJob(new FetchFeedJob());
             }
         });
 
@@ -70,24 +70,18 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
+        swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
         swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
         swipeRefreshLayout.setOnRefreshListener(this);
 
-        // Dummy dataset
-        final List<String> dataset = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            dataset.add("Element: " + i);
-        }
-
         final RecyclerView feed = (RecyclerView) findViewById(R.id.feed);
         feed.setLayoutManager(new LinearLayoutManager(this));
         feed.setHasFixedSize(true);
 
-        adapter = new FeedAdapter(dataset);
+        adapter = new FeedAdapter(new ArrayList<String>());
         feed.setAdapter(adapter);
         feed.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
@@ -109,14 +103,16 @@ public class MainActivity extends AppCompatActivity
                 if (!loading && (totalItemCount - visibleItemCount)
                         <= (firstVisibleItem + visibleThreshold)) {
 
-                    dataset.add("More...");
+                    adapter.add("More...");
                     recyclerView.getAdapter().notifyDataSetChanged();
 
                     loading = true;
-                    swipeRefreshLayout.setRefreshing(loading);
+                    swipeRefreshLayout.setRefreshing(false);
                 }
             }
         });
+
+        updateFeedUI();
     }
 
     @Override
@@ -190,12 +186,19 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onRefresh() {
-
+        jobManager.addJob(new FetchFeedJob());
     }
 
     public void onEventMainThread(FetchedNewPostsEvent event) {
 
         Log.i("EVENT", "Received");
+
+        updateFeedUI();
+
+        swipeRefreshLayout.setRefreshing(false);
+    }
+
+    private void updateFeedUI() {
         FeedModel feedModel = FeedModel.getInstance();
 
         List<Post> posts = feedModel.getPosts();

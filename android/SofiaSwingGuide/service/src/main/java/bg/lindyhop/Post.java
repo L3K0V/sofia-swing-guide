@@ -1,12 +1,17 @@
 package bg.lindyhop;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by mmironov on 12/23/15.
  */
 public class Post {
 
+    @SerializedName("id")
     private Long serverId;
+
     private String title;
+
     private String text;
 
     public void setTitle(String title) {
