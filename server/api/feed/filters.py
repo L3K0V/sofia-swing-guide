@@ -9,4 +9,4 @@ class FeedItemFilter(django_filters.FilterSet):
 
     class Meta:
         model = FeedItem
-        fields = ['created', 'updated']
+        fields = ['event', 'created', 'updated']
