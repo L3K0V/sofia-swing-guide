@@ -6,4 +6,5 @@ mainClassName = "bg.lindyhop.dao.SofiaSwingFestDaoGenerator"
 
 dependencies {
     compile 'de.greenrobot:greendao-generator:2.1.0'
+    compile 'org.freemarker:freemarker:2.3.23'
 }

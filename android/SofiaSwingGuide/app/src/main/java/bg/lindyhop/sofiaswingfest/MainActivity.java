@@ -54,7 +54,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         final SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
-        swipeRefreshLayout.setColorSchemeColors(Color.RED, Color.GREEN, Color.BLUE, Color.YELLOW);
+        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
         swipeRefreshLayout.setOnRefreshListener(this);
 
         // Dummy dataset
