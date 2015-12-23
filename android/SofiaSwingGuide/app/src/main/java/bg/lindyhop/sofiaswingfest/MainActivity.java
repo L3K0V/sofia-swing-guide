@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onRefresh() {
-        jobManager.addJob(new FetchFeedJob());
+        jobManager.addJobInBackground(new FetchFeedJob());
     }
 
     public void onEventMainThread(FetchedNewPostsEvent event) {
