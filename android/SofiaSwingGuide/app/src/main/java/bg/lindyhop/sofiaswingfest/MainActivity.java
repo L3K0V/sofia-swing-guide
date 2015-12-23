@@ -1,4 +1,4 @@
-package com.swing.sofiaguide;
+package bg.lindyhop.sofiaswingfest;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

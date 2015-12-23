@@ -9,7 +9,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.swing.sofiaguide"
+        applicationId "bg.lindyhop.sofiaswingfest"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
