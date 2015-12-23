@@ -10,7 +10,7 @@ class FeedItem(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    cover = models.FileField()
+    cover = models.FileField(blank=True, null=True)
 
     urls = models.ManyToManyField('FeedItemUrl')
 
