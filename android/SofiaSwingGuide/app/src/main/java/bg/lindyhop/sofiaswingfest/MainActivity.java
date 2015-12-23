@@ -21,6 +21,9 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+import bg.lindyhop.Post;
+import bg.lindyhop.controllers.FeedController;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
