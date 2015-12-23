@@ -23,7 +23,7 @@ public class FeedController {
         return instance;
     }
 
-    public List<Post> loadFeed() {
+    public List<Post> loadFeed(Long sinceId) {
 
         RestAdapter rest = new RestAdapter.Builder()
                                     .setEndpoint(Config.SERVER_URL)

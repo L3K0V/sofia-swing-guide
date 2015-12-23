@@ -13,15 +13,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.path.android.jobqueue.JobManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import bg.lindyhop.Post;
 import bg.lindyhop.controllers.FeedController;
+import bg.lindyhop.events.FetchedNewPostsEvent;
+import bg.lindyhop.jobs.FetchFeedJob;
+import bg.lindyhop.models.FeedModel;
+import de.greenrobot.event.EventBus;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, SwipeRefreshLayout.OnRefreshListener {
@@ -29,7 +36,10 @@ public class MainActivity extends AppCompatActivity
     private int previousTotal = 0;
     private boolean loading = true;
     private int visibleThreshold = 5;
+    private FeedAdapter adapter;
     int firstVisibleItem, visibleItemCount, totalItemCount;
+
+    private JobManager jobManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +48,16 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        jobManager = SofiaSwingFestApplication.getInstance().getJobManager();
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                jobManager.addJob(new FetchFeedJob());
             }
         });
 
@@ -72,7 +86,9 @@ public class MainActivity extends AppCompatActivity
         final RecyclerView feed = (RecyclerView) findViewById(R.id.feed);
         feed.setLayoutManager(new LinearLayoutManager(this));
         feed.setHasFixedSize(true);
-        feed.setAdapter(new FeedAdapter(dataset));
+
+        adapter = new FeedAdapter(dataset);
+        feed.setAdapter(adapter);
         feed.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
             @Override
@@ -101,6 +117,18 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        EventBus.getDefault().unregister(this);
+        super.onStop();
     }
 
     @Override
@@ -163,5 +191,20 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onRefresh() {
 
+    }
+
+    public void onEventMainThread(FetchedNewPostsEvent event) {
+
+        Log.i("EVENT", "Received");
+        FeedModel feedModel = FeedModel.getInstance();
+
+        List<Post> posts = feedModel.getPosts();
+        List<String> dataset = new ArrayList<String>();
+
+        for(Post post : posts) {
+            dataset.add(post.getTitle());
+        }
+
+        adapter.changeDataSet(dataset);
     }
 }

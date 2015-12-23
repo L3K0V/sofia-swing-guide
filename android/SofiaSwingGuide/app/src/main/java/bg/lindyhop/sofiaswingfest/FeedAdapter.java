@@ -45,4 +45,9 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
             text = (TextView) itemView.findViewById(android.R.id.text1);
         }
     }
+
+    public void changeDataSet(List<String> dataset) {
+        mDataset = dataset;
+        notifyDataSetChanged();
+    }
 }

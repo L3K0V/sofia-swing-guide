@@ -5,6 +5,7 @@ package bg.lindyhop;
  */
 public class Post {
 
+    private Long serverId;
     private String title;
     private String text;
 
@@ -22,5 +23,9 @@ public class Post {
 
     public String getText() {
         return text;
+    }
+
+    public Long getServerId() {
+        return serverId;
     }
 }

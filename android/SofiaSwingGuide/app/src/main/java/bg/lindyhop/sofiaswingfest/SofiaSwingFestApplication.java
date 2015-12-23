@@ -2,6 +2,7 @@ package bg.lindyhop.sofiaswingfest;
 
 import android.app.Application;
 
+import com.path.android.jobqueue.JobManager;
 import com.path.android.jobqueue.config.Configuration;
 import com.path.android.jobqueue.log.CustomLogger;
 
@@ -10,11 +11,21 @@ import com.path.android.jobqueue.log.CustomLogger;
  */
 public class SofiaSwingFestApplication extends Application {
 
+    private static SofiaSwingFestApplication instance;
+
+    private static JobManager jobManager;
+
     @Override
     public void onCreate() {
         super.onCreate();
 
+        instance = this;
+
         configureJobManager();
+    }
+
+    public static SofiaSwingFestApplication getInstance() {
+        return instance;
     }
 
     private void configureJobManager() {
@@ -41,6 +52,17 @@ public class SofiaSwingFestApplication extends Application {
 
                     }
                 }
-        ).build();
+        )
+                .minConsumerCount(1)//always keep at least one consumer alive
+                .maxConsumerCount(3)//up to 3 consumers at a time
+                .loadFactor(3)//3 jobs per consumer
+                .consumerKeepAlive(120)
+                .build();
+
+        jobManager = new JobManager(this, config);
     };
+
+    public JobManager getJobManager() {
+        return jobManager;
+    }
 }
