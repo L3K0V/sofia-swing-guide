@@ -524,7 +524,6 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
     + o_id (number) - The organisation's id
     + e_id (number) - The event's id
     + person_id (number, optional) - The peron's id, for whom to retrieve UNREAD status
-    
 ### List all posts for an event [GET]
 
 + Response 200 (application/json)
@@ -532,17 +531,27 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
         [
                 {
                     "id": 1,
-                    "title": "Next teaching couple",
+                    "title": "Dax and Sarah 2015",
                     "text": "Dax and Sarah are our next superstart couple.",
                     "urls": "http://example1.com;http://example2.com",
                     "unread": true
+                    "updatedAt": "2015-05-05T12:30:00"
                 },
                 {
                     "id": 2,
-                    "title": "Hot Sugar Band are coming",
+                    "title": "Hot Sugar Band 2014",
                     "text": "The amazing hot sugar band are coming to Sofia.",
                     "urls": "http://example1.com;http://example2.com",
                     "unread": false
+                    "updatedAt": "2014-05-05T12:30:00"
+                },
+                {
+                    "id": 3,
+                    "title": "Felipe and Alice 2016",
+                    "text": "The amazing hot sugar band are coming to Sofia.",
+                    "urls": "http://example1.com;http://example2.com",
+                    "unread": false
+                    "updatedAt": "2016-05-05T12:30:00"
                 }
         ]
 
