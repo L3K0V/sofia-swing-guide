@@ -67,6 +67,7 @@ public class FetchFeedJob extends Job {
     protected RetryConstraint shouldReRunOnThrowable(Throwable throwable, int runCount,
                                                      int maxRunCount) {
 
+        Log.i("EXCEPTION", throwable.getMessage());
         return RetryConstraint.RETRY;
     }
 }

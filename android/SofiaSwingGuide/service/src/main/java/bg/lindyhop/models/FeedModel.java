@@ -30,13 +30,17 @@ public class FeedModel {
         dao.insertOrReplaceInTx(posts);
     }
 
+    public void insertOrReplace(FeedItem feedItem) {
+        dao.insertOrReplace(feedItem);
+    }
+
     public FeedItem getLastFeedItem() {
         return dao.queryBuilder().where(FeedItemDao.Properties.ServerId.isNotNull())
-                .orderDesc(FeedItemDao.Properties.CreatedAt)
+                .orderDesc(FeedItemDao.Properties.UpdatedAt)
                 .limit(1).unique();
     }
 
     public List<FeedItem> getFeedItems() {
-        return dao.queryBuilder().orderDesc(FeedItemDao.Properties.CreatedAt).list();
+        return dao.queryBuilder().orderDesc(FeedItemDao.Properties.UpdatedAt).list();
     }
 }
