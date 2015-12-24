@@ -17,6 +17,7 @@ public class FeedItemUrl {
 
     private Long id;
     private String url;
+    private Long feedId;
 
     /** Used to resolve relations */
     private transient DaoSession daoSession;
@@ -38,9 +39,10 @@ public class FeedItemUrl {
         this.id = id;
     }
 
-    public FeedItemUrl(Long id, String url) {
+    public FeedItemUrl(Long id, String url, Long feedId) {
         this.id = id;
         this.url = url;
+        this.feedId = feedId;
     }
 
     /** called by internal mechanisms, do not call yourself. */
@@ -63,6 +65,14 @@ public class FeedItemUrl {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public Long getFeedId() {
+        return feedId;
+    }
+
+    public void setFeedId(Long feedId) {
+        this.feedId = feedId;
     }
 
     /** To-one relationship, resolved on first access. */

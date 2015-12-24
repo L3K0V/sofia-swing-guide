@@ -2,7 +2,7 @@ package bg.lindyhop.controllers;
 
 import java.util.List;
 
-import bg.lindyhop.Post;
+import bg.lindyhop.entities.FeedItem;
 import bg.lindyhop.network.Config;
 import bg.lindyhop.network.FeedService;
 import retrofit.RestAdapter;
@@ -23,7 +23,7 @@ public class FeedController {
         return instance;
     }
 
-    public List<Post> loadFeed(Long sinceId) {
+    public List<FeedItem> loadFeed(Long sinceId) {
 
         RestAdapter rest = new RestAdapter.Builder()
                                     .setEndpoint(Config.SERVER_URL)

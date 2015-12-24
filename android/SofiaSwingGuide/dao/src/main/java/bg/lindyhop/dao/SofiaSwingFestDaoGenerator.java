@@ -49,7 +49,7 @@ public class SofiaSwingFestDaoGenerator extends DaoGenerator {
         feedUrl.addIdProperty();
         feedUrl.addStringProperty("url");
 
-        Property feedId = feed.addLongProperty("feedId").getProperty();
+        Property feedId = feedUrl.addLongProperty("feedId").getProperty();
         feedUrl.addToOne(feed, feedId, "urls");
 
         try {

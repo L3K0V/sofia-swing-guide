@@ -1,6 +1,5 @@
 package bg.lindyhop.sofiaswingfest;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -23,8 +22,7 @@ import com.path.android.jobqueue.JobManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import bg.lindyhop.Post;
-import bg.lindyhop.controllers.FeedController;
+import bg.lindyhop.entities.FeedItem;
 import bg.lindyhop.events.FetchedNewPostsEvent;
 import bg.lindyhop.jobs.FetchFeedJob;
 import bg.lindyhop.models.FeedModel;
@@ -201,11 +199,11 @@ public class MainActivity extends AppCompatActivity
     private void updateFeedUI() {
         FeedModel feedModel = FeedModel.getInstance();
 
-        List<Post> posts = feedModel.getPosts();
+        List<FeedItem> feedItems = feedModel.getFeedItems();
         List<String> dataset = new ArrayList<String>();
 
-        for(Post post : posts) {
-            dataset.add(post.getTitle());
+        for(FeedItem feedItem : feedItems) {
+            dataset.add(feedItem.getTitle());
         }
 
         adapter.changeDataSet(dataset);

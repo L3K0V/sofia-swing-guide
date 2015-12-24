@@ -36,7 +36,6 @@ public class FeedItemDao extends AbstractDao<FeedItem, Long> {
         public final static Property UpdatedAt = new Property(5, java.util.Date.class, "updatedAt", false, "UPDATED_AT");
         public final static Property CoverUrl = new Property(6, String.class, "coverUrl", false, "COVER_URL");
         public final static Property EventId = new Property(7, Long.class, "eventId", false, "EVENT_ID");
-        public final static Property FeedId = new Property(8, Long.class, "feedId", false, "FEED_ID");
     };
 
     private DaoSession daoSession;
@@ -62,8 +61,7 @@ public class FeedItemDao extends AbstractDao<FeedItem, Long> {
                 "\"CREATED_AT\" INTEGER," + // 4: createdAt
                 "\"UPDATED_AT\" INTEGER," + // 5: updatedAt
                 "\"COVER_URL\" TEXT," + // 6: coverUrl
-                "\"EVENT_ID\" INTEGER," + // 7: eventId
-                "\"FEED_ID\" INTEGER);"); // 8: feedId
+                "\"EVENT_ID\" INTEGER);"); // 7: eventId
     }
 
     /** Drops the underlying database table. */
@@ -116,11 +114,6 @@ public class FeedItemDao extends AbstractDao<FeedItem, Long> {
         if (eventId != null) {
             stmt.bindLong(8, eventId);
         }
- 
-        Long feedId = entity.getFeedId();
-        if (feedId != null) {
-            stmt.bindLong(9, feedId);
-        }
     }
 
     @Override
@@ -146,8 +139,7 @@ public class FeedItemDao extends AbstractDao<FeedItem, Long> {
             cursor.isNull(offset + 4) ? null : new java.util.Date(cursor.getLong(offset + 4)), // createdAt
             cursor.isNull(offset + 5) ? null : new java.util.Date(cursor.getLong(offset + 5)), // updatedAt
             cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // coverUrl
-            cursor.isNull(offset + 7) ? null : cursor.getLong(offset + 7), // eventId
-            cursor.isNull(offset + 8) ? null : cursor.getLong(offset + 8) // feedId
+            cursor.isNull(offset + 7) ? null : cursor.getLong(offset + 7) // eventId
         );
         return entity;
     }
@@ -163,7 +155,6 @@ public class FeedItemDao extends AbstractDao<FeedItem, Long> {
         entity.setUpdatedAt(cursor.isNull(offset + 5) ? null : new java.util.Date(cursor.getLong(offset + 5)));
         entity.setCoverUrl(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
         entity.setEventId(cursor.isNull(offset + 7) ? null : cursor.getLong(offset + 7));
-        entity.setFeedId(cursor.isNull(offset + 8) ? null : cursor.getLong(offset + 8));
      }
     
     /** @inheritdoc */

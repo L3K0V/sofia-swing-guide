@@ -23,7 +23,6 @@ public class FeedItem {
     private java.util.Date updatedAt;
     private String coverUrl;
     private Long eventId;
-    private Long feedId;
 
     /** Used to resolve relations */
     private transient DaoSession daoSession;
@@ -45,7 +44,7 @@ public class FeedItem {
         this.localId = localId;
     }
 
-    public FeedItem(Long localId, Long serverId, String title, String text, java.util.Date createdAt, java.util.Date updatedAt, String coverUrl, Long eventId, Long feedId) {
+    public FeedItem(Long localId, Long serverId, String title, String text, java.util.Date createdAt, java.util.Date updatedAt, String coverUrl, Long eventId) {
         this.localId = localId;
         this.serverId = serverId;
         this.title = title;
@@ -54,7 +53,6 @@ public class FeedItem {
         this.updatedAt = updatedAt;
         this.coverUrl = coverUrl;
         this.eventId = eventId;
-        this.feedId = feedId;
     }
 
     /** called by internal mechanisms, do not call yourself. */
@@ -125,14 +123,6 @@ public class FeedItem {
 
     public void setEventId(Long eventId) {
         this.eventId = eventId;
-    }
-
-    public Long getFeedId() {
-        return feedId;
-    }
-
-    public void setFeedId(Long feedId) {
-        this.feedId = feedId;
     }
 
     /** To-one relationship, resolved on first access. */

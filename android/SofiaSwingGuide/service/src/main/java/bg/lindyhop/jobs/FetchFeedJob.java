@@ -1,19 +1,16 @@
 package bg.lindyhop.jobs;
 
-import android.renderscript.RenderScript;
 import android.util.Log;
 
 import com.path.android.jobqueue.Job;
 import com.path.android.jobqueue.Params;
 import com.path.android.jobqueue.RetryConstraint;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import bg.lindyhop.Post;
 import bg.lindyhop.controllers.FeedController;
+import bg.lindyhop.entities.FeedItem;
 import bg.lindyhop.events.FetchedNewPostsEvent;
 import bg.lindyhop.models.FeedModel;
 import de.greenrobot.event.EventBus;
@@ -49,14 +46,14 @@ public class FetchFeedJob extends Job {
 
         FeedModel feedModel = FeedModel.getInstance();
 
-        Post lastPost = feedModel.getLastPost();
+        FeedItem lastFeedItem = feedModel.getLastFeedItem();
 
-        Long sinceId = lastPost == null ? null : lastPost.getServerId();
-        List<Post> posts = FeedController.getInstance().loadFeed(sinceId);
+        Long sinceId = lastFeedItem == null ? null : lastFeedItem.getServerId();
+        List<FeedItem> feedItems = FeedController.getInstance().loadFeed(sinceId);
 
-        if (posts.size() > 0) {
+        if (feedItems.size() > 0) {
 
-            feedModel.insertOrReplaceAll(posts);
+            feedModel.insertOrReplaceAll(feedItems);
             EventBus.getDefault().post(new FetchedNewPostsEvent());
         }
     }

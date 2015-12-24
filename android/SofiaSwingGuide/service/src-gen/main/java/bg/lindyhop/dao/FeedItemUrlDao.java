@@ -74,6 +74,11 @@ public class FeedItemUrlDao extends AbstractDao<FeedItemUrl, Long> {
         if (url != null) {
             stmt.bindString(2, url);
         }
+ 
+        Long feedId = entity.getFeedId();
+        if (feedId != null) {
+            stmt.bindLong(3, feedId);
+        }
     }
 
     @Override
@@ -93,7 +98,8 @@ public class FeedItemUrlDao extends AbstractDao<FeedItemUrl, Long> {
     public FeedItemUrl readEntity(Cursor cursor, int offset) {
         FeedItemUrl entity = new FeedItemUrl( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
-            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1) // url
+            cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // url
+            cursor.isNull(offset + 2) ? null : cursor.getLong(offset + 2) // feedId
         );
         return entity;
     }
@@ -103,6 +109,7 @@ public class FeedItemUrlDao extends AbstractDao<FeedItemUrl, Long> {
     public void readEntity(Cursor cursor, FeedItemUrl entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setUrl(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
+        entity.setFeedId(cursor.isNull(offset + 2) ? null : cursor.getLong(offset + 2));
      }
     
     /** @inheritdoc */

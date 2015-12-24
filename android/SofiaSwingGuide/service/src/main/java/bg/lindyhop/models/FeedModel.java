@@ -3,19 +3,19 @@ package bg.lindyhop.models;
 import java.util.ArrayList;
 import java.util.List;
 
-import bg.lindyhop.Post;
+import bg.lindyhop.entities.FeedItem;
 
 /**
  * Created by mmironov on 12/23/15.
  */
 public class FeedModel {
 
-    private List<Post> posts;
+    private List<FeedItem> feedItems;
 
     private static FeedModel instance;
 
     private FeedModel() {
-        posts = new ArrayList<Post>();
+        feedItems = new ArrayList<FeedItem>();
     }
 
     public static FeedModel getInstance() {
@@ -27,16 +27,16 @@ public class FeedModel {
         return instance;
     }
 
-    public void insertOrReplaceAll(List<Post> posts) {
-        this.posts = posts;
+    public void insertOrReplaceAll(List<FeedItem> posts) {
+        this.feedItems = posts;
     }
 
     //TODO: implement
-    public Post getLastPost() {
-        return new Post();
+    public FeedItem getLastFeedItem() {
+        return new FeedItem();
     }
 
-    public List<Post> getPosts() {
-        return posts;
+    public List<FeedItem> getFeedItems() {
+        return feedItems;
     }
 }
