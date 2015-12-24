@@ -8,6 +8,7 @@ import de.greenrobot.daogenerator.Property;
 import de.greenrobot.daogenerator.Schema;
 
 public class SofiaSwingFestDaoGenerator extends DaoGenerator {
+
     public SofiaSwingFestDaoGenerator() throws IOException {
     }
 
@@ -19,8 +20,8 @@ public class SofiaSwingFestDaoGenerator extends DaoGenerator {
         Entity event = schema.addEntity("Event");
         event.addLongProperty("localId").primaryKey().autoincrement();
         event.addLongProperty("serverId").unique();
-        event.addBooleanProperty("isLocal");
         event.addDateProperty("createdAt");
+        event.addDateProperty("updatedAt");
 
         event.addStringProperty("name");
         event.addStringProperty("description");
@@ -33,7 +34,6 @@ public class SofiaSwingFestDaoGenerator extends DaoGenerator {
         Entity feed = schema.addEntity("FeedItem");
         feed.addLongProperty("localId").primaryKey().autoincrement();
         feed.addLongProperty("serverId").unique();
-        feed.addBooleanProperty("isLocal");
 
         feed.addStringProperty("title");
         feed.addStringProperty("text");
