@@ -1,8 +1,8 @@
 package bg.lindyhop.models;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import bg.lindyhop.dao.FeedItemDao;
 import bg.lindyhop.entities.FeedItem;
 
 /**
@@ -10,12 +10,11 @@ import bg.lindyhop.entities.FeedItem;
  */
 public class FeedModel {
 
-    private List<FeedItem> feedItems;
-
     private static FeedModel instance;
+    private final FeedItemDao dao;
 
     private FeedModel() {
-        feedItems = new ArrayList<FeedItem>();
+        dao = DbHelper.getInstance().getDaoSession().getFeedItemDao();
     }
 
     public static FeedModel getInstance() {
@@ -28,15 +27,16 @@ public class FeedModel {
     }
 
     public void insertOrReplaceAll(List<FeedItem> posts) {
-        this.feedItems = posts;
+        dao.insertOrReplaceInTx(posts);
     }
 
-    //TODO: implement
     public FeedItem getLastFeedItem() {
-        return new FeedItem();
+        return dao.queryBuilder().where(FeedItemDao.Properties.ServerId.isNotNull())
+                .orderDesc(FeedItemDao.Properties.CreatedAt)
+                .limit(1).unique();
     }
 
     public List<FeedItem> getFeedItems() {
-        return feedItems;
+        return dao.queryBuilder().orderDesc(FeedItemDao.Properties.CreatedAt).list();
     }
 }
