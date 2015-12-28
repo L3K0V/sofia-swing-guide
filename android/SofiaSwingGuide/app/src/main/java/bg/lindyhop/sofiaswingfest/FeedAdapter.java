@@ -46,8 +46,15 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
         }
     }
 
-    public void changeDataSet(List<String> dataset) {
-        mDataset = dataset;
+    public void swapDataSet(List<String> dataSet) {
+
+
+        for(int i=dataSet.size() - 1; i >= 0; --i) {
+            if (!mDataset.contains(dataSet.get(i))) {
+                mDataset.add(0, dataSet.get(i));
+            }
+        }
+
         notifyDataSetChanged();
     }
 

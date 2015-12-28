@@ -206,6 +206,6 @@ public class MainActivity extends AppCompatActivity
             dataset.add(feedItem.getTitle());
         }
 
-        adapter.changeDataSet(dataset);
+        adapter.swapDataSet(dataset);
     }
 }
