@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -28,7 +29,7 @@ import bg.lindyhop.jobs.FetchFeedJob;
 import bg.lindyhop.models.FeedModel;
 import de.greenrobot.event.EventBus;
 
-public class MainActivity extends AppCompatActivity
+public class FeedActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, SwipeRefreshLayout.OnRefreshListener {
 
     private int previousTotal = 0;
@@ -50,15 +51,6 @@ public class MainActivity extends AppCompatActivity
 
         jobManager = SofiaSwingFestApplication.getInstance().getJobManager();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -77,9 +69,10 @@ public class MainActivity extends AppCompatActivity
 
         final RecyclerView feed = (RecyclerView) findViewById(R.id.feed);
         feed.setLayoutManager(new LinearLayoutManager(this));
+        feed.setItemAnimator(new DefaultItemAnimator());
         feed.setHasFixedSize(true);
 
-        adapter = new FeedAdapter(new ArrayList<String>());
+        adapter = new FeedAdapter(this, new ArrayList<FeedItem>());
         feed.setAdapter(adapter);
         feed.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
@@ -101,8 +94,7 @@ public class MainActivity extends AppCompatActivity
                 if (!loading && (totalItemCount - visibleItemCount)
                         <= (firstVisibleItem + visibleThreshold)) {
 
-                    adapter.add("More...");
-                    recyclerView.getAdapter().notifyDataSetChanged();
+                    // Load more
 
                     loading = true;
                     swipeRefreshLayout.setRefreshing(false);
@@ -198,14 +190,7 @@ public class MainActivity extends AppCompatActivity
 
     private void updateFeedUI() {
         FeedModel feedModel = FeedModel.getInstance();
-
         List<FeedItem> feedItems = feedModel.getFeedItems();
-        List<String> dataset = new ArrayList<String>();
-
-        for(FeedItem feedItem : feedItems) {
-            dataset.add(feedItem.getTitle());
-        }
-
-        adapter.swapDataSet(dataset);
+        adapter.swapDataSet(feedItems);
     }
 }

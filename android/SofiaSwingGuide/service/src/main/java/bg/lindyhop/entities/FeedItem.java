@@ -1,5 +1,11 @@
 package bg.lindyhop.entities;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.view.View;
+
+import java.util.Date;
+
 import bg.lindyhop.dao.DaoSession;
 import de.greenrobot.dao.DaoException;
 
@@ -13,7 +19,7 @@ import bg.lindyhop.dao.FeedItemDao;
 /**
  * Entity mapped to table "FEED_ITEM".
  */
-public class FeedItem {
+public class FeedItem implements Parcelable {
 
     private Long localId;
     private Long serverId;
@@ -175,6 +181,44 @@ public class FeedItem {
     }
 
     // KEEP METHODS - put your custom methods here
-    // KEEP METHODS END
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(this.localId);
+        dest.writeValue(this.serverId);
+        dest.writeString(this.title);
+        dest.writeString(this.text);
+        dest.writeLong(createdAt != null ? createdAt.getTime() : -1);
+        dest.writeLong(updatedAt != null ? updatedAt.getTime() : -1);
+        dest.writeString(this.coverUrl);
+        dest.writeValue(this.eventId);
+    }
+
+    protected FeedItem(Parcel in) {
+        this.localId = (Long) in.readValue(Long.class.getClassLoader());
+        this.serverId = (Long) in.readValue(Long.class.getClassLoader());
+        this.title = in.readString();
+        this.text = in.readString();
+        long tmpCreatedAt = in.readLong();
+        this.createdAt = tmpCreatedAt == -1 ? null : new Date(tmpCreatedAt);
+        long tmpUpdatedAt = in.readLong();
+        this.updatedAt = tmpUpdatedAt == -1 ? null : new Date(tmpUpdatedAt);
+        this.coverUrl = in.readString();
+        this.eventId = (Long) in.readValue(Long.class.getClassLoader());
+    }
+
+    public static final Parcelable.Creator<FeedItem> CREATOR = new Parcelable.Creator<FeedItem>() {
+        public FeedItem createFromParcel(Parcel source) {
+            return new FeedItem(source);
+        }
+
+        public FeedItem[] newArray(int size) {
+            return new FeedItem[size];
+        }
+    };
+    // KEEP METHODS END
 }

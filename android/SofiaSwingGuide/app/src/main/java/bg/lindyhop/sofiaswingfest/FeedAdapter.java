@@ -1,34 +1,44 @@
 package bg.lindyhop.sofiaswingfest;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.databinding.DataBindingUtil;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import bg.lindyhop.entities.FeedItem;
+import bg.lindyhop.sofiaswingfest.databinding.FeedListItemBinding;
 
 /**
  * Created by lekov on 12/23/15.
  */
 public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
 
-    private List<String> mDataset;
+    private List<FeedItem> mDataset;
+    private final Activity mActivity;
 
-    public FeedAdapter(List<String> list) {
+    public FeedAdapter(Activity activity, List<FeedItem> list) {
         mDataset = list;
+        mActivity = activity;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
-        return new ViewHolder(v);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.feed_list_item, parent, false);
+        return new ViewHolder(mActivity, v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.text.setText(mDataset.get(position));
+        holder.getBinding().setItem(mDataset.get(position));
+        holder.getBinding().executePendingBindings();
     }
 
     @Override
@@ -36,18 +46,37 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
         return mDataset.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private FeedListItemBinding binding;
+        private final Activity activity;
 
-        public TextView text;
-
-        public ViewHolder(View itemView) {
+        public ViewHolder(Activity activity, View itemView) {
             super(itemView);
-            text = (TextView) itemView.findViewById(android.R.id.text1);
+            binding = DataBindingUtil.bind(itemView);
+            binding.card.setOnClickListener(this);
+            this.activity = activity;
+        }
+
+        public FeedListItemBinding getBinding() {
+            return binding;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(v.getContext(), FeedItemActivity.class);
+            intent.putExtra(FeedItemActivity.EXTRA_FEED_ITEM, binding.getItem());
+
+            Pair<View, String> cover = Pair.create(binding.getRoot().findViewById(R.id.cover), "cover");
+            Pair<View, String> title = Pair.create(binding.getRoot().findViewById(R.id.title), "title");
+
+            ActivityOptionsCompat options = ActivityOptionsCompat.
+                    makeSceneTransitionAnimation(activity, cover, title);
+            ActivityCompat.startActivity(activity, intent, options.toBundle());
         }
     }
 
-    public void swapDataSet(List<String> dataSet) {
-
+    public void swapDataSet(List<FeedItem> dataSet) {
+//        mDataset = dataSet;
 
         for(int i=dataSet.size() - 1; i >= 0; --i) {
             if (!mDataset.contains(dataSet.get(i))) {
@@ -58,7 +87,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
         notifyDataSetChanged();
     }
 
-    public void add(String item) {
+    public void add(FeedItem item) {
         mDataset.add(item);
         notifyDataSetChanged();
     }
