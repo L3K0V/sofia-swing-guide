@@ -11,6 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import bg.lindyhop.controllers.FeedController;
 import bg.lindyhop.entities.FeedItem;
+import bg.lindyhop.entities.FeedItemsPage;
 import bg.lindyhop.events.FetchedNewPostsEvent;
 import bg.lindyhop.models.FeedModel;
 import de.greenrobot.event.EventBus;
@@ -48,8 +49,10 @@ public class FetchFeedJob extends Job {
 
         FeedItem lastFeedItem = feedModel.getLastFeedItem();
 
-        Long sinceId = lastFeedItem == null ? null : lastFeedItem.getServerId();
-        List<FeedItem> feedItems = FeedController.getInstance().loadFeed(sinceId);
+        Long sinceId = lastFeedItem == null ? null : lastFeedItem.getId();
+        FeedItemsPage feedItemsPage = FeedController.getInstance().loadFeed(sinceId);
+
+        List<FeedItem> feedItems = feedItemsPage.getResults();
 
         if (feedItems.size() > 0) {
 

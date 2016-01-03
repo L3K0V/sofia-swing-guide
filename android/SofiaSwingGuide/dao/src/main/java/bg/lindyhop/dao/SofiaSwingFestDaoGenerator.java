@@ -33,7 +33,7 @@ public class SofiaSwingFestDaoGenerator extends DaoGenerator {
         // FeedItem entitiy
         Entity feed = schema.addEntity("FeedItem");
         feed.addLongProperty("localId").primaryKey().autoincrement();
-        feed.addLongProperty("serverId").unique();
+        feed.addLongProperty("id").unique();
 
         feed.addStringProperty("title");
         feed.addStringProperty("text");

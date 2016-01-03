@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import java.util.List;
 
 import bg.lindyhop.entities.FeedItem;
+import bg.lindyhop.entities.FeedItemsPage;
 import bg.lindyhop.network.Config;
 import bg.lindyhop.network.FeedService;
 import retrofit.RestAdapter;
@@ -27,19 +28,19 @@ public class FeedController {
         return instance;
     }
 
-    public List<FeedItem> loadFeed(Long sinceId) {
+    public FeedItemsPage loadFeed(Long sinceId) {
 
         Gson gson = new GsonBuilder()
-                .setDateFormat("yyyy-MM-dd'T'HH:mm:ssz")
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
                 .create();
 
         RestAdapter rest = new RestAdapter.Builder()
                                     .setEndpoint(Config.SERVER_URL)
-                                    .setConverter(new GsonConverter(gson))
-                                    .build();
+                .setConverter(new GsonConverter(gson))
+                .build();
 
         FeedService service = rest.create(FeedService.class);
 
-        return service.listPosts(0, 0);
+        return service.listPosts();
     }
 }

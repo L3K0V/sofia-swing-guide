@@ -2,7 +2,8 @@ package bg.lindyhop.entities;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.view.View;
+
+import com.google.gson.annotations.SerializedName;
 
 import java.util.Date;
 
@@ -22,12 +23,19 @@ import bg.lindyhop.dao.FeedItemDao;
 public class FeedItem implements Parcelable {
 
     private Long localId;
-    private Long serverId;
+    private Long id;
     private String title;
     private String text;
+
+    @SerializedName("created_at")
     private java.util.Date createdAt;
+
+    @SerializedName("updated_at")
     private java.util.Date updatedAt;
+
     private String coverUrl;
+
+    @SerializedName("event")
     private Long eventId;
 
     /** Used to resolve relations */
@@ -36,7 +44,7 @@ public class FeedItem implements Parcelable {
     /** Used for active entity operations. */
     private transient FeedItemDao myDao;
 
-    private Event event;
+    private transient Event event;
     private Long event__resolvedKey;
 
 
@@ -50,9 +58,9 @@ public class FeedItem implements Parcelable {
         this.localId = localId;
     }
 
-    public FeedItem(Long localId, Long serverId, String title, String text, java.util.Date createdAt, java.util.Date updatedAt, String coverUrl, Long eventId) {
+    public FeedItem(Long localId, Long id, String title, String text, java.util.Date createdAt, java.util.Date updatedAt, String coverUrl, Long eventId) {
         this.localId = localId;
-        this.serverId = serverId;
+        this.id = id;
         this.title = title;
         this.text = text;
         this.createdAt = createdAt;
@@ -75,12 +83,12 @@ public class FeedItem implements Parcelable {
         this.localId = localId;
     }
 
-    public Long getServerId() {
-        return serverId;
+    public Long getId() {
+        return id;
     }
 
-    public void setServerId(Long serverId) {
-        this.serverId = serverId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -189,7 +197,7 @@ public class FeedItem implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeValue(this.localId);
-        dest.writeValue(this.serverId);
+        dest.writeValue(this.id);
         dest.writeString(this.title);
         dest.writeString(this.text);
         dest.writeLong(createdAt != null ? createdAt.getTime() : -1);
@@ -200,7 +208,7 @@ public class FeedItem implements Parcelable {
 
     protected FeedItem(Parcel in) {
         this.localId = (Long) in.readValue(Long.class.getClassLoader());
-        this.serverId = (Long) in.readValue(Long.class.getClassLoader());
+        this.id = (Long) in.readValue(Long.class.getClassLoader());
         this.title = in.readString();
         this.text = in.readString();
         long tmpCreatedAt = in.readLong();
@@ -221,4 +229,5 @@ public class FeedItem implements Parcelable {
         }
     };
     // KEEP METHODS END
+
 }

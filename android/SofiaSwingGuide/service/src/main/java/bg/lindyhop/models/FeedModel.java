@@ -35,12 +35,12 @@ public class FeedModel {
     }
 
     public FeedItem getLastFeedItem() {
-        return dao.queryBuilder().where(FeedItemDao.Properties.ServerId.isNotNull())
-                .orderDesc(FeedItemDao.Properties.UpdatedAt)
+        return dao.queryBuilder().where(FeedItemDao.Properties.Id.isNotNull())
+                .orderDesc(FeedItemDao.Properties.CreatedAt)
                 .limit(1).unique();
     }
 
     public List<FeedItem> getFeedItems() {
-        return dao.queryBuilder().orderDesc(FeedItemDao.Properties.UpdatedAt).list();
+        return dao.queryBuilder().orderDesc(FeedItemDao.Properties.CreatedAt).list();
     }
 }

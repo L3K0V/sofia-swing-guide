@@ -29,7 +29,7 @@ public class FeedItemDao extends AbstractDao<FeedItem, Long> {
     */
     public static class Properties {
         public final static Property LocalId = new Property(0, Long.class, "localId", true, "LOCAL_ID");
-        public final static Property ServerId = new Property(1, Long.class, "serverId", false, "SERVER_ID");
+        public final static Property Id = new Property(1, Long.class, "id", false, "ID");
         public final static Property Title = new Property(2, String.class, "title", false, "TITLE");
         public final static Property Text = new Property(3, String.class, "text", false, "TEXT");
         public final static Property CreatedAt = new Property(4, java.util.Date.class, "createdAt", false, "CREATED_AT");
@@ -55,7 +55,7 @@ public class FeedItemDao extends AbstractDao<FeedItem, Long> {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"FEED_ITEM\" (" + //
                 "\"LOCAL_ID\" INTEGER PRIMARY KEY AUTOINCREMENT ," + // 0: localId
-                "\"SERVER_ID\" INTEGER UNIQUE ," + // 1: serverId
+                "\"ID\" INTEGER UNIQUE ," + // 1: id
                 "\"TITLE\" TEXT," + // 2: title
                 "\"TEXT\" TEXT," + // 3: text
                 "\"CREATED_AT\" INTEGER," + // 4: createdAt
@@ -80,9 +80,9 @@ public class FeedItemDao extends AbstractDao<FeedItem, Long> {
             stmt.bindLong(1, localId);
         }
  
-        Long serverId = entity.getServerId();
-        if (serverId != null) {
-            stmt.bindLong(2, serverId);
+        Long id = entity.getId();
+        if (id != null) {
+            stmt.bindLong(2, id);
         }
  
         String title = entity.getTitle();
@@ -133,7 +133,7 @@ public class FeedItemDao extends AbstractDao<FeedItem, Long> {
     public FeedItem readEntity(Cursor cursor, int offset) {
         FeedItem entity = new FeedItem( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // localId
-            cursor.isNull(offset + 1) ? null : cursor.getLong(offset + 1), // serverId
+            cursor.isNull(offset + 1) ? null : cursor.getLong(offset + 1), // id
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // title
             cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // text
             cursor.isNull(offset + 4) ? null : new java.util.Date(cursor.getLong(offset + 4)), // createdAt
@@ -148,7 +148,7 @@ public class FeedItemDao extends AbstractDao<FeedItem, Long> {
     @Override
     public void readEntity(Cursor cursor, FeedItem entity, int offset) {
         entity.setLocalId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
-        entity.setServerId(cursor.isNull(offset + 1) ? null : cursor.getLong(offset + 1));
+        entity.setId(cursor.isNull(offset + 1) ? null : cursor.getLong(offset + 1));
         entity.setTitle(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setText(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
         entity.setCreatedAt(cursor.isNull(offset + 4) ? null : new java.util.Date(cursor.getLong(offset + 4)));
