@@ -33,6 +33,7 @@ public class FeedItem implements Parcelable {
     @SerializedName("updated_at")
     private java.util.Date updatedAt;
 
+    @SerializedName("cover")
     private String coverUrl;
 
     @SerializedName("event")
