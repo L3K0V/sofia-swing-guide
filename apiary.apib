@@ -518,72 +518,46 @@ Sofia-Swing is an API that allows for retrieveing information about swing dance 
 + Response 204
 
 
-## Posts [/orgs/{o_id}/events/{e_id}/posts{?person_id}]
+## Posts [/feed]
 
-+ Parameters
-    + o_id (number) - The organisation's id
-    + e_id (number) - The event's id
-    + person_id (number, optional) - The peron's id, for whom to retrieve UNREAD status
 ### List all posts for an event [GET]
 
 + Response 200 (application/json)
 
-        [
+        {
+            "count": 3,
+            "next": null,
+            "previous": null,
+            "results": [
                 {
-                    "serverId": 1,
-                    "title": "Dax and Sarah 2013",
-                    "text": "Dax and Sarah are our next superstart couple.",
-                    "urls": "http://example1.com;http://example2.com",
-                    "unread": true,
-                    "updatedAt": "2013-07-16T22:52:36Z",
-                    "coverUrl": "http://gallery.photo.net/photo/8061614-md.jpg"
+                    "id": 1,
+                    "event": 1,
+                    "title": "Dax and Sarah 2010",
+                    "text": "Dax and Sarah are coming for the amazing Sofia Swing Dance Festival in 2010. Watch out for more news as the event approaches.",
+                    "created_at": "2016-01-03T16:35:24.861162Z",
+                    "updated_at": "2016-01-03T16:35:24.861259Z",
+                    "cover": "http://192.168.0.103:8000/feed/dax_sarah.jpg"
                 },
                 {
-                    "serverId": 2,
-                    "title": "Hot Sugar Band 2010",
-                    "text": "The amazing hot sugar band are coming to Sofia.",
-                    "urls": "http://example1.com;http://example2.com",
-                    "unread": false,
-                    "updatedAt": "2010-07-16T22:52:36Z",
-                    "coverUrl": "http://gallery.photo.net/photo/8061614-md.jpg"
+                    "id": 2,
+                    "event": 1,
+                    "title": "Dax and Sarah 2017",
+                    "text": "Dax and Sarah Again in 2017",
+                    "created_at": "2016-01-03T16:37:47.067988Z",
+                    "updated_at": "2016-01-03T19:28:28.398779Z",
+                    "cover": null
                 },
                 {
-                    "serverId": 3,
-                    "title": "Felipe and Alice 2015",
-                    "text": "The amazing hot sugar band are coming to Sofia.",
-                    "urls": "http://example1.com;http://example2.com",
-                    "unread": false,
-                    "updatedAt": "2015-07-16T22:52:36Z",
-                    "coverUrl": "http://gallery.photo.net/photo/8061614-md.jpg"
-                },
-                {
-                    "serverId": 4,
-                    "title": "Kevin and Jo 2017",
-                    "text": "The amazing hot sugar band are coming to Sofia.",
-                    "urls": "http://example1.com;http://example2.com",
-                    "unread": false,
-                    "updatedAt": "2017-07-16T22:52:36Z",
-                    "coverUrl": "http://gallery.photo.net/photo/8061614-md.jpg"
-                },
-                {
-                    "serverId": 5,
-                    "title": "Max and Annie 2009",
-                    "text": "Dax and Sarah are our next superstart couple.",
-                    "urls": "http://example1.com;http://example2.com",
-                    "unread": true,
-                    "updatedAt": "2009-07-16T22:52:36Z",
-                    "coverUrl": "http://gallery.photo.net/photo/8061614-md.jpg"
-                },
-                {
-                    "serverId": 6,
-                    "title": "Max and Annie 2009",
-                    "text": "Dax and Sarah are our next superstart couple.",
-                    "urls": "http://example1.com;http://example2.com",
-                    "unread": true,
-                    "updatedAt": "2008-07-16T22:52:36Z",
-                    "coverUrl": "http://gallery.photo.net/photo/8061614-md.jpg"
+                    "id": 3,
+                    "event": 1,
+                    "title": "Kevin and Jo",
+                    "text": "Kevin and Jo are coming too.",
+                    "created_at": "2016-01-03T18:14:11.022411Z",
+                    "updated_at": "2016-01-03T18:14:11.022543Z",
+                    "cover": null
                 }
-        ]
+            ]
+        }
 
 ### Add a new post to an event [POST]
 
