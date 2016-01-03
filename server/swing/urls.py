@@ -14,7 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
+from django.conf.urls.static import static
 from django.contrib import admin
+
+from django.conf import settings
 
 from rest_framework_nested import routers
 
@@ -46,3 +49,5 @@ urlpatterns = [
     url(r'^', include(levels_router.urls)),
     url(r'^admin/', include(admin.site.urls)),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
