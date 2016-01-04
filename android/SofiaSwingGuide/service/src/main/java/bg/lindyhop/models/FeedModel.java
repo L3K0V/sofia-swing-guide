@@ -40,6 +40,10 @@ public class FeedModel {
                 .limit(1).unique();
     }
 
+    public void deleteAll() {
+        dao.deleteAll();
+    }
+
     public List<FeedItem> getFeedItems() {
         return dao.queryBuilder().orderDesc(FeedItemDao.Properties.CreatedAt).list();
     }

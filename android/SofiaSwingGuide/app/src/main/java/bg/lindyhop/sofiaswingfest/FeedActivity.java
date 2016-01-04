@@ -24,9 +24,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bg.lindyhop.entities.FeedItem;
+import bg.lindyhop.entities.FeedItemsPage;
 import bg.lindyhop.events.FetchedNewPostsEvent;
+import bg.lindyhop.events.NoNewPostsEvent;
 import bg.lindyhop.jobs.FetchFeedJob;
 import bg.lindyhop.models.FeedModel;
+import bg.lindyhop.utils.Prefs;
 import de.greenrobot.event.EventBus;
 
 public class FeedActivity extends AppCompatActivity
@@ -34,7 +37,7 @@ public class FeedActivity extends AppCompatActivity
 
     private int previousTotal = 0;
     private boolean loading = false;
-    private int visibleThreshold = 5;
+    private int visibleThreshold = 0;
     private FeedAdapter adapter;
     int firstVisibleItem, visibleItemCount, totalItemCount;
 
@@ -46,6 +49,9 @@ public class FeedActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Prefs.putNextPage(FeedItemsPage.FIRST_PAGE_INDEX);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -87,22 +93,22 @@ public class FeedActivity extends AppCompatActivity
                 if (loading) {
                     if (totalItemCount > previousTotal) {
                         loading = false;
-                        swipeRefreshLayout.setRefreshing(loading);
                         previousTotal = totalItemCount;
                     }
-                }
-                if (!loading && (totalItemCount - visibleItemCount)
+                } else if (!loading && (totalItemCount - visibleItemCount)
                         <= (firstVisibleItem + visibleThreshold)) {
 
-                    // Load more
+                    Log.i("SCROLL", "Load more...");
 
                     loading = true;
-                    swipeRefreshLayout.setRefreshing(false);
+                    jobManager.addJobInBackground(new FetchFeedJob());
                 }
+
             }
         });
 
-        updateFeedUI();
+        swipeRefreshLayout.setRefreshing(true);
+        jobManager.addJobInBackground(new FetchFeedJob());
     }
 
     @Override
@@ -174,14 +180,28 @@ public class FeedActivity extends AppCompatActivity
 
     @Override
     public void onRefresh() {
+        Prefs.putNextPage(FeedItemsPage.FIRST_PAGE_INDEX);
+        previousTotal = 0;
         jobManager.addJobInBackground(new FetchFeedJob());
+        swipeRefreshLayout.setRefreshing(true);
     }
 
     public void onEventMainThread(FetchedNewPostsEvent event) {
 
         Log.i("EVENT", "Received");
 
-        updateFeedUI();
+        if (Prefs.hasNextPage() && Prefs.getNextPage() == FeedItemsPage.FIRST_PAGE_INDEX + 1) {
+            updateFeedUI();
+            Log.i("EVENT", "Updating Feed");
+        } else {
+            addToFeedUI(event.getPosts());
+            Log.i("EVENT", "Adding to Feed");
+        }
+
+        swipeRefreshLayout.setRefreshing(false);
+    }
+
+    public void onEventMainThread(NoNewPostsEvent event) {
 
         swipeRefreshLayout.setRefreshing(false);
     }
@@ -190,5 +210,9 @@ public class FeedActivity extends AppCompatActivity
         FeedModel feedModel = FeedModel.getInstance();
         List<FeedItem> feedItems = feedModel.getFeedItems();
         adapter.swapDataSet(feedItems);
+    }
+
+    private void addToFeedUI(List<FeedItem> posts) {
+        adapter.add(posts);
     }
 }

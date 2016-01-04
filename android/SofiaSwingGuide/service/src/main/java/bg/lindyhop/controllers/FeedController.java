@@ -28,7 +28,11 @@ public class FeedController {
         return instance;
     }
 
-    public FeedItemsPage loadFeed(Long sinceId) {
+    public FeedItemsPage loadFeed(int page) {
+
+        if (page < 1) {
+            return new FeedItemsPage();
+        }
 
         Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
@@ -41,6 +45,10 @@ public class FeedController {
 
         FeedService service = rest.create(FeedService.class);
 
-        return service.listPosts();
+        return service.listPosts(page);
+    }
+
+    public FeedItemsPage loadFeed() {
+        return loadFeed(FeedItemsPage.FIRST_PAGE_INDEX);
     }
 }

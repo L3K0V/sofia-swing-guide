@@ -13,7 +13,9 @@ import bg.lindyhop.controllers.FeedController;
 import bg.lindyhop.entities.FeedItem;
 import bg.lindyhop.entities.FeedItemsPage;
 import bg.lindyhop.events.FetchedNewPostsEvent;
+import bg.lindyhop.events.NoNewPostsEvent;
 import bg.lindyhop.models.FeedModel;
+import bg.lindyhop.utils.Prefs;
 import de.greenrobot.event.EventBus;
 
 /**
@@ -32,7 +34,13 @@ public class FetchFeedJob extends Job {
 
     @Override
     public void onAdded() {
+
         Log.i("JOB", "Added");
+
+        if (!Prefs.hasNextPage()) {
+
+            EventBus.getDefault().post(new NoNewPostsEvent());
+        }
     }
 
     @Override
@@ -45,19 +53,34 @@ public class FetchFeedJob extends Job {
             return;
         }
 
+        if (!Prefs.hasNextPage()) {
+            return;
+        }
+
+        final int nextPage = Prefs.getNextPage();
+
         FeedModel feedModel = FeedModel.getInstance();
 
-        FeedItem lastFeedItem = feedModel.getLastFeedItem();
+        if (nextPage == FeedItemsPage.FIRST_PAGE_INDEX) {
+            feedModel.deleteAll();
+        }
 
-        Long sinceId = lastFeedItem == null ? null : lastFeedItem.getId();
-        FeedItemsPage feedItemsPage = FeedController.getInstance().loadFeed(sinceId);
+        FeedItemsPage feedItemsPage = FeedController.getInstance().loadFeed(nextPage);
+
+        if (feedItemsPage.hasNextPage()) {
+            Prefs.putNextPage(feedItemsPage.getNextPage());
+        } else {
+            Prefs.removeNextPage();
+        }
 
         List<FeedItem> feedItems = feedItemsPage.getResults();
 
         if (feedItems.size() > 0) {
 
+            Log.i("NEW ITEMS COUNT", String.valueOf(feedItems.size()));
+
             feedModel.insertOrReplaceAll(feedItems);
-            EventBus.getDefault().post(new FetchedNewPostsEvent());
+            EventBus.getDefault().post(new FetchedNewPostsEvent(feedItems));
         }
     }
 
