@@ -1,4 +1,4 @@
-package bg.lindyhop.sofiaswingfest;
+package bg.lindyhop.sofiaswingfest.adapters;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import bg.lindyhop.entities.FeedItem;
+import bg.lindyhop.sofiaswingfest.FeedItemActivity;
+import bg.lindyhop.sofiaswingfest.R;
 import bg.lindyhop.sofiaswingfest.databinding.FeedListItemBinding;
 
 /**

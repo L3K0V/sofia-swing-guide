@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".FeedActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -24,11 +24,11 @@
         <activity
             android:name=".FeedItemActivity"
             android:label="@string/title_activity_feed_item"
-            android:parentActivityName=".FeedActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".FeedActivity" />
+                android:value=".MainActivity" />
         </activity>
     </application>
 

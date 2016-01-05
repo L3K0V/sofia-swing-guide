@@ -23,7 +23,7 @@ import bg.lindyhop.events.FetchedNewPostsEvent;
 import bg.lindyhop.events.NoNewPostsEvent;
 import bg.lindyhop.jobs.FetchFeedJob;
 import bg.lindyhop.models.FeedModel;
-import bg.lindyhop.sofiaswingfest.FeedAdapter;
+import bg.lindyhop.sofiaswingfest.adapters.FeedAdapter;
 import bg.lindyhop.sofiaswingfest.R;
 import bg.lindyhop.sofiaswingfest.SofiaSwingFestApplication;
 import bg.lindyhop.utils.Prefs;
@@ -51,7 +51,7 @@ public class FeedFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
-        final View view = inflater.inflate(R.layout.content_main, container, false);
+        final View view = inflater.inflate(R.layout.fragment_feed, container, false);
 
         jobManager = SofiaSwingFestApplication.getInstance().getJobManager();
 
