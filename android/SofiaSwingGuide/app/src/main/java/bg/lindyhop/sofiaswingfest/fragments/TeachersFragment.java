@@ -36,7 +36,7 @@ public class TeachersFragment extends Fragment {
 
         teachersView = (RecyclerView) view.findViewById(R.id.teachers);
 
-        layoutManager = new StaggeredGridLayoutManager(2, 1);
+        layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         teachersView.setLayoutManager(layoutManager);
 
         List<Teacher> teachers = new ArrayList<>();
