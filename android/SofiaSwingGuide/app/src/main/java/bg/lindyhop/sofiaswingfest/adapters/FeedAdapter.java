@@ -97,7 +97,6 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
         final int firstNewIndex = mDataset.size();
 
         mDataset.addAll(items);
-        notifyDataSetChanged();
         notifyItemRangeInserted(firstNewIndex, items.size());
     }
 }
