@@ -33,7 +33,7 @@ public class EventDao extends AbstractDao<Event, Long> {
         public final static Property City = new Property(7, String.class, "city", false, "CITY");
         public final static Property FromDate = new Property(8, java.util.Date.class, "fromDate", false, "FROM_DATE");
         public final static Property ToDate = new Property(9, java.util.Date.class, "toDate", false, "TO_DATE");
-    };
+    }
 
 
     public EventDao(DaoConfig config) {
