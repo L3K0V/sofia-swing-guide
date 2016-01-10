@@ -60,7 +60,7 @@ public class App extends Application {
                 .build();
 
         jobManager = new JobManager(this, config);
-    };
+    }
 
     public JobManager getJobManager() {
         return jobManager;

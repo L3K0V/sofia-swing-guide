@@ -31,7 +31,7 @@ public class FeedItemUrlDao extends AbstractDao<FeedItemUrl, Long> {
         public final static Property Id = new Property(0, Long.class, "id", true, "_id");
         public final static Property Url = new Property(1, String.class, "url", false, "URL");
         public final static Property FeedId = new Property(2, Long.class, "feedId", false, "FEED_ID");
-    };
+    }
 
     private DaoSession daoSession;
 
