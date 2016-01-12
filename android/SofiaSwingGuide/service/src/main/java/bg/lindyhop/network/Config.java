@@ -9,4 +9,8 @@ public class Config {
     private static final String LOCAL_HOST = "http://192.168.0.103:8000";
 
     public static final String SERVER_URL = LOCAL_HOST;
+
+    public static final String CLIENT_ID = "IgNwQynxUNBPHLAOoskvJd1ques6xjMxr5G8q1SH";
+    public static final String CLIENT_SECRET = "8muRjCQSKWnhUmlWxV1C9E8DDhm6AjTeYbXG9Vc40Ntam3Jj8HEY5ee4qvc0NDGKZ5rKQoAzWfKSaiq5PV5KgRQDSgccjdQCMAQg3hvx9K7ovkKCTtE4yZLnjYO8pRPA";
+    public static final String GRANT_TYPE = "client_credentials";
 }

@@ -1,16 +1,11 @@
 package bg.lindyhop.controllers;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import java.util.List;
-
-import bg.lindyhop.entities.FeedItem;
+import bg.lindyhop.entities.AuthToken;
 import bg.lindyhop.entities.FeedItemsPage;
+import bg.lindyhop.network.AuthTokenService;
 import bg.lindyhop.network.Config;
 import bg.lindyhop.network.FeedService;
-import retrofit.RestAdapter;
-import retrofit.converter.GsonConverter;
+import bg.lindyhop.network.ServiceGenerator;
 
 /**
  * Created by mmironov on 12/23/15.
@@ -34,16 +29,12 @@ public class FeedController {
             return new FeedItemsPage();
         }
 
-        Gson gson = new GsonBuilder()
-                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
-                .create();
+        AuthTokenService tokenService = ServiceGenerator.createService(AuthTokenService.class,
+                Config.CLIENT_ID, Config.CLIENT_SECRET);
 
-        RestAdapter rest = new RestAdapter.Builder()
-                                    .setEndpoint(Config.SERVER_URL)
-                .setConverter(new GsonConverter(gson))
-                .build();
+        AuthToken token = tokenService.obtainToken(Config.GRANT_TYPE);
 
-        FeedService service = rest.create(FeedService.class);
+        FeedService service = ServiceGenerator.createService(FeedService.class);
 
         return service.listPosts(page);
     }
