@@ -54,7 +54,7 @@ public class ServiceGenerator {
                     request.addHeader("Accept", "application/json");
                     request.addHeader("Content-Type", "application/x-www-form-urlencoded");
                     request.addHeader("Authorization",
-                                    token.getTokenType() + " " + token.getAccess_token());
+                                    token.getTokenType() + "  " + token.getAccess_token());
                 }
             });
         }

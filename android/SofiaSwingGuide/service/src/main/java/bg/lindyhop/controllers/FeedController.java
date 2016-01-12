@@ -34,7 +34,7 @@ public class FeedController {
 
         AuthToken token = tokenService.obtainToken(Config.GRANT_TYPE);
 
-        FeedService service = ServiceGenerator.createService(FeedService.class);
+        FeedService service = ServiceGenerator.createService(FeedService.class, token);
 
         return service.listPosts(page);
     }
