@@ -17,6 +17,7 @@ import com.path.android.jobqueue.JobManager;
 
 import bg.lindyhop.entities.FeedItemsPage;
 import bg.lindyhop.sofiaswingfest.fragments.FeedFragment;
+import bg.lindyhop.sofiaswingfest.fragments.TeachersFlipFragment;
 import bg.lindyhop.sofiaswingfest.fragments.TeachersFragment;
 import bg.lindyhop.utils.Prefs;
 
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_schedule) {
 
         } else if (id == R.id.nav_teachers) {
-            replaceFragment(new TeachersFragment(), TeachersFragment.TAG, true);
+            replaceFragment(new TeachersFlipFragment(), TeachersFragment.TAG, true);
         } else if (id == R.id.nav_parties) {
 
         } else if (id == R.id.nav_competitions) {
