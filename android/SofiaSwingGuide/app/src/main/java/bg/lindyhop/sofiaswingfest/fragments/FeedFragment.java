@@ -55,6 +55,8 @@ public class FeedFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
         jobManager = SofiaSwingFestApplication.getInstance().getJobManager();
 
+        Prefs.putNextPage(FeedItemsPage.FIRST_PAGE_INDEX);
+
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh);
         swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
@@ -96,10 +98,18 @@ public class FeedFragment extends Fragment implements SwipeRefreshLayout.OnRefre
             }
         });
 
+        EventBus.getDefault().register(this);
+
         swipeRefreshLayout.setRefreshing(true);
         jobManager.addJobInBackground(new FetchFeedJob());
 
         return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroyView();
     }
 
     @Override
@@ -114,20 +124,18 @@ public class FeedFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
         Log.i("EVENT", "Received");
 
-        if (Prefs.hasNextPage() && Prefs.getNextPage() == FeedItemsPage.FIRST_PAGE_INDEX + 1) {
+        if (swipeRefreshLayout.isRefreshing()) {
             updateFeedUI();
             Log.i("EVENT", "Updating Feed");
+            swipeRefreshLayout.setRefreshing(false);
         } else {
             addToFeedUI(event.getPosts());
             Log.i("EVENT", "Adding to Feed");
         }
-
-        swipeRefreshLayout.setRefreshing(false);
     }
 
     public void onEventMainThread(NoNewPostsEvent event) {
 
-        swipeRefreshLayout.setRefreshing(false);
     }
 
     private void updateFeedUI() {
@@ -138,17 +146,5 @@ public class FeedFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
     private void addToFeedUI(List<FeedItem> posts) {
         adapter.add(posts);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        EventBus.getDefault().register(this);
-    }
-
-    @Override
-    public void onStop() {
-        EventBus.getDefault().unregister(this);
-        super.onStop();
     }
 }

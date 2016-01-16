@@ -3,13 +3,16 @@ package bg.lindyhop.sofiaswingfest.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import bg.lindyhop.entities.Teacher;
@@ -26,7 +29,11 @@ public class TeachersFragment extends Fragment {
     private RecyclerView teachersView;
     private TeachersAdapter adapter;
 
-    private StaggeredGridLayoutManager layoutManager;
+    private GridLayoutManager layoutManager;
+
+    public TeachersFragment() {
+
+    }
 
     @Nullable
     @Override
@@ -36,7 +43,20 @@ public class TeachersFragment extends Fragment {
 
         teachersView = (RecyclerView) view.findViewById(R.id.teachers);
 
-        layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        layoutManager = new GridLayoutManager(getActivity(), 2);
+
+        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+            @Override
+            public int getSpanSize(int position) {
+
+                if (position == 0) {
+                    return 2;
+                }
+
+                return 1;
+            }
+        });
+
         teachersView.setLayoutManager(layoutManager);
 
         List<Teacher> teachers = new ArrayList<>();
@@ -61,6 +81,8 @@ public class TeachersFragment extends Fragment {
         teachers.add(petrAndPavli);
         teachers.add(daxAndSarah);
         teachers.add(marcos);
+
+        Collections.shuffle(teachers);
 
         adapter = new TeachersAdapter(teachers);
 

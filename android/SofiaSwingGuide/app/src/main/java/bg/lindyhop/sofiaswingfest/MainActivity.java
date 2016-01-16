@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Prefs.putNextPage(FeedItemsPage.FIRST_PAGE_INDEX);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -85,11 +83,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_feed) {
-            // Handle the camera action
+            replaceFragment(new FeedFragment(), FeedFragment.TAG, false);
         } else if (id == R.id.nav_schedule) {
 
         } else if (id == R.id.nav_teachers) {
-            replaceFragment(new TeachersFlipFragment(), TeachersFragment.TAG, true);
+            replaceFragment(new TeachersFragment(), TeachersFragment.TAG, false);
         } else if (id == R.id.nav_parties) {
 
         } else if (id == R.id.nav_competitions) {
