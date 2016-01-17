@@ -12,17 +12,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.path.android.jobqueue.JobManager;
 
 import bg.lindyhop.entities.FeedItemsPage;
+import bg.lindyhop.sofiaswingfest.fragments.ContactClickCallbacks;
+import bg.lindyhop.sofiaswingfest.fragments.ContactsFragment;
 import bg.lindyhop.sofiaswingfest.fragments.FeedFragment;
 import bg.lindyhop.sofiaswingfest.fragments.TeachersFlipFragment;
 import bg.lindyhop.sofiaswingfest.fragments.TeachersFragment;
 import bg.lindyhop.utils.Prefs;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, ContactClickCallbacks {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +95,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_competitions) {
 
+        } else if (id == R.id.nav_contact) {
+            replaceFragment(new ContactsFragment(), ContactsFragment.TAG, false);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -123,5 +128,49 @@ public class MainActivity extends AppCompatActivity
         }
 
         tr.commit();
+    }
+
+    @Override
+    public void handleFacebookPage(View v) {
+        for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+            if (fragment instanceof ContactClickCallbacks) {
+                ContactClickCallbacks callbacks = (ContactClickCallbacks) fragment;
+                callbacks.handleFacebookPage(v);
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void handleWebPage(View v) {
+        for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+            if (fragment instanceof ContactClickCallbacks) {
+                ContactClickCallbacks callbacks = (ContactClickCallbacks) fragment;
+                callbacks.handleWebPage(v);
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void handleEmail(View v) {
+        for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+            if (fragment instanceof ContactClickCallbacks) {
+                ContactClickCallbacks callbacks = (ContactClickCallbacks) fragment;
+                callbacks.handleEmail(v);
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void handlePhone(View v) {
+        for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+            if (fragment instanceof ContactClickCallbacks) {
+                ContactClickCallbacks callbacks = (ContactClickCallbacks) fragment;
+                callbacks.handlePhone(v);
+                break;
+            }
+        }
     }
 }
