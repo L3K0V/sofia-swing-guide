@@ -84,6 +84,8 @@ public class TeachersFragment extends Fragment {
 
         Collections.shuffle(teachers);
 
+        teachers.get(0).setIsFeatured(true);
+
         adapter = new TeachersAdapter(teachers);
 
         teachersView.setAdapter(adapter);

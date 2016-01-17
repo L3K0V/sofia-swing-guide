@@ -16,6 +16,8 @@ public class Teacher implements Parcelable {
     private String description;
     private int resDrawable;
 
+    private boolean isFeatured;
+
     public String getName() {
         return name;
     }
@@ -40,6 +42,16 @@ public class Teacher implements Parcelable {
         this.resDrawable = resDrawable;
     }
 
+    public boolean isFeatured() {
+        return isFeatured;
+    }
+
+    public void setIsFeatured(boolean isFeatured) {
+        this.isFeatured = isFeatured;
+    }
+
+    public Teacher() {
+    }
 
     @Override
     public int describeContents() {
@@ -51,18 +63,17 @@ public class Teacher implements Parcelable {
         dest.writeString(this.name);
         dest.writeString(this.description);
         dest.writeInt(this.resDrawable);
-    }
-
-    public Teacher() {
+        dest.writeByte(isFeatured ? (byte) 1 : (byte) 0);
     }
 
     protected Teacher(Parcel in) {
         this.name = in.readString();
         this.description = in.readString();
         this.resDrawable = in.readInt();
+        this.isFeatured = in.readByte() != 0;
     }
 
-    public static final Parcelable.Creator<Teacher> CREATOR = new Parcelable.Creator<Teacher>() {
+    public static final Creator<Teacher> CREATOR = new Creator<Teacher>() {
         public Teacher createFromParcel(Parcel source) {
             return new Teacher(source);
         }

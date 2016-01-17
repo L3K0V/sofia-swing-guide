@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,15 +13,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.path.android.jobqueue.JobManager;
-
-import bg.lindyhop.entities.FeedItemsPage;
 import bg.lindyhop.sofiaswingfest.fragments.ContactClickCallbacks;
 import bg.lindyhop.sofiaswingfest.fragments.ContactsFragment;
 import bg.lindyhop.sofiaswingfest.fragments.FeedFragment;
-import bg.lindyhop.sofiaswingfest.fragments.TeachersFlipFragment;
 import bg.lindyhop.sofiaswingfest.fragments.TeachersFragment;
-import bg.lindyhop.utils.Prefs;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, ContactClickCallbacks {
