@@ -63,18 +63,22 @@ public class TeachersFragment extends Fragment {
 
         Teacher williamAndMaeva = new Teacher();
         williamAndMaeva.setName("William and Maeva");
+        williamAndMaeva.setDescription("The great Frenchies...");
         williamAndMaeva.setResDrawable(R.drawable.william_maeva);
 
         Teacher petrAndPavli = new Teacher();
         petrAndPavli.setName("Petr & Pavli");
+        petrAndPavli.setDescription("With style and rhythm");
         petrAndPavli.setResDrawable(R.drawable.petr_pavli);
 
         Teacher daxAndSarah = new Teacher();
         daxAndSarah.setName("Dax & Sarah");
+        daxAndSarah.setDescription("Perfect teaching.");
         daxAndSarah.setResDrawable(R.drawable.dax_sarah);
 
         Teacher marcos = new Teacher();
         marcos.setName("Marcos");
+        marcos.setDescription("Inspiration");
         marcos.setResDrawable(R.drawable.marcos);
 
         teachers.add(williamAndMaeva);
