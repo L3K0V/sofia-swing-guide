@@ -35,5 +35,6 @@ public class ViewBindingAdapters {
     public static void setImageDrawable(ImageView view, int resId) {
 
         Drawable drawable = ContextCompat.getDrawable(view.getContext(), resId);
+        view.setImageDrawable(drawable);
     }
 }

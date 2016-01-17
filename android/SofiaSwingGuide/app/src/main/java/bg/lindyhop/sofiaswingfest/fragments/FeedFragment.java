@@ -1,10 +1,12 @@
 package bg.lindyhop.sofiaswingfest.fragments;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -65,7 +67,16 @@ public class FeedFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         swipeRefreshLayout.setOnRefreshListener(this);
 
         final RecyclerView feed = (RecyclerView) view.findViewById(R.id.feed);
-        feed.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        int currentOrientation = getResources().getConfiguration().orientation;
+        if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
+            feed.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        }
+        else {
+            feed.setLayoutManager(new LinearLayoutManager(getActivity()));
+        }
+
+
         feed.setItemAnimator(new DefaultItemAnimator());
         feed.setHasFixedSize(true);
 

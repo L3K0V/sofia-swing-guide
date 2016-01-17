@@ -75,7 +75,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
                         }
 
                         if (swatch != null) {
-                            holder.binding.container.setBackgroundColor(swatch.getRgb());
+                            holder.binding.card.setBackgroundColor(swatch.getRgb());
                             holder.binding.title.setTextColor(swatch.getTitleTextColor());
                             holder.binding.text.setTextColor(swatch.getBodyTextColor());
                         }
