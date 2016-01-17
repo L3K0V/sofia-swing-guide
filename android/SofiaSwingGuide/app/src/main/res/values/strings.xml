@@ -5,6 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -95,4 +96,11 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="title_activity_feed_item">Feed Details</string>
+
+    <string name="contacts_lindyhop_facebook">https://www.facebook.com/LindyHopBulgaria/</string>
+    <string name="contacts_ssdf_facebook">https://www.facebook.com/SofiaSwing/</string>
+    <string name="contacts_lindyhop_web">http://www.lindyhop.bg/</string>
+    <string name="contacts_ssdf_web">http://sofiaswing.com/</string>
+    <string name="contacts_lindyhop_email">lindyhop@mail.bg</string>
+    <string name="contacts_ssdf_email">lindyhop@mail.bg</string>
 </resources>
