@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable name="item" type="bg.lindyhop.entities.FeedItem"/>
+        <variable name="callback" type="bg.lindyhop.sofiaswingfest.fragments.ImageLoaderCallbacks"/>
     </data>
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
@@ -23,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleTextAppearance="@android:color/transparent"
                 android:fitsSystemWindows="true">
 
                 <ImageView
@@ -34,7 +35,8 @@
                     android:scaleType="centerCrop"
                     android:fitsSystemWindows="true"
                     app:layout_collapseMode="parallax"
-                    app:coverUrl="@{item.coverUrl}"/>
+                    app:coverUrl="@{item.coverUrl}"
+                    app:callback="@{callback}"/>
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/toolbar"

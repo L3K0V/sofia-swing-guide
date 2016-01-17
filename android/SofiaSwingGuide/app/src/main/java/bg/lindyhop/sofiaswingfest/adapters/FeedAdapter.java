@@ -3,9 +3,14 @@ package bg.lindyhop.sofiaswingfest.adapters;
 import android.app.Activity;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +22,7 @@ import bg.lindyhop.entities.FeedItem;
 import bg.lindyhop.sofiaswingfest.FeedItemActivity;
 import bg.lindyhop.sofiaswingfest.R;
 import bg.lindyhop.sofiaswingfest.databinding.FeedListItemBinding;
+import bg.lindyhop.sofiaswingfest.fragments.ImageLoaderCallbacks;
 
 /**
  * Created by lekov on 12/23/15.
@@ -38,9 +44,53 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.getBinding().setItem(mDataset.get(position));
+        holder.getBinding().setCallback(new ImageLoaderCallbacks() {
+            @Override
+            public void onImageLoading() {
+
+            }
+
+            @Override
+            public void onImageReady() {
+                Bitmap bitmap;
+                if (holder.binding.cover.getDrawable() instanceof BitmapDrawable) {
+                    bitmap = ((BitmapDrawable) holder.binding.cover.getDrawable()).getBitmap();
+                } else {
+                    Drawable d = holder.binding.cover.getDrawable();
+                    bitmap = Bitmap.createBitmap(d.getIntrinsicWidth(), d.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+                    Canvas canvas = new Canvas(bitmap);
+                    d.draw(canvas);
+                }
+
+
+                // Asynchronous
+                Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
+                    public void onGenerated(Palette p) {
+                        Palette.Swatch swatch = p.getVibrantSwatch();
+
+                        if (swatch == null) {
+                            swatch = p.getMutedSwatch();
+                        }
+
+                        if (swatch != null) {
+                            holder.binding.container.setBackgroundColor(swatch.getRgb());
+                            holder.binding.title.setTextColor(swatch.getTitleTextColor());
+                            holder.binding.text.setTextColor(swatch.getBodyTextColor());
+                        }
+                    }
+                });
+            }
+
+            @Override
+            public void onImageLoadError() {
+
+            }
+        });
         holder.getBinding().executePendingBindings();
+
+
     }
 
     @Override

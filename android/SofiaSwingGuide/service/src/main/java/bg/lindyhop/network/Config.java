@@ -6,7 +6,7 @@ package bg.lindyhop.network;
 public class Config {
 
     private static final String MOCK_SERVER_URL = "http://private-676b-studioswing.apiary-mock.com";
-    private static final String LOCAL_HOST = "http://f29d7a39.ngrok.io/";
+    private static final String LOCAL_HOST = "http://c15ccbec.ngrok.io/";
 
     public static final String SERVER_URL = "http://10.10.10.114:8000";
 
