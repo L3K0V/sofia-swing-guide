@@ -103,4 +103,42 @@
     <string name="contacts_ssdf_web">http://sofiaswing.com/</string>
     <string name="contacts_lindyhop_email">lindyhop@mail.bg</string>
     <string name="contacts_ssdf_email">lindyhop@mail.bg</string>
+
+    <string name="open_jnj">Open Jack n Jill</string>
+    <string name="advanced_jnj">Advanced Jack n Jill</string>
+    <string name="swing_out_drop_out">Swing Out Drop Out</string>
+    <string name="oscars_show_down">Oscars Showdown</string>
+
+    <string name="open_jnj_description">
+        ‘Cause you know how to do it, you know how to do it, you know how to do it, good enough for anyone!
+        The classic case – swing dance with a random partner. Registrations will be handled on the spot.
+        All leaders and followers sign up individually to compete in the Jack’n’Jill.
+        Registrations are limited to 30 couples.
+        Partners will be assigned at random and you will dance to different tempos with different partners.
+        The competition is open for all participants.
+        The prelims will be held on Friday night and the finals will be held on Saturday night – dancing to live music.
+    </string>
+
+    <string name="advanced_jnj_description">
+        Best of the best, our advanced level dancers, will compete in a social dance competition.
+        Registrations will be handled on the spot, as the limit will be 20 couples.
+        Partners will be assigned at random and you will dance to various tempos with different partners.
+        The prelims will be held on Friday night and the finals will be held on Saturday night – dancing to live music.
+    </string>
+
+    <string name="swing_out_drop_out_description">
+        Faster and faster swing outs. The last survivors win.
+        This competition will be held on the Sunday night party.
+        The registration will be taken on the spot.
+    </string>
+
+    <string name="oscars_showdown_description">
+        We believe that dancing is not only about the moves and figures – it’s about expressing yourself and your emotions.
+        Being a passionate nation, the Bulgarians embrace that and give you the chance to show us your performance skills.
+        The competition unites acting and swing dancing into one and the judge here will be the audience.
+        You will get a special task (role) that you have to incorporate into your dancing and convince
+        the crowd that you deserve an Oscar more than DiCaprio himself. Open for all participants,
+        registrations will be handled on the spot and everyone will sign up individually.
+        Registrations are limited to 10 couples. The competition will be held on the welcoming Thursday party.
+    </string>
 </resources>

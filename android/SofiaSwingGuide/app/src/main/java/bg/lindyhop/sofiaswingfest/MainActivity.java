@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import bg.lindyhop.sofiaswingfest.R;
+import bg.lindyhop.sofiaswingfest.fragments.CompetitionsFragment;
 import bg.lindyhop.sofiaswingfest.fragments.ContactClickCallbacks;
 import bg.lindyhop.sofiaswingfest.fragments.ContactsFragment;
 import bg.lindyhop.sofiaswingfest.fragments.FeedFragment;
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_parties) {
 
         } else if (id == R.id.nav_competitions) {
-
+            replaceFragment(new CompetitionsFragment(), CompetitionsFragment.TAG, false);
         } else if (id == R.id.nav_contact) {
             replaceFragment(new ContactsFragment(), ContactsFragment.TAG, false);
         }

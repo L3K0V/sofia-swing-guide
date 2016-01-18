@@ -2,7 +2,6 @@ package bg.lindyhop.sofiaswingfest.adapters;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +53,7 @@ public class TeachersAdapter extends RecyclerView.Adapter<TeachersAdapter.ViewHo
 
             binding = DataBindingUtil.bind(viewItem);
 
-            viewItem.setOnClickListener(this);
+            binding.card.setOnClickListener(this);
         }
 
         public TeachersItemBinding getBinding() {

@@ -1,12 +1,10 @@
 package bg.lindyhop.sofiaswingfest;
 
 import android.databinding.DataBindingUtil;
-import android.databinding.parser.XMLParser;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.ActivityCompat;

@@ -1,4 +1,4 @@
-package bg.lindyhop.sofiaswingfest;
+package bg.lindyhop.sofiaswingfest.adapters;
 
 import android.databinding.BindingAdapter;
 import android.graphics.drawable.Drawable;
