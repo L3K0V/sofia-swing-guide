@@ -30,7 +30,7 @@
                 android:layout_gravity="right|top"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="12dp"
-                android:src="@drawable/dots_horizontal"/>
+                android:src="@drawable/information_outline"/>
             
             <TextView
                 android:id="@+id/name"
@@ -43,9 +43,22 @@
                 android:text="@{item.name}" />
 
             <TextView
+                android:id="@+id/anotherName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="top|left"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="12dp"
+                android:visibility="invisible"
+                android:minHeight="180dp"
+                style="@style/TextAppearance.AppCompat.Headline"
+                android:text="@{item.name}" />
+
+            <TextView
                 android:id="@+id/description"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:minHeight="180dp"
