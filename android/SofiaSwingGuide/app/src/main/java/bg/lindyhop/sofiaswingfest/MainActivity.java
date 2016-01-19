@@ -1,5 +1,6 @@
 package bg.lindyhop.sofiaswingfest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -93,6 +94,8 @@ public class MainActivity extends AppCompatActivity
             replaceFragment(new CompetitionsFragment(), CompetitionsFragment.TAG, false);
         } else if (id == R.id.nav_contact) {
             replaceFragment(new ContactsFragment(), ContactsFragment.TAG, false);
+        } else if (id == R.id.nav_places) {
+            startActivity(new Intent(this, GuideActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
