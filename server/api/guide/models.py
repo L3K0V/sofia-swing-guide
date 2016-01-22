@@ -13,7 +13,9 @@ class GuideItem(models.Model):
 
 
 class OpeningHours(models.Model):
-    description = models.TextField()
     guide_item = models.ForeignKey('GuideItem', related_name='hours')
+
+    description = models.TextField()
+
     from_datetime = models.DateTimeField()
     to_datetime = models.DateTimeField()
