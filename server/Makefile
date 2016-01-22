@@ -1,13 +1,13 @@
-install: bin/python3
+install: bin/python
 
-bin/python3:
+bin/python:
     virtualenv .
     bin/pip3 install -r requirements.txt
 
-serve: bin/python3
+serve: bin/python
     bin/python3 ./manage.py runserver 8888
 
-deploy: bin/python3
+deploy: bin/python
     bin/python3 ./manage.py collectstatic --clear --noinput
     touch swing/wsgi.py  # trigger reload
 
