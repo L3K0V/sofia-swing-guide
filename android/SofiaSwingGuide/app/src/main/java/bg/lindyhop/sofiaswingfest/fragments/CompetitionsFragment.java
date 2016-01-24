@@ -12,11 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import bg.lindyhop.entities.Competition;
-import bg.lindyhop.entities.Teacher;
 import bg.lindyhop.sofiaswingfest.R;
 import bg.lindyhop.sofiaswingfest.adapters.CompetitionsAdapter;
 

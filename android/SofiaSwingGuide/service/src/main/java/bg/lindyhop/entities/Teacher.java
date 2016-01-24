@@ -3,8 +3,6 @@ package bg.lindyhop.entities;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.Date;
-
 /**
  * Created by mmironov on 1/4/16.
  */

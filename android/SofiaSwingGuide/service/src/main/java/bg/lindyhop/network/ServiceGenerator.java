@@ -4,8 +4,16 @@ import android.util.Base64;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParseException;
+
+import java.lang.reflect.Type;
 
 import bg.lindyhop.entities.AuthToken;
+import bg.lindyhop.entities.GuideItem;
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;
@@ -65,5 +73,38 @@ public class ServiceGenerator {
 
         RestAdapter adapter = builder.setConverter(new GsonConverter(gson)).build();
         return adapter.create(serviceClass);
+    }
+
+    public static <S> S createServiceWithDeserializer(Class<S> serviceClass, final AuthToken token) {
+
+        if (token != null) {
+            builder.setRequestInterceptor(new RequestInterceptor() {
+                @Override
+                public void intercept(RequestFacade request) {
+                    request.addHeader("Accept", "application/json");
+                    request.addHeader("Content-Type", "application/x-www-form-urlencoded");
+                    request.addHeader("Authorization",
+                            token.getTokenType() + " " + token.getAccess_token());
+                }
+            });
+        }
+
+        Gson gson = new GsonBuilder()
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+                .registerTypeAdapter(GuideItem.class, new GEOJSONDeserializer())
+                .create();
+
+        RestAdapter adapter = builder.setConverter(new GsonConverter(gson)).build();
+        return adapter.create(serviceClass);
+    }
+
+    public static class GEOJSONDeserializer implements JsonDeserializer<GuideItem> {
+
+        @Override
+        public GuideItem deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+            JsonArray features = json.getAsJsonObject().getAsJsonArray("features");
+            String type = json.getAsJsonObject().get("type").getAsString();
+            return new GuideItem(type, features.toString(), 1L);
+        }
     }
 }

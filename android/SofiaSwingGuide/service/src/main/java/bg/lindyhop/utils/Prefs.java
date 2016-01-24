@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import bg.lindyhop.App;
-import bg.lindyhop.entities.FeedItem;
 import bg.lindyhop.entities.FeedItemsPage;
 
 /**

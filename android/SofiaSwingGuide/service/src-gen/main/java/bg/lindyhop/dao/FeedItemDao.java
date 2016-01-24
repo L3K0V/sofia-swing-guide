@@ -35,7 +35,7 @@ public class FeedItemDao extends AbstractDao<FeedItem, Long> {
         public final static Property UpdatedAt = new Property(5, java.util.Date.class, "updatedAt", false, "UPDATED_AT");
         public final static Property CoverUrl = new Property(6, String.class, "coverUrl", false, "COVER_URL");
         public final static Property EventId = new Property(7, Long.class, "eventId", false, "EVENT_ID");
-    }
+    };
 
     private DaoSession daoSession;
 

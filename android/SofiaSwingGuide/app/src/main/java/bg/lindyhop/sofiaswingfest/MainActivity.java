@@ -14,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import bg.lindyhop.sofiaswingfest.R;
 import bg.lindyhop.sofiaswingfest.fragments.CompetitionsFragment;
 import bg.lindyhop.sofiaswingfest.fragments.ContactClickCallbacks;
 import bg.lindyhop.sofiaswingfest.fragments.ContactsFragment;
@@ -42,6 +41,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         replaceFragment(new FeedFragment(), FeedFragment.TAG, false);
+
     }
 
     @Override

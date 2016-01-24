@@ -3,8 +3,6 @@ package bg.lindyhop.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-import bg.lindyhop.models.FeedModel;
-
 /**
  * Created by mmironov on 1/3/16.
  */

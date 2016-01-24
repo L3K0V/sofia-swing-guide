@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import bg.lindyhop.entities.Teacher;
-import bg.lindyhop.sofiaswingfest.R;
 import bg.lindyhop.sofiaswingfest.databinding.ActivityTeachersItemBinding;
-import bg.lindyhop.sofiaswingfest.databinding.TeachersItemBinding;
 
 /**
  * Created by mmironov on 1/16/16.
