@@ -52,7 +52,7 @@ public class SofiaSwingFestDaoGenerator extends DaoGenerator {
         Property feedId = feedUrl.addLongProperty("feedId").getProperty();
         feedUrl.addToOne(feed, feedId, "urls");
 
-        Entity guide = schema.addEntity("GuideItem");
+        Entity guide = schema.addEntity("Guide");
         guide.addStringProperty("type");
         guide.addStringProperty("geo");
 

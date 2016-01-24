@@ -13,7 +13,7 @@ import com.google.gson.JsonParseException;
 import java.lang.reflect.Type;
 
 import bg.lindyhop.entities.AuthToken;
-import bg.lindyhop.entities.GuideItem;
+import bg.lindyhop.entities.Guide;
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;
@@ -91,20 +91,20 @@ public class ServiceGenerator {
 
         Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
-                .registerTypeAdapter(GuideItem.class, new GEOJSONDeserializer())
+                .registerTypeAdapter(Guide.class, new GEOJSONDeserializer())
                 .create();
 
         RestAdapter adapter = builder.setConverter(new GsonConverter(gson)).build();
         return adapter.create(serviceClass);
     }
 
-    public static class GEOJSONDeserializer implements JsonDeserializer<GuideItem> {
+    public static class GEOJSONDeserializer implements JsonDeserializer<Guide> {
 
         @Override
-        public GuideItem deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+        public Guide deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
             JsonArray features = json.getAsJsonObject().getAsJsonArray("features");
             String type = json.getAsJsonObject().get("type").getAsString();
-            return new GuideItem(type, features.toString(), 1L);
+            return new Guide(type, features.toString(), 1L);
         }
     }
 }

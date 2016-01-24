@@ -1,6 +1,6 @@
 package bg.lindyhop.network;
 
-import bg.lindyhop.entities.GuideItem;
+import bg.lindyhop.entities.Guide;
 import retrofit.http.GET;
 import retrofit.http.Path;
 
@@ -10,5 +10,5 @@ import retrofit.http.Path;
 public interface GuideService {
 
     @GET("/events/{eventId}/guides/")
-    GuideItem listGuideItems(@Path("eventId") long eventId);
+    Guide listGuideItems(@Path("eventId") long eventId);
 }

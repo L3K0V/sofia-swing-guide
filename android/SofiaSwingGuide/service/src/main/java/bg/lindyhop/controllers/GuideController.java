@@ -1,7 +1,7 @@
 package bg.lindyhop.controllers;
 
 import bg.lindyhop.entities.AuthToken;
-import bg.lindyhop.entities.GuideItem;
+import bg.lindyhop.entities.Guide;
 import bg.lindyhop.network.AuthTokenService;
 import bg.lindyhop.network.Config;
 import bg.lindyhop.network.GuideService;
@@ -23,7 +23,7 @@ public class GuideController {
         return instance;
     }
 
-    public GuideItem loadGuide() {
+    public Guide loadGuide() {
 
         AuthTokenService tokenService = ServiceGenerator.createService(AuthTokenService.class,
                 Config.CLIENT_ID, Config.CLIENT_SECRET);
