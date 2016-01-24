@@ -8,8 +8,6 @@ class Event(models.Model):
     name = models.CharField(max_length=64, blank=False, null=False)
     description = models.TextField()
 
-    # Organizerid
-
     country = CountryField()
     city = models.CharField(max_length=32, blank=True, null=False)
 

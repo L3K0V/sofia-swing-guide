@@ -25,6 +25,7 @@ from api.events.views import EventViewSet, EventTrackViewSet, EventTrackLevelVie
 from api.guide.views import GuideItemViewSet
 from api.competitions.views import CompetitionViewSet
 from api.feed.views import FeedViewSet
+from api.feedback.views import EventTrackLevelRateViewSet, ScheduleItemRateViewSet
 
 router = routers.DefaultRouter()
 router.register(r'events', EventViewSet, base_name='events')
@@ -40,13 +41,18 @@ tracks_router = routers.NestedSimpleRouter(event_router, r'tracks', lookup='trac
 tracks_router.register(r'levels', EventTrackLevelViewSet, base_name='levels')
 
 levels_router = routers.NestedSimpleRouter(tracks_router, r'levels', lookup='level')
-levels_router.register(r'schedule', ScheduleItemViewSet, base_name='shedule')
+levels_router.register(r'schedule', ScheduleItemViewSet, base_name='schedule')
+levels_router.register(r'feedback', EventTrackLevelRateViewSet, base_name='feedback')
+
+schedule_router = routers.NestedSimpleRouter(levels_router, r'schedule', lookup='schedule')
+schedule_router.register(r'feedback', ScheduleItemRateViewSet, base_name='feedback')
 
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^', include(event_router.urls)),
     url(r'^', include(tracks_router.urls)),
     url(r'^', include(levels_router.urls)),
+    url(r'^', include(schedule_router.urls)),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^oauth2/', include('oauth2_provider.urls', namespace='oauth2_provider')),

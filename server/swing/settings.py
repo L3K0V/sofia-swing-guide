@@ -46,7 +46,8 @@ INSTALLED_APPS = (
     'api.events',
     'api.feed',
     'api.guide',
-    'api.competitions'
+    'api.competitions',
+    'api.feedback'
 )
 
 REST_FRAMEWORK = {
