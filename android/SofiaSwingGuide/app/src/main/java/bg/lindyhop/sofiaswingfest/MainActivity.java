@@ -18,6 +18,7 @@ import bg.lindyhop.sofiaswingfest.fragments.CompetitionsFragment;
 import bg.lindyhop.sofiaswingfest.fragments.ContactClickCallbacks;
 import bg.lindyhop.sofiaswingfest.fragments.ContactsFragment;
 import bg.lindyhop.sofiaswingfest.fragments.FeedFragment;
+import bg.lindyhop.sofiaswingfest.fragments.ScheduleFragment;
 import bg.lindyhop.sofiaswingfest.fragments.TeachersFragment;
 
 public class MainActivity extends AppCompatActivity
@@ -84,7 +85,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_feed) {
             replaceFragment(new FeedFragment(), FeedFragment.TAG, false);
         } else if (id == R.id.nav_schedule) {
-
+            replaceFragment(new ScheduleFragment(), ScheduleFragment.TAG, false);
         } else if (id == R.id.nav_teachers) {
             replaceFragment(new TeachersFragment(), TeachersFragment.TAG, false);
         } else if (id == R.id.nav_parties) {
