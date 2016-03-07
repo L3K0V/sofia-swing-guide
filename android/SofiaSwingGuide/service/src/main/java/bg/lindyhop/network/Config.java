@@ -5,12 +5,9 @@ package bg.lindyhop.network;
  */
 public class Config {
 
-    private static final String MOCK_SERVER_URL = "http://private-676b-studioswing.apiary-mock.com";
-    private static final String LOCAL_HOST = "http://c15ccbec.ngrok.io/";
+    public static final String SERVER_URL = "http://ssdf.tempest.bg/";
 
-    public static final String SERVER_URL = "http://5179d191.ngrok.io";
-
-    public static final String CLIENT_ID = "IgNwQynxUNBPHLAOoskvJd1ques6xjMxr5G8q1SH";
-    public static final String CLIENT_SECRET = "8muRjCQSKWnhUmlWxV1C9E8DDhm6AjTeYbXG9Vc40Ntam3Jj8HEY5ee4qvc0NDGKZ5rKQoAzWfKSaiq5PV5KgRQDSgccjdQCMAQg3hvx9K7ovkKCTtE4yZLnjYO8pRPA";
+    public static final String CLIENT_ID = "ChX2ZtRVK3WBMoa3XT12qbxQMMD0PLVcGmzRr4Pj";
+    public static final String CLIENT_SECRET = "44BFcvVE0WYjMM7rXLHEKJ8LyquEDqbOMcQC0n9h8bC6HIn2TSOwFvnTkV3gNVOgxy316bs42TADclM0MzSfPrsY0yts37bqCFGBlR44BYF31ffscGaY3TxNgEZP7D8u";
     public static final String GRANT_TYPE = "client_credentials";
 }
