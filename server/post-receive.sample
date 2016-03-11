@@ -1,6 +1,0 @@
-#!/bin/sh
-dest=/var/www/yourapp
-echo "Deploying into $dest"
-GIT_WORK_TREE=$dest git checkout --force
-cd $dest
-make deploy
