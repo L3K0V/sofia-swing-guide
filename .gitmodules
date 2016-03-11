@@ -1,0 +1,3 @@
+[submodule "ssdf-server"]
+	path = ssdf-server
+	url = https://github.com/L3K0V/ssdf-server.git

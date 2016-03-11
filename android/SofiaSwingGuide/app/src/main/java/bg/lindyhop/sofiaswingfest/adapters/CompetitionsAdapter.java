@@ -55,7 +55,6 @@ public class CompetitionsAdapter extends RecyclerView.Adapter<CompetitionsAdapte
             binding = DataBindingUtil.bind(viewItem);
 
             binding.infoButton.setOnClickListener(this);
-            binding.card.setOnClickListener(this);
         }
 
         public CompetitionsItemBinding getBinding() {
@@ -73,9 +72,16 @@ public class CompetitionsAdapter extends RecyclerView.Adapter<CompetitionsAdapte
             int dx = Math.max(cx, v.getWidth() - cx);
             int dy = Math.max(cy, v.getHeight() - cy);
             float finalRadius = (float) Math.hypot(dx, dy);
+            float startRadius = 0;
+
+            if (getBinding().name.getVisibility() == View.INVISIBLE) {
+                float temp = finalRadius;
+                finalRadius = startRadius;
+                startRadius = temp;
+            }
 
             SupportAnimator animator =
-                    ViewAnimationUtils.createCircularReveal(getBinding().card, cx, cy, 0, finalRadius);
+                    ViewAnimationUtils.createCircularReveal(getBinding().card, cx, cy, startRadius, finalRadius);
             animator.setInterpolator(new AccelerateDecelerateInterpolator());
             animator.setDuration(500);
 
@@ -88,7 +94,8 @@ public class CompetitionsAdapter extends RecyclerView.Adapter<CompetitionsAdapte
 
                     //swap the visibilities
                     getBinding().name.setVisibility(descriptionVisibility);
-                    getBinding().infoButton.setVisibility(descriptionVisibility);
+                    getBinding().anotherName.setVisibility(nameVisibility);
+//                    getBinding().infoButton.setVisibility(descriptionVisibility);
 
                     getBinding().description.setVisibility(nameVisibility);
                 }
