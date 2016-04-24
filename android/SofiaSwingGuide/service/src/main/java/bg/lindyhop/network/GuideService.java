@@ -9,6 +9,6 @@ import retrofit.http.Path;
  */
 public interface GuideService {
 
-    @GET("/events/{eventId}/guides/")
+    @GET("/events/{eventId}/guide/")
     Guide listGuideItems(@Path("eventId") long eventId);
 }
