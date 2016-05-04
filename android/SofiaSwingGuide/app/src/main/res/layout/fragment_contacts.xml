@@ -27,7 +27,7 @@
                 android:layout_height="200dp"
                 android:paddingBottom="48dp"
                 android:scaleType="centerInside"
-                android:background="@color/contact_pink" />
+                android:background="@color/accent" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -104,7 +104,7 @@
                 android:layout_height="200dp"
                 android:paddingBottom="48dp"
                 android:scaleType="centerInside"
-                android:background="@color/accent" />
+                android:background="@color/contact_pink />
 
             <LinearLayout
                 android:orientation="vertical"
