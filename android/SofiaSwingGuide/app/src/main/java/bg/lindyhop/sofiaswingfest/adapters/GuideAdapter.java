@@ -42,7 +42,7 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
         try {
             text.setText(guide.getJSONObject(position).getJSONObject("properties").getString("name"));
 
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
+            text.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
