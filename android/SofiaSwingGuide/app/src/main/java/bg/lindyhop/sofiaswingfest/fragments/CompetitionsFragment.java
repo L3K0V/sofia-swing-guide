@@ -62,14 +62,14 @@ public class CompetitionsFragment extends Fragment {
         swingOutDropOut.setName(getResources().getString(R.string.swing_out_drop_out));
         swingOutDropOut.setDescription(getResources().getString(R.string.swing_out_drop_out_description));
 
-        Competition oscarsShowDown = new Competition();
-        oscarsShowDown.setName(getResources().getString(R.string.oscars_show_down));
-        oscarsShowDown.setDescription(getResources().getString(R.string.oscars_showdown_description));
+        Competition strictly = new Competition();
+        strictly.setName(getResources().getString(R.string.strictly));
+        strictly.setDescription(getResources().getString(R.string.strictly_description));
 
         competitions.add(openJnJ);
         competitions.add(advancedJnJ);
         competitions.add(swingOutDropOut);
-        competitions.add(oscarsShowDown);
+        competitions.add(strictly);
 
         adapter = new CompetitionsAdapter(competitions);
 
