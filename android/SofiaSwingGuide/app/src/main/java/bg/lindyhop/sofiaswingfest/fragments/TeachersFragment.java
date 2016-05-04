@@ -62,27 +62,33 @@ public class TeachersFragment extends Fragment {
         Teacher williamAndMaeva = new Teacher();
         williamAndMaeva.setName("William and Maeva");
         williamAndMaeva.setDescription("The great Frenchies...");
-        williamAndMaeva.setResDrawable(R.drawable.william_maeva);
+        williamAndMaeva.setResDrawable(R.drawable.felipe);
 
-        Teacher petrAndPavli = new Teacher();
-        petrAndPavli.setName("Petr & Pavli");
-        petrAndPavli.setDescription("With style and rhythm");
-        petrAndPavli.setResDrawable(R.drawable.petr_pavli);
+        Teacher alice = new Teacher();
+        alice.setName("Alice Mei");
+        alice.setDescription("With style and rhythm");
+        alice.setResDrawable(R.drawable.felipe);
 
-        Teacher daxAndSarah = new Teacher();
-        daxAndSarah.setName("Dax & Sarah");
-        daxAndSarah.setDescription("Perfect teaching.");
-        daxAndSarah.setResDrawable(R.drawable.dax_sarah);
+        Teacher felipe = new Teacher();
+        felipe.setName("Felipe");
+        felipe.setDescription("Perfect teaching.");
+        felipe.setResDrawable(R.drawable.felipe);
 
-        Teacher marcos = new Teacher();
-        marcos.setName("Marcos");
-        marcos.setDescription("Inspiration");
-        marcos.setResDrawable(R.drawable.marcos);
+        Teacher ryan = new Teacher();
+        ryan.setName("Ryan");
+        ryan.setDescription("Inspiration");
+        ryan.setResDrawable(R.drawable.felipe);
+
+        Teacher evgenya = new Teacher();
+        evgenya.setName("Evgeniya");
+        evgenya.setDescription("Inspiration");
+        evgenya.setResDrawable(R.drawable.felipe);
 
         teachers.add(williamAndMaeva);
-        teachers.add(petrAndPavli);
-        teachers.add(daxAndSarah);
-        teachers.add(marcos);
+        teachers.add(alice);
+        teachers.add(felipe);
+        teachers.add(ryan);
+        teachers.add(evgenya);
 
         Collections.shuffle(teachers);
 

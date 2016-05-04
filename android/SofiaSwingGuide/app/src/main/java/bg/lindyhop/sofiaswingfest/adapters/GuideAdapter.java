@@ -1,6 +1,8 @@
 package bg.lindyhop.sofiaswingfest.adapters;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,11 +36,35 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
         TextView text = (TextView) holder.itemView.findViewById(R.id.type);
         try {
             text.setText(guide.getJSONObject(position).getJSONObject("properties").getString("name"));
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    try {
+                        JSONArray coordinates = guide.getJSONObject(position).getJSONObject("geometry").getJSONArray("coordinates");
+                        double lon = coordinates.getDouble(0);
+                        double lat = coordinates.getDouble(1);
+
+                        String geoUri = String.format("http://maps.google.com/maps?f=d&daddr=%f,%f", lat, lon);
+
+                        Uri gmmIntentUri = Uri.parse(geoUri);
+                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                        mapIntent.setPackage("com.google.android.apps.maps");
+                        if (mapIntent.resolveActivity(v.getContext().getPackageManager()) != null) {
+                            v.getContext().startActivity(mapIntent);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -1,7 +1,9 @@
 package bg.lindyhop.sofiaswingfest.adapters;
 
+import android.content.Context;
 import android.databinding.BindingAdapter;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
 import android.widget.ImageView;
 
@@ -31,9 +33,12 @@ public class ViewBindingAdapters {
     }
 
     @BindingAdapter("photo")
-    public static void setImageDrawable(ImageView view, int resId) {
+    public static void setImageDrawable(final ImageView view, final int resId) {
 
-        Drawable drawable = ContextCompat.getDrawable(view.getContext(), resId);
-        view.setImageDrawable(drawable);
+        final Context context = view.getContext();
+
+        Picasso.with(context)
+                .load(resId)
+                .into(view);
     }
 }
