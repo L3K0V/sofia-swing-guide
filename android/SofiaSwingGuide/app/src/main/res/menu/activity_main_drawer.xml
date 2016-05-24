@@ -6,18 +6,18 @@
             android:id="@+id/nav_feed"
             android:icon="@drawable/ic_newspaper_black_24dp"
             android:title="News" />
-        <!--<item-->
-            <!--android:id="@+id/nav_schedule"-->
-            <!--android:icon="@drawable/ic_menu_gallery"-->
-            <!--android:title="Schedule" />-->
+        <item
+            android:id="@+id/nav_schedule"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Schedule" />
         <item
             android:id="@+id/nav_teachers"
             android:icon="@drawable/ic_account_black_24dp"
             android:title="Teachers" />
-        <!--<item-->
-            <!--android:id="@+id/nav_parties"-->
-            <!--android:icon="@drawable/ic_menu_manage"-->
-            <!--android:title="Parties" />-->
+        <item
+            android:id="@+id/nav_parties"
+            android:icon="@drawable/ic_martini_black_24dp"
+            android:title="Evenings" />
         <item
             android:id="@+id/nav_competitions"
             android:icon="@drawable/ic_trophy_outline_black_24dp"
