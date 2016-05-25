@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:card_view="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <data>
-            <variable name="item" type="bg.lindyhop.entities.ScheduleItem"/>
-        </data>
+    <data>
+
+        <variable
+            name="item"
+            type="bg.lindyhop.entities.ScheduleItem" />
+    </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,32 +15,41 @@
 
         <TextView
             android:id="@+id/timeInterval"
+            style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:text="@{item.timeInterval}"/>
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingStart="8dp"
+            android:text="@{item.timeInterval}"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/title"
+            style="@style/TextAppearance.AppCompat.Body2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/timeInterval"
             android:layout_marginBottom="5dp"
-            android:text="@{item.title}"/>
+            android:layout_toRightOf="@id/timeInterval"
+            android:text="@{item.title}" />
+
         <TextView
             android:id="@+id/description"
+            style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/timeInterval"
             android:layout_below="@id/title"
-            android:text="@{item.description}"/>
+            android:layout_toRightOf="@id/timeInterval"
+            android:text="@{item.description}" />
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1px"
+            android:layout_below="@id/description"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="@android:color/darker_gray"
-            android:layout_below="@id/description"/>
+            android:background="@android:color/darker_gray" />
     </RelativeLayout>
 
 </layout>

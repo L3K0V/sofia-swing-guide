@@ -63,17 +63,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_feed) {
-            replaceFragment(new FeedFragment(), FeedFragment.TAG, false);
+            replaceFragment(new FeedFragment(), FeedFragment.TAG, true);
         } else if (id == R.id.nav_teachers) {
-            replaceFragment(new TeachersFragment(), TeachersFragment.TAG, false);
+            replaceFragment(new TeachersFragment(), TeachersFragment.TAG, true);
         } else if (id == R.id.nav_parties) {
-            replaceFragment(new PartiesFragment(), PartiesFragment.TAG, false);
+            replaceFragment(new PartiesFragment(), PartiesFragment.TAG, true);
         } else if (id == R.id.nav_schedule) {
-            replaceFragment(new ScheduleFragment(), ScheduleFragment.TAG, false);
+            replaceFragment(new ScheduleFragment(), ScheduleFragment.TAG, true);
         } else if (id == R.id.nav_competitions) {
-            replaceFragment(new CompetitionsFragment(), CompetitionsFragment.TAG, false);
+            replaceFragment(new CompetitionsFragment(), CompetitionsFragment.TAG, true);
         } else if (id == R.id.nav_contact) {
-            replaceFragment(new ContactsFragment(), ContactsFragment.TAG, false);
+            replaceFragment(new ContactsFragment(), ContactsFragment.TAG, true);
         } else if (id == R.id.nav_places) {
             startActivity(new Intent(this, GuideActivity.class));
         }

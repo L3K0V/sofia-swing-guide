@@ -2,6 +2,7 @@ package bg.lindyhop.sofiaswingfest.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -19,8 +20,6 @@ public class ScheduleFragment extends Fragment {
 
     public static final String TAG = "ScheduleFragment";
 
-    private TabLayout tabs;
-    private ViewPager schedulePager;
     private SchedulePagerAdapter adapter;
 
     @Nullable
@@ -28,8 +27,11 @@ public class ScheduleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_schedule, container, false);
 
-        tabs = (TabLayout) view.findViewById(R.id.tabs);
-        schedulePager = (ViewPager) view.findViewById(R.id.schedulePager);
+        final AppBarLayout collapsing = (AppBarLayout) getActivity().findViewById(R.id.app_bar);
+        collapsing.setExpanded(false);
+
+        TabLayout tabs = (TabLayout) view.findViewById(R.id.tabs);
+        ViewPager schedulePager = (ViewPager) view.findViewById(R.id.schedulePager);
 
         adapter = new SchedulePagerAdapter(getFragmentManager());
 
