@@ -2,9 +2,6 @@ package bg.lindyhop.sofiaswingfest.adapters;
 
 import android.content.Context;
 import android.databinding.BindingAdapter;
-import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
-import android.support.v4.content.ContextCompat;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Callback;

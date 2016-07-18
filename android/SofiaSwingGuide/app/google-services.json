@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "652863699907",
+    "firebase_url": "https://sofia-swing-festival.firebaseio.com",
+    "project_id": "sofia-swing-festival",
+    "storage_bucket": "sofia-swing-festival.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652863699907:android:2ab1041562176fc0",
+        "android_client_info": {
+          "package_name": "bg.lindyhop.sofiaswingfest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "652863699907-af8onojb82pkdl2k1dmmbut9jni9ir1a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZBwYg8h_EHwIvYBCBzuXE_QbA0EgVYto"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
