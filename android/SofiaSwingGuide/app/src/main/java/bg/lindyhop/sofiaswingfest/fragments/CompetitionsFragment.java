@@ -12,11 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import bg.lindyhop.entities.Competition;
-import bg.lindyhop.entities.Teacher;
 import bg.lindyhop.sofiaswingfest.R;
 import bg.lindyhop.sofiaswingfest.adapters.CompetitionsAdapter;
 
@@ -55,27 +53,23 @@ public class CompetitionsFragment extends Fragment {
         Competition openJnJ = new Competition();
         openJnJ.setName(getResources().getString(R.string.open_jnj));
         openJnJ.setDescription(getResources().getString(R.string.open_jnj_description));
-        openJnJ.setResDrawable(R.drawable.marcos);
 
         Competition advancedJnJ = new Competition();
         advancedJnJ.setName(getResources().getString(R.string.advanced_jnj));
         advancedJnJ.setDescription(getResources().getString(R.string.advanced_jnj_description));
-        advancedJnJ.setResDrawable(R.drawable.petr_pavli);
 
         Competition swingOutDropOut = new Competition();
         swingOutDropOut.setName(getResources().getString(R.string.swing_out_drop_out));
         swingOutDropOut.setDescription(getResources().getString(R.string.swing_out_drop_out_description));
-        swingOutDropOut.setResDrawable(R.drawable.marcos);
 
-        Competition oscarsShowDown = new Competition();
-        oscarsShowDown.setName(getResources().getString(R.string.oscars_show_down));
-        oscarsShowDown.setDescription(getResources().getString(R.string.oscars_showdown_description));
-        oscarsShowDown.setResDrawable(R.drawable.petr_pavli);
+        Competition strictly = new Competition();
+        strictly.setName(getResources().getString(R.string.strictly));
+        strictly.setDescription(getResources().getString(R.string.strictly_description));
 
         competitions.add(openJnJ);
         competitions.add(advancedJnJ);
         competitions.add(swingOutDropOut);
-        competitions.add(oscarsShowDown);
+        competitions.add(strictly);
 
         adapter = new CompetitionsAdapter(competitions);
 

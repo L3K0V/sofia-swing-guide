@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sofia Swing Guide</string>
+    <string name="app_name">SSDF</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -107,23 +107,18 @@
     <string name="open_jnj">Open Jack n Jill</string>
     <string name="advanced_jnj">Advanced Jack n Jill</string>
     <string name="swing_out_drop_out">Swing Out Drop Out</string>
-    <string name="oscars_show_down">Oscars Showdown</string>
+    <string name="strictly">Strictly Lindy</string>
 
     <string name="open_jnj_description">
-        ‘Cause you know how to do it, you know how to do it, you know how to do it, good enough for anyone!
         The classic case – swing dance with a random partner. Registrations will be handled on the spot.
         All leaders and followers sign up individually to compete in the Jack’n’Jill.
-        Registrations are limited to 30 couples.
-        Partners will be assigned at random and you will dance to different tempos with different partners.
-        The competition is open for all participants.
-        The prelims will be held on Friday night and the finals will be held on Saturday night – dancing to live music.
+        You can enter only one of the Open and Advanced Jack n Jill competitions.
     </string>
 
     <string name="advanced_jnj_description">
-        Best of the best, our advanced level dancers, will compete in a social dance competition.
-        Registrations will be handled on the spot, as the limit will be 20 couples.
-        Partners will be assigned at random and you will dance to various tempos with different partners.
-        The prelims will be held on Friday night and the finals will be held on Saturday night – dancing to live music.
+        The classic case – swing dance with a random partner. Registrations will be handled on the spot.
+        All leaders and followers sign up individually to compete in the Jack’n’Jill.
+        You can enter only one of the Open and Advanced Jack n Jill competitions.
     </string>
 
     <string name="swing_out_drop_out_description">
@@ -132,13 +127,52 @@
         The registration will be taken on the spot.
     </string>
 
-    <string name="oscars_showdown_description">
-        We believe that dancing is not only about the moves and figures – it’s about expressing yourself and your emotions.
-        Being a passionate nation, the Bulgarians embrace that and give you the chance to show us your performance skills.
-        The competition unites acting and swing dancing into one and the judge here will be the audience.
-        You will get a special task (role) that you have to incorporate into your dancing and convince
-        the crowd that you deserve an Oscar more than DiCaprio himself. Open for all participants,
-        registrations will be handled on the spot and everyone will sign up individually.
-        Registrations are limited to 10 couples. The competition will be held on the welcoming Thursday party.
+    <string name="strictly_description">
+        Here dancers have to register as couples – no change in partners throughout the competition.
+        Dancing with a partner you know and are used to, should deliver something extraordinary on the dance floor.
+        Prepare well and show us what you got!
+    </string>
+
+    <string name="alice_description">
+        We have all read/watched or at least heard of “Alice in Wonderland”. There is something really special about this heroine with her specific charm and fascinating personality. Alice Meï is probably this girl come true in the real world… but with dancing shoes.
+
+Alice started dancing at the age of 4. By the time she turned 14 she had the honor of interpreting almost every single Disney character from “Dopey” to “Tinker-Bell”. She eventually joined a national dance school for another 4 years where she practiced ballet, contemporary and jazz dance daily. Slowly burning out with these dance styles, she began to look for something new. After a few unsuccessful attempts at African dancing, flamenco, and kick boxing she eventually met her true love – Lindy Hop!
+
+Alice is definitely at her happiest when she is swingin’ it on the dance floor. You will most likely hear her giggling from the other side of the room when she is social dancing. Alice enjoys keeping her dancing simple and natural. It seems like her silliness has reached enough people since she won the “dancers choice award” at ULHS in 2006. In class, she teaches the same principals that she cherishes as a dancer and she mainly focuses on keeping things simple and in a nice rhythm.
+    </string>
+
+    <string name="william_and_maeva_description">
+        Alright. Okay. We are in love with them! Yes, seriously. If you say `William` and not continue with `and Maeva` or vise-a-versa, it is like the sentence is not complete and something is wrong. When you look at them, you see this complex of both their energies and it is working as one finished perfection. True, their story started long ago with Boogie Woogie, but they have proven that Lindy Hop suits them very well, too!
+
+A bit more than a decade ago, at the age of 14 years old, there in France, the dance floor appeared to be the magic glue that gathered them together. While putting their efforts in the Boogie Woogie, they did a great job by winning the WRRC Boogie-Woogie World Championship four times. In 2011 Lindy Hop took their attention and with their talent and creativity they successfully won quite a good number of competitions during their first year in this dance style. Of course, they have not forgotten their original passion. Nowadays, you can see William and Maeva at the biggest international swing festivals. They teach, they dance and spread the joy!
+    </string>
+
+    <string name="ryan_description">
+        Ladies, you might as well get a pen and a piece of paper so that you can have an autograph – we got a real star in here! Gentlemen, you can learn really a lot from that British one. Ryan Francois is such an exciting dancer, that it is hard to decide where to start from. He has devoted more than 30 years to all dances related to the Jazz and Swing era, including Lindy Hop, Jitterbug, Jive, Charleston, Tap, Be Bop and Blues.
+
+With such a stable experience and with many occurrences and contributions to TV shows, movies and music videos, Ryan is a great professional and always puts his soul in his work. He is popularly known for his choreography for “Strictly Come dancing” and “So You Think You Can Dance”, also  a two time winner of the U.S. Open and American Swing Dance Championships and if that is not enough –some of his best works to date are for the Broadway show “Swing”, nominated for 7 Tony Awards – including best choreography. As you can figure out, the list of other credits is long-long, so the best thing we can do is just experience his genius.
+    </string>
+
+    <string name="evgenia_description">
+        Did you know that St. Petersburg in Russia has more bridges than any city in Europe? About 800 bridges! No, this is not just a random fact. Actually one of our main teachers is from that astonishing place and she is as special as the town itself. Evgenia Salakhutdinova is such an energetic and charming lady, she is like the perfect detail for every dance floor.
+
+Through the years, she has been dancing Boogie Woogie, Charleston, Authentic jazz, West Coast Swing and Salsa. In 2002 Lindy Hop strikes again and makes another dancer fall in love with it. This is how it all started for her – enjoying social dancing. Further on she joined a performance group, taking part of different competitions, both in Russia and Europe. With the years of experience, Evgenia started to compete internationally as a part of Finnish National team in 2014 and is currently a Finnish champion in Lindy Hop and Boogie Woogie. Teaches Lindy Hop and Boogie Woogie regularly in several schools in St. Petersburg.
+    </string>
+
+    <string name="max_description">
+        Well… you know how no matter what the occasion is, there is always that one guy that everyone has noticed and in the end you are all watching with your mouth open. Yeap, this shall be Max Pitruzzella. The amazing Max!
+
+He is originally from Montpellier (France), but now he is teaching every weekend in a different city worldwide. He is passionate about sharing his understanding of all the details that create a good connection between partners and give the most energy to the Lindy Hop. He is dedicated to spread the passion of swing all over the world, pursuing Frankie Manning’s vision. Max Pitruzzella has been a strong influence in international swing dancing in the past decade. One of the world’s top competitors, Max holds countless competition titles to his name. With a powerful and distinct style, Max is known for his innovation, precision and sharpness.
+    </string>
+
+    <string name="audrey_description">
+        Who would say that dancing wasn’t her one and only path? Audrey has actually studied Fashion and Environment in Duperré School of Applied Arts. For her and our happiness, though, dancing seems to be what also truly moves her. With a joyful smile and dynamic movements, she is always ready to amaze!
+After dancing Street Jazz, Rock’n’roll and Salsa for years, she found out  Swing dance for herself in 2007. Today, Audrey is doing what she loves: teaching  Lindy Hop, Charleston and  Authentic Jazz in Paris,  she dances, performs, competes and also – coaches and makes choreographies for her solo jazz girls’ team “The Shimmy Army”. They actually won first place in their very first competition!
+    </string>
+
+    <string name="felipe_description">
+        Do you feel some kind of a Brazilian breeze passing by? Quite unusual occurrence for the Balkans, isn’t it? Oh, but yes – it is Felipe Braga! He was born in Brazil and maybe that is part of the reason he is such a passionate dancer. At some point, he was amazed by the dancing movements that Jazz music can create and ever since, he is unstoppable.
+
+His whole life path is like a recipe for reaching that current moment. Theatrical acting, playing drums, party-animator for a live music club in Brazil – these activities, quite different from each other, actually helped him a lot! He is very enthusiastic for social dancing and even if you are just watching him, you can feel how much fun it is! Felipe loves to exchange energy in the jam circles, as well as in the competitions or professional performances. Now, he lives in Munich, Germany so he can teach Lindy Hop and Authentic Jazz at Vintage Club. Also, this year you can see his name in the Herrang Dance Camp schedule. We can’t wait to meet him at our dance floor!
     </string>
 </resources>

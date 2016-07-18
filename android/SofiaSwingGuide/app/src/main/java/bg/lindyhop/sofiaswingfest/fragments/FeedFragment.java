@@ -25,9 +25,9 @@ import bg.lindyhop.events.FetchedNewPostsEvent;
 import bg.lindyhop.events.NoNewPostsEvent;
 import bg.lindyhop.jobs.FetchFeedJob;
 import bg.lindyhop.models.FeedModel;
-import bg.lindyhop.sofiaswingfest.adapters.FeedAdapter;
 import bg.lindyhop.sofiaswingfest.R;
 import bg.lindyhop.sofiaswingfest.SofiaSwingFestApplication;
+import bg.lindyhop.sofiaswingfest.adapters.FeedAdapter;
 import bg.lindyhop.utils.Prefs;
 import de.greenrobot.event.EventBus;
 

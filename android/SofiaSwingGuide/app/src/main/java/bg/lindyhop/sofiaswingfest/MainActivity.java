@@ -1,5 +1,6 @@
 package bg.lindyhop.sofiaswingfest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -9,15 +10,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import bg.lindyhop.sofiaswingfest.R;
 import bg.lindyhop.sofiaswingfest.fragments.CompetitionsFragment;
 import bg.lindyhop.sofiaswingfest.fragments.ContactClickCallbacks;
 import bg.lindyhop.sofiaswingfest.fragments.ContactsFragment;
 import bg.lindyhop.sofiaswingfest.fragments.FeedFragment;
+import bg.lindyhop.sofiaswingfest.fragments.PartiesFragment;
 import bg.lindyhop.sofiaswingfest.fragments.ScheduleFragment;
 import bg.lindyhop.sofiaswingfest.fragments.TeachersFragment;
 
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        final ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
@@ -54,28 +54,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -83,17 +61,19 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_feed) {
-            replaceFragment(new FeedFragment(), FeedFragment.TAG, false);
-        } else if (id == R.id.nav_schedule) {
-            replaceFragment(new ScheduleFragment(), ScheduleFragment.TAG, false);
+            replaceFragment(new FeedFragment(), FeedFragment.TAG, true);
         } else if (id == R.id.nav_teachers) {
-            replaceFragment(new TeachersFragment(), TeachersFragment.TAG, false);
+            replaceFragment(new TeachersFragment(), TeachersFragment.TAG, true);
         } else if (id == R.id.nav_parties) {
-
+            replaceFragment(new PartiesFragment(), PartiesFragment.TAG, true);
+        } else if (id == R.id.nav_schedule) {
+            replaceFragment(new ScheduleFragment(), ScheduleFragment.TAG, true);
         } else if (id == R.id.nav_competitions) {
-            replaceFragment(new CompetitionsFragment(), CompetitionsFragment.TAG, false);
+            replaceFragment(new CompetitionsFragment(), CompetitionsFragment.TAG, true);
         } else if (id == R.id.nav_contact) {
-            replaceFragment(new ContactsFragment(), ContactsFragment.TAG, false);
+            replaceFragment(new ContactsFragment(), ContactsFragment.TAG, true);
+        } else if (id == R.id.nav_places) {
+            startActivity(new Intent(this, GuideActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

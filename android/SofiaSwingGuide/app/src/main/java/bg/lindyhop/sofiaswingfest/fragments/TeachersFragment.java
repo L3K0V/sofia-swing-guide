@@ -5,11 +5,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridLayout;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -63,28 +61,46 @@ public class TeachersFragment extends Fragment {
 
         Teacher williamAndMaeva = new Teacher();
         williamAndMaeva.setName("William and Maeva");
-        williamAndMaeva.setDescription("The great Frenchies...");
+        williamAndMaeva.setDescription(getResources().getString(R.string.william_and_maeva_description));
         williamAndMaeva.setResDrawable(R.drawable.william_maeva);
 
-        Teacher petrAndPavli = new Teacher();
-        petrAndPavli.setName("Petr & Pavli");
-        petrAndPavli.setDescription("With style and rhythm");
-        petrAndPavli.setResDrawable(R.drawable.petr_pavli);
+        Teacher alice = new Teacher();
+        alice.setName("Alice Meï");
+        alice.setDescription(getResources().getString(R.string.alice_description));
+        alice.setResDrawable(R.drawable.alice);
 
-        Teacher daxAndSarah = new Teacher();
-        daxAndSarah.setName("Dax & Sarah");
-        daxAndSarah.setDescription("Perfect teaching.");
-        daxAndSarah.setResDrawable(R.drawable.dax_sarah);
+        Teacher felipe = new Teacher();
+        felipe.setName("Felipe Braga");
+        felipe.setDescription(getResources().getString(R.string.felipe_description));
+        felipe.setResDrawable(R.drawable.felipe);
 
-        Teacher marcos = new Teacher();
-        marcos.setName("Marcos");
-        marcos.setDescription("Inspiration");
-        marcos.setResDrawable(R.drawable.marcos);
+        Teacher ryan = new Teacher();
+        ryan.setName("Ryan Francois");
+        ryan.setDescription(getResources().getString(R.string.ryan_description));
+        ryan.setResDrawable(R.drawable.ryan);
+
+        Teacher evgenya = new Teacher();
+        evgenya.setName("Evgenia Salakhutdinova");
+        evgenya.setDescription(getResources().getString(R.string.evgenia_description));
+        evgenya.setResDrawable(R.drawable.evgenia);
+
+        Teacher max = new Teacher();
+        max.setName("Max Pitruzzella");
+        max.setDescription(getResources().getString(R.string.max_description));
+        max.setResDrawable(R.drawable.max);
+
+        Teacher audrey = new Teacher();
+        audrey.setName("Audrey da Sois");
+        audrey.setDescription(getResources().getString(R.string.audrey_description));
+        audrey.setResDrawable(R.drawable.audrey);
 
         teachers.add(williamAndMaeva);
-        teachers.add(petrAndPavli);
-        teachers.add(daxAndSarah);
-        teachers.add(marcos);
+        teachers.add(alice);
+        teachers.add(felipe);
+        teachers.add(ryan);
+        teachers.add(evgenya);
+        teachers.add(max);
+        teachers.add(audrey);
 
         Collections.shuffle(teachers);
 

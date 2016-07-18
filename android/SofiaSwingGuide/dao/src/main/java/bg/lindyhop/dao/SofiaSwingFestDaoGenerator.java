@@ -52,6 +52,13 @@ public class SofiaSwingFestDaoGenerator extends DaoGenerator {
         Property feedId = feedUrl.addLongProperty("feedId").getProperty();
         feedUrl.addToOne(feed, feedId, "urls");
 
+        Entity guide = schema.addEntity("Guide");
+        guide.addStringProperty("type");
+        guide.addStringProperty("geo");
+
+        Property guideEventId = guide.addLongProperty("eventId").getProperty();
+        guide.addToOne(event, guideEventId);
+
         try {
             new DaoGenerator().generateAll(schema, "service/src-gen/main/java", "service/src/main/java", null);
         } catch (Exception e) {

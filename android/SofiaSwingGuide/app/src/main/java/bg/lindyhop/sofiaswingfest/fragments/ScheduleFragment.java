@@ -2,6 +2,7 @@ package bg.lindyhop.sofiaswingfest.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -19,8 +20,6 @@ public class ScheduleFragment extends Fragment {
 
     public static final String TAG = "ScheduleFragment";
 
-    private TabLayout tabs;
-    private ViewPager schedulePager;
     private SchedulePagerAdapter adapter;
 
     @Nullable
@@ -28,15 +27,19 @@ public class ScheduleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_schedule, container, false);
 
-        tabs = (TabLayout) view.findViewById(R.id.tabs);
-        schedulePager = (ViewPager) view.findViewById(R.id.schedulePager);
+        final AppBarLayout collapsing = (AppBarLayout) getActivity().findViewById(R.id.app_bar);
+        collapsing.setExpanded(false);
+
+        TabLayout tabs = (TabLayout) view.findViewById(R.id.tabs);
+        ViewPager schedulePager = (ViewPager) view.findViewById(R.id.schedulePager);
 
         adapter = new SchedulePagerAdapter(getFragmentManager());
 
         addFragments();
 
         schedulePager.setAdapter(adapter);
-        tabs.setTabsFromPagerAdapter(adapter);
+
+        tabs.setupWithViewPager(schedulePager);
 
         return view;
     }
@@ -48,23 +51,35 @@ public class ScheduleFragment extends Fragment {
         page1.setArguments(args);
 
         Bundle args2 = new Bundle();
-        args2.putString(SchedulePageFragment.PAGE_TITLE, "Int-Adv");
+        args2.putString(SchedulePageFragment.PAGE_TITLE, "Int-Adv-1");
         SchedulePageFragment page2 = new SchedulePageFragment();
         page2.setArguments(args2);
 
         Bundle args3 = new Bundle();
-        args3.putString(SchedulePageFragment.PAGE_TITLE, "Adv");
+        args3.putString(SchedulePageFragment.PAGE_TITLE, "Int-Adv-2");
         SchedulePageFragment page3 = new SchedulePageFragment();
-        page1.setArguments(args3);
+        page3.setArguments(args3);
 
         Bundle args4 = new Bundle();
-        args4.putString(SchedulePageFragment.PAGE_TITLE, "Inv");
+        args4.putString(SchedulePageFragment.PAGE_TITLE, "Adv");
         SchedulePageFragment page4 = new SchedulePageFragment();
-        page2.setArguments(args4);
+        page4.setArguments(args4);
+
+        Bundle args5 = new Bundle();
+        args5.putString(SchedulePageFragment.PAGE_TITLE, "Adv+");
+        SchedulePageFragment page5 = new SchedulePageFragment();
+        page5.setArguments(args5);
+
+        Bundle args6 = new Bundle();
+        args6.putString(SchedulePageFragment.PAGE_TITLE, "Inv");
+        SchedulePageFragment page6 = new SchedulePageFragment();
+        page6.setArguments(args6);
 
         adapter.addFragment(page1, "Int");
-        adapter.addFragment(page2, "Int-Adv");
-        adapter.addFragment(page3, "Adv");
-        adapter.addFragment(page4, "Inv");
+        adapter.addFragment(page2, "IA-1");
+        adapter.addFragment(page3, "IA-2");
+        adapter.addFragment(page4, "Adv");
+        adapter.addFragment(page5, "Adv+");
+        adapter.addFragment(page6, "Inv");
     }
 }

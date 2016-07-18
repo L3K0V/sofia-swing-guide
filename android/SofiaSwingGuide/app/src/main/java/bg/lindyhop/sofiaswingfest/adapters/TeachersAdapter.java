@@ -23,6 +23,7 @@ public class TeachersAdapter extends RecyclerView.Adapter<TeachersAdapter.ViewHo
 
     public TeachersAdapter(List<Teacher> teachers) {
         this.teachers = teachers;
+        setHasStableIds(true);
     }
 
     @Override

@@ -27,6 +27,16 @@ public class FeedItem implements Parcelable {
     private String title;
     private String text;
 
+    /** Used to resolve relations */
+    private transient DaoSession daoSession;
+
+    /** Used for active entity operations. */
+    private transient FeedItemDao myDao;
+
+    private Long event__resolvedKey;
+
+
+    // KEEP FIELDS - put your custom fields here
     @SerializedName("created_at")
     private java.util.Date createdAt;
 
@@ -39,17 +49,7 @@ public class FeedItem implements Parcelable {
     @SerializedName("event")
     private Long eventId;
 
-    /** Used to resolve relations */
-    private transient DaoSession daoSession;
-
-    /** Used for active entity operations. */
-    private transient FeedItemDao myDao;
-
     private transient Event event;
-    private Long event__resolvedKey;
-
-
-    // KEEP FIELDS - put your custom fields here
     // KEEP FIELDS END
 
     public FeedItem() {
