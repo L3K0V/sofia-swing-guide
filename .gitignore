@@ -228,3 +228,5 @@ $RECYCLE.BIN/
 *.lnk
 
 server/db.sqlite3
+
+android/SofiaSwingGuide/service/gradle.properties
