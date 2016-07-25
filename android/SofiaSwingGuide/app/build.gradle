@@ -32,16 +32,23 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':service')
+
+    // Common
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:design:24.1.1'
-    compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.github.ozodrukh:CircularReveal:1.3.1'
-    compile 'com.google.maps.android:android-maps-utils:0.4+'
+    compile 'com.android.support:cardview-v7:24.1.1'
+    compile 'com.android.support:palette-v7:24.1.1'
+
+    // Play services
     compile 'com.google.android.gms:play-services-maps:9.2.1'
     compile 'com.google.firebase:firebase-messaging:9.2.0'
     compile 'com.google.android.gms:play-services-location:9.2.1'
-    compile 'com.android.support:cardview-v7:24.1.1'
-    compile 'com.android.support:palette-v7:24.1.1'
+
+    // Utils
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.github.ozodrukh:CircularReveal:1.3.1'
+    compile 'com.google.maps.android:android-maps-utils:0.4+'
+    compile 'com.github.alamkanak:android-week-view:1.2.6'
 }
 
 apply plugin: 'com.google.gms.google-services'
