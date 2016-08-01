@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import bg.lindyhop.entities.Teacher;
+import bg.lindyhop.sofiaswingfest.BR;
 import bg.lindyhop.sofiaswingfest.R;
 import bg.lindyhop.sofiaswingfest.TeachersItemActivity;
 import bg.lindyhop.sofiaswingfest.databinding.TeachersItemBinding;
@@ -23,20 +24,18 @@ public class TeachersAdapter extends RecyclerView.Adapter<TeachersAdapter.ViewHo
 
     public TeachersAdapter(List<Teacher> teachers) {
         this.teachers = teachers;
-        setHasStableIds(true);
     }
 
     @Override
     public TeachersAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         final View viewItem = LayoutInflater.from(parent.getContext()).inflate(R.layout.teachers_item, parent, false);
-
         return new ViewHolder(viewItem);
     }
 
     @Override
     public void onBindViewHolder(TeachersAdapter.ViewHolder holder, int position) {
-        holder.getBinding().setItem(teachers.get(position));
+        final Teacher t = teachers.get(position);
+        holder.getBinding().setVariable(BR.item, t);
         holder.getBinding().executePendingBindings();
     }
 
@@ -51,9 +50,7 @@ public class TeachersAdapter extends RecyclerView.Adapter<TeachersAdapter.ViewHo
 
         public ViewHolder(View viewItem) {
             super(viewItem);
-
             binding = DataBindingUtil.bind(viewItem);
-
             binding.card.setOnClickListener(this);
         }
 

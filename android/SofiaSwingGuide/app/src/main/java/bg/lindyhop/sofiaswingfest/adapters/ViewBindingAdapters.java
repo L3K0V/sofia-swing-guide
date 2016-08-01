@@ -4,8 +4,11 @@ import android.content.Context;
 import android.databinding.BindingAdapter;
 import android.widget.ImageView;
 
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+import com.bumptech.glide.request.target.Target;
 
 import bg.lindyhop.sofiaswingfest.fragments.ImageLoaderCallbacks;
 
@@ -16,15 +19,24 @@ public class ViewBindingAdapters {
 
     @BindingAdapter({"coverUrl", "callback"})
     public static void setImageUrl(ImageView view, String url, final ImageLoaderCallbacks callback) {
-        Picasso.with(view.getContext()).load(url).into(view, new Callback() {
+
+        final Context context = view.getContext();
+        Glide.with(context).load(url).crossFade().listener(new RequestListener<String, GlideDrawable>() {
             @Override
-            public void onSuccess() {
-                callback.onImageReady();
+            public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                callback.onImageLoadError();
+                return false;
             }
 
             @Override
-            public void onError() {
-                callback.onImageLoadError();
+            public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                return false;
+            }
+        }).into(new GlideDrawableImageViewTarget(view) {
+            @Override
+            protected void setResource(GlideDrawable resource) {
+                super.setResource(resource);
+                callback.onImageReady();
             }
         });
     }
@@ -34,8 +46,11 @@ public class ViewBindingAdapters {
 
         final Context context = view.getContext();
 
-        Picasso.with(context)
+        Glide.with(context)
                 .load(resId)
+                .centerCrop()
+                .crossFade()
                 .into(view);
+
     }
 }
