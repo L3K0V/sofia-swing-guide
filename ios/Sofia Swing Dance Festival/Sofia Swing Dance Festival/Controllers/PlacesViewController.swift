@@ -19,11 +19,13 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let iv:UIImageView = UIImageView (image: UIImage(named: "Logo"))
-        iv.frame.size.width = 40
-        iv.frame.size.height = 40
-        iv.contentMode = .ScaleAspectFit
-        self.navigationItem.titleView = iv
+//        let iv:UIImageView = UIImageView (image: UIImage(named: "Logo"))
+//        iv.frame.size.width = 40
+//        iv.frame.size.height = 40
+//        iv.contentMode = .ScaleAspectFit
+//        self.navigationItem.titleView = iv
+        
+        self.navigationItem.title = "Swing Aout"
         
         let camera = GMSCameraPosition.cameraWithLatitude(42.6847251, longitude: 23.3189384, zoom: 15)
         mapView.camera = camera
@@ -60,7 +62,7 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate, UITable
     }
     
     var locations:[Location] = []
-    let baseURL = NSURL(string: "http://ssdf.tempest.bg")
+    let baseURL = NSURL(string: "http://swingaout.lekov.me")
     func loadLocations () {
         let manager:AFHTTPSessionManager = AFHTTPSessionManager(baseURL: baseURL)
         manager.requestSerializer.setAuthorizationHeaderFieldWithCredential(AFOAuthCredential.retrieveCredentialWithIdentifier("credential"))

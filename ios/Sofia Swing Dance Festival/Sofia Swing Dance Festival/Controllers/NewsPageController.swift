@@ -23,11 +23,13 @@ class NewsPageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let iv:UIImageView = UIImageView (image: UIImage(named: "Logo"))
-        iv.frame.size.width = 40
-        iv.frame.size.height = 40
-        iv.contentMode = .ScaleAspectFit
-        self.navigationItem.titleView = iv
+        self.navigationItem.title = "Swing Aout"
+        
+//        let iv:UIImageView = UIImageView (image: UIImage(named: "Logo"))
+//        iv.frame.size.width = 40
+//        iv.frame.size.height = 40
+//        iv.contentMode = .ScaleAspectFit
+//        self.navigationItem.titleView = iv
         
         self.titleLabel?.text = feed.title
         self.descrionLabel?.text = feed.text

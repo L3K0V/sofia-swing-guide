@@ -16,11 +16,13 @@ class ContactController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let iv:UIImageView = UIImageView (image: UIImage(named: "Logo"))
-        iv.frame.size.width = 40
-        iv.frame.size.height = 40
-        iv.contentMode = .ScaleAspectFit
-        self.navigationItem.titleView = iv
+        self.navigationItem.title = "Swing Aout"
+        
+//        let iv:UIImageView = UIImageView (image: UIImage(named: "Logo"))
+//        iv.frame.size.width = 40
+//        iv.frame.size.height = 40
+//        iv.contentMode = .ScaleAspectFit
+//        self.navigationItem.titleView = iv
         
         applyPlainShadow(view1!)
         applyPlainShadow(view2!)
@@ -35,26 +37,26 @@ class ContactController: UIViewController {
         layer.shadowRadius = 3
     }
     @IBAction func fbLH(sender: AnyObject) {
-        if let requestUrl = NSURL(string: "https://www.facebook.com/LindyHopBulgaria") {
+        if let requestUrl = NSURL(string: "https://www.facebook.com/swingaoutfestival2015/") {
             UIApplication.sharedApplication().openURL(requestUrl)
         }
     }
     @IBAction func webLH(sender: AnyObject) {
-        if let requestUrl = NSURL(string: "http://lindyhop.bg/") {
+        if let requestUrl = NSURL(string: "www.swingaout.com") {
             UIApplication.sharedApplication().openURL(requestUrl)
         }
     }
     @IBAction func phone(sender: AnyObject) {
-        if let url = NSURL(string: "tel://+359896878308") {
+        if let url = NSURL(string: "tel://+33678834569") {
             UIApplication.sharedApplication().openURL(url)
         }
     }
     @IBAction func mailLH(sender: AnyObject) {
-        let url = NSURL(string: "mailto:http://info@lindyhop.bg")
+        let url = NSURL(string: "mailto:swingaoutcontact@gmail.com")
         UIApplication.sharedApplication().openURL(url!)
     }
     @IBAction func fbSF(sender: AnyObject) {
-        if let requestUrl = NSURL(string: "https://www.facebook.com/SofiaSwing") {
+        if let requestUrl = NSURL(string: "https://www.facebook.com/events/845806628881838/") {
             UIApplication.sharedApplication().openURL(requestUrl)
         }
     }

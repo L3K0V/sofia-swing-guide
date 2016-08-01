@@ -17,54 +17,97 @@ class TeachersController: UIViewController {
     
     let padding:Float = 5
     
-    let instrNames:[String] = ["Felipe Braga", "Alice Meï", "Max Pitruzzella", "Audrey Dа Sois", "Ryan Francois", "Evgenia Salakhutdinova", "William & Maeva"]
-    let instrDescr:[String] = ["Do you feel some kind of a Brazilian breeze passing by? Quite unusual occurrence for the Balkans, isn’t it? Oh, but yes – it is Felipe Braga! He was born in Brazil and maybe that is part of the reason he is such a passionate dancer. At some point, he was amazed by the dancing movements that Jazz music can create and ever since, he is unstoppable.\n\nHis whole life path is like a recipe for reaching that current moment. Theatrical acting, playing drums, party-animator for a live music club in Brazil – these activities, quite different from each other, actually helped him a lot! He is very enthusiastic for social dancing and even if you are just watching him, you can feel how much fun it is! Felipe loves to exchange energy in the jam circles, as well as in the competitions or professional performances. Now, he lives in Munich, Germany so he can teach Lindy Hop and Authentic Jazz at Vintage Club. Also, this year you can see his name in the Herrang Dance Camp schedule. We can’t wait to meet him at our dance floor!",
-   "We have all read/watched or at least heard of “Alice in Wonderland”. There is something really special about this heroine with her specific charm and fascinating personality. Alice Meï is probably this girl come true in the real world… but with dancing shoes.\n\nAlice started dancing at the age of 4. By the time she turned 14 she had the honor of interpreting almost every single Disney character from “Dopey” to “Tinker-Bell”. She eventually joined a national dance school for another 4 years where she practiced ballet, contemporary and jazz dance daily. Slowly burning out with these dance styles, she began to look for something new. After a few unsuccessful attempts at African dancing, flamenco, and kick boxing she eventually met her true love – Lindy Hop!\n\nAlice is definitely at her happiest when she is swingin’ it on the dance floor.You will most likely hear her giggling from the other side of the room when she is social dancing. Alice enjoys keeping her dancing simple and natural. It seems like her silliness has reached enough people since she won the “dancers choice award” at ULHS in 2006. In class, she teaches the same principals that she cherishes as a dancer and she mainly focuses on keeping things simple and in a nice rhythm.",
-    "Well… you know how no matter what the occasion is, there is always that one guy that everyone has noticed and in the end you are all watching with your mouth open. Yeap, this shall be Max Pitruzzella. The amazing Max!\n\nHe is originally from Montpellier (France), but now he is teaching every weekend in a different city worldwide. He is passionate about sharing his understanding of all the details that create a good connection between partners and give the most energy to the Lindy Hop. He is dedicated to spread the passion of swing all over the world, pursuing Frankie Manning’s vision. Max Pitruzzella has been a strong influence in international swing dancing in the past decade. One of the world’s top competitors, Max holds countless competition titles to his name. With a powerful and distinct style, Max is known for his innovation, precision and sharpness.",
-    "Who would say that dancing wasn’t her one and only path? Audrey has actually studied Fashion and Environment in Duperré School of Applied Arts. For her and our happiness, though, dancing seems to be what also truly moves her. With a joyful smile and dynamic movements, she is always ready to amaze!\nAfter dancing Street Jazz, Rock’n’roll and Salsa for years, she found out  Swing dance for herself in 2007. Today, Audrey is doing what she loves: teaching  Lindy Hop, Charleston and  Authentic Jazz in Paris,  she dances, performs, competes and also – coaches and makes choreographies for her solo jazz girls’ team “The Shimmy Army”. They actually won first place in their very first competition!",
-    "Ladies, you might as well get a pen and a piece of paper so that you can have an autograph – we got a real star in here! Gentlemen, you can learn really a lot from that British one. Ryan Francois is such an exciting dancer, that it is hard to decide where to start from. He has devoted more than 30 years to all dances related to the Jazz & Swing era, including Lindy Hop, Jitterbug, Jive, Charleston, Tap, Be Bop and Blues.\n\nWith such a stable experience and with many occurrences and contributions to TV shows, movies and music videos, Ryan is a great professional and always puts his soul in his work. He is popularly known for his choreography for “Strictly Come dancing” and “So You Think You Can Dance”, also  a two time winner of the U.S. Open and American Swing Dance Championships and if that is not enough –some of his best works to date are for the Broadway show “Swing”, nominated for 7 Tony Awards – including best choreography. As you can figure out, the list of other credits is long-long, so the best thing we can do is just experience his genius.",
-    "Did you know that St. Petersburg in Russia has more bridges than any city in Europe? About 800 bridges! No, this is not just a random fact. Actually one of our main teachers is from that astonishing place and she is as special as the town itself. Evgenia Salakhutdinova is such an energetic and charming lady, she is like the perfect detail for every dance floor.\n\nThrough the years, she has been dancing Boogie Woogie, Charleston, Authentic jazz, West Coast Swing and Salsa. In 2002 Lindy Hop strikes again and makes another dancer fall in love with it. This is how it all started for her – enjoying social dancing. Further on she joined a performance group, taking part of different competitions, both in Russia and Europe. With the years of experience, Evgenia started to compete internationally as a part of Finnish National team in 2014 and is currently a Finnish champion in Lindy Hop and Boogie Woogie. Teaches Lindy Hop and Boogie Woogie regularly in several schools in St. Petersburg.",
-    "Alright. Okay. We’re in love with them! Yes, seriously. If you say ‘William’ and not continue with “and Maeva” or vise-a-versa, it is like the sentence is not complete and something is wrong. When you look at them, you see this complex of both their energies and it is working as one finished perfection. True, their story started long ago with Boogie Woogie, but they have proven that Lindy Hop suits them very well, too!\n\nA bit more than a decade ago, at the age of 14 years old, there in France, the dance floor appeared to be the magic glue that gathered them together. While putting their efforts in the Boogie Woogie, they did a great job by winning the WRRC Boogie-Woogie World Championship four times. In 2011 Lindy Hop took their attention and with their talent and creativity they successfully won quite a good number of competitions during their first year in this dance style. Of course, they haven’t forgotten their original passion. Nowadays, you can see William and Maeva at the biggest international swing festivals. They teach, they dance and spread the joy!"]
-    let instrImages:[String] = ["Felipe", "Alice", "Max", "Audrey", "Ryan", "Evgenia", "WM"]
+    let instrNames:[String] = ["Thomas",
+                               "Maeva",
+                               "Pontus",
+                               "Isabella",
+                               "Jb",
+                               "Tatiana",
+                               "Max",
+                               "Audrey",
+                               "Thorbjon",
+                               "Flora",
+                               "Miguel",
+                               "Carla",
+                               "Sondre",
+                               "Tanya",
+                               "William",
+                               "Maeva",
+                               "Oliv Wan",
+                               "Nicolas Rodriguez",
+                               "Andy Spitz"]
+    let instrDescr:[String] = ["Inédit !! Présent pour la deuxième édition de SwingAout Festival c’est avec Maéva que Thomas fera son retour. Deux professeurs très expérimentés qui vous transmettrons tout leur savoir et leurs expertise acquise depuis de nombreuses années partout dans le monde.",
+                               "Inédit !! Présent pour la deuxième édition de SwingAout Festival c’est avec Maéva que Thomas fera son retour. Deux professeurs très expérimentés qui vous transmettrons tout leur savoir et leurs expertise acquise depuis de nombreuses années partout dans le monde.",
+                               
+   "Pour la segonde fois à SwingAout, Isabella et Pontus; des personnages hors normes!! Compétiteurs, showman, ce couple très expérimenté dans toutes les danses swing partagera avec vous sa vision du Lindy Hop et du Boogie Woogie. Avec un brin d’humour et beaucoup de complicité, ces deux danseurs professionnels sauront vous amener dans leur univers de danse, de délire et de bonne humeur.",
+    "Pour la segonde fois à SwingAout, Isabella et Pontus; des personnages hors normes!! Compétiteurs, showman, ce couple très expérimenté dans toutes les danses swing partagera avec vous sa vision du Lindy Hop et du Boogie Woogie. Avec un brin d’humour et beaucoup de complicité, ces deux danseurs professionnels sauront vous amener dans leur univers de danse, de délire et de bonne humeur.",
+    
+    "Travailleurs acharnés avant tout, Jean Batiste et Tatiana ne lésinent pas sur les heures d’entraînement et d’enseignement. Toujours à la recherche de la perfection, ils s’activent depuis plusieurs années à développer la scène swing Montpelliéraine. Avec la bonne humeur de JB et le charme de Tatiana, leurs cours deviennent très vite un endroit privilégié dans lequel on ne veut plus sortir.",
+    "Travailleurs acharnés avant tout, Jean Batiste et Tatiana ne lésinent pas sur les heures d’entraînement et d’enseignement. Toujours à la recherche de la perfection, ils s’activent depuis plusieurs années à développer la scène swing Montpelliéraine. Avec la bonne humeur de JB et le charme de Tatiana, leurs cours deviennent très vite un endroit privilégié dans lequel on ne veut plus sortir.",
+    
+    "On ne présente plus Max Pittruzella, son charisme, son talent influence depuis de nombreuses années bon nombre de danseurs dans le monde entier.\n Très présente dans les soirées et événements internationaux de Swing, Audrey à pour particularité d’être pleine d’énergie et de bonne humeur. Audrey est également compétitrice : elle s’est faite remarquer à plusieurs reprises en atteignant le podium ou même la 1ère place, dans des compétitions européennes de Lindy Hop ou de solo Charleston.",
+    "On ne présente plus Max Pittruzella, son charisme, son talent influence depuis de nombreuses années bon nombre de danseurs dans le monde entier.\n Très présente dans les soirées et événements internationaux de Swing, Audrey à pour particularité d’être pleine d’énergie et de bonne humeur. Audrey est également compétitrice : elle s’est faite remarquer à plusieurs reprises en atteignant le podium ou même la 1ère place, dans des compétitions européennes de Lindy Hop ou de solo Charleston.",
+    
+    "Nos champions de Boogie Woogie!! Dernièrement sacré champion du monde de Boogie ce couple ne cesse de progresser et de relever les challenges.\n Des compétiteurs exceptionnels, des  professeurs expérimentés, c’est avec beaucoup de gentillesse et d’humilité que Torbjorn et Flora combleront toutes vos attentes.",
+    "Nos champions de Boogie Woogie!! Dernièrement sacré champion du monde de Boogie ce couple ne cesse de progresser et de relever les challenges.\n Des compétiteurs exceptionnels, des  professeurs expérimentés, c’est avec beaucoup de gentillesse et d’humilité que Torbjorn et Flora combleront toutes vos attentes.",
+    
+    "Très bon danseur social, il a déjà remporté en cette année 2015, plusieurs Jack et Jill comme Barswingona, Gastroswing et Small Paradise. Au cours des 6 dernières années, il a participé à plus de 30 ateliers dans le monde entier comme ILHC, Herrang, Swing Août etc… afin qu’il puisse apprendre des meilleurs danseurs du monde. Il est professeur de Lindy Hop, Jazz, Routines et Acrobaties.\n Carla Saz, une passionnée de la danse est non seulement une enseignante de Lindy Hop, mais aussi une professeur de musique.\n Être presents dans leurs classes, vous donnera la possibilité d’absorber leur style unique et leur technique raffinée.",
+    "Très bon danseur social, il a déjà remporté en cette année 2015, plusieurs Jack et Jill comme Barswingona, Gastroswing et Small Paradise. Au cours des 6 dernières années, il a participé à plus de 30 ateliers dans le monde entier comme ILHC, Herrang, Swing Août etc… afin qu’il puisse apprendre des meilleurs danseurs du monde. Il est professeur de Lindy Hop, Jazz, Routines et Acrobaties.\n Carla Saz, une passionnée de la danse est non seulement une enseignante de Lindy Hop, mais aussi une professeur de musique.\n Être presents dans leurs classes, vous donnera la possibilité d’absorber leur style unique et leur technique raffinée.",
+    
+    "Tanya started dancing at the age of 4 with classing choreography, later switching to acrobatic rock-n-roll. School years added more boogie-woogie, ballet jazz and contemporary to her life. She started cometing internationaly in 2011 and in 2013 won 4 World Cups in boogie-woogie. Now she is teachign boogie-woogie internationally.  Sondre has been dancing swing since he was 6. After winning World Championship in boogie-woogie juniors in 2011 he started also teaching. At the moment he enriches his dancing experience with lindy-hop and charleston.",
+    "Tanya started dancing at the age of 4 with classing choreography, later switching to acrobatic rock-n-roll. School years added more boogie-woogie, ballet jazz and contemporary to her life. She started cometing internationaly in 2011 and in 2013 won 4 World Cups in boogie-woogie. Now she is teachign boogie-woogie internationally.  Sondre has been dancing swing since he was 6. After winning World Championship in boogie-woogie juniors in 2011 he started also teaching. At the moment he enriches his dancing experience with lindy-hop and charleston.",
+    
+    "William et Maéva sont tous deux originaires du sud de la France.  Ils se sont rencontrés à l’âge de 14 ans sur les planchers de compétitions.  Après plusieurs années consacrées au Boogie Woogie où ils ont été sacrés champions du monde WRRC à 4 reprises (2005, 2008, 2009 et 2010)\n Ils enseignent désormais dans les plus grands événements swing mondiaux.  Ils ont la particularité de rester eux-mêmes en toutes circonstances et d’assumer leur identité.\n Ces petits danseurs par la taille seront vous transporter dans leur univers plein de talents, d’humour, de génie et de générosité qu’ils s’empressent de partager avec le plus grand nombre de personnes.",
+    "William et Maéva sont tous deux originaires du sud de la France.  Ils se sont rencontrés à l’âge de 14 ans sur les planchers de compétitions.  Après plusieurs années consacrées au Boogie Woogie où ils ont été sacrés champions du monde WRRC à 4 reprises (2005, 2008, 2009 et 2010)\n Ils enseignent désormais dans les plus grands événements swing mondiaux.  Ils ont la particularité de rester eux-mêmes en toutes circonstances et d’assumer leur identité.\n Ces petits danseurs par la taille seront vous transporter dans leur univers plein de talents, d’humour, de génie et de générosité qu’ils s’empressent de partager avec le plus grand nombre de personnes.",
+    
+    "Oliv Wan a appris à danser à Montpellier en 2006 avec Tommy Blacharz chez les Swingjammerz dont il fait toujours parti à ce jour.\n En 2009 il lance au Japon le projet I Charleston the World sur Utube qui a connu un essor considérable par la suite.\n De très nombreuses villes sont aujourd’hui représentées comme New York, Paris, Berlin…\n Admirateur des danseurs anciens, son inspiration provient d’artistes comme Frankie Manning, Al Minns, John Bubbles et les Nicholas Brothers.Son enseignement s’articule autour de fondamentaux solides de rythme et de fluidité tout en en accordant une part importante à la musicalité.",
+    
+    "Amoureux du jazz swing des années 30 et 40 et DJ à l’occasion, tout cela le mène naturellement à la découverte du Lindy Hop, puis du Balboa en 2002 à Herrang (Suède) où il rencontrera Frankie Manning. Dès sa première année de compétition, en Lindy Hop, il se classe sur les podiums avec un titre de vice-champion de France en 2003 et une place de demi-finaliste des championnats du monde en 2004.",
+    
+    "Sa vision de la danse swing est largement basé sur les réactions naturelles du corps, visant à optimiser son utilisation dans le mouvement ainsi que l’énergie créée au sein du couple.\n Son style unique et distinctif provient de l’inspiration de diverses sources telles que les danses de rue, danse traditionnelle, et de danseurs comme Gene Kelly, Fred Astaire …Son enseignement se concentre sur le développement de la connexion, la légèreté du mouvement dans la danse, la connaissance et la maîtrise du corps, afin de créer un style de danse unique à chacun."]
+    
+    
+    let instrImages:[String] = ["thomas", "maeva", "pontus", "isabella", "JB", "Tat", "Max", "audrey", "Thorbjorn", "Flora", "Miguel", "carla", "sondre", "tanya", "william", "maeva", "oliv", "nico", "andy"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let iv:UIImageView = UIImageView (image: UIImage(named: "Logo"))
-        iv.frame.size.width = 40
-        iv.frame.size.height = 40
-        iv.contentMode = .ScaleAspectFit
-        self.navigationItem.titleView = iv
+//        let iv:UIImageView = UIImageView (image: UIImage(named: "Logo"))
+//        iv.frame.size.width = 40
+//        iv.frame.size.height = 40
+//        iv.contentMode = .ScaleAspectFit
+//        self.navigationItem.titleView = iv
+
+        self.navigationItem.title = "Swing Aout"
         
-        topButtonView = UIView(frame: CGRectMake(CGFloat(padding)+5, CGFloat(padding), view.frame.width-CGFloat(2*padding), 204))
-        topButtonView?.backgroundColor = UIColor.whiteColor()
-        scroll!.addSubview(topButtonView!)
+//        topButtonView = UIView(frame: CGRectMake(CGFloat(padding)+5, CGFloat(padding), view.frame.width-CGFloat(2*padding), 204))
+//        topButtonView?.backgroundColor = UIColor.whiteColor()
+//        scroll!.addSubview(topButtonView!)
+//        
+//        let imgContainer:UIView = UIView (frame: CGRectMake(2, 2, (topButtonView?.frame.width)!-4, 200))
+//        imgContainer.clipsToBounds = true
+//        topButtonView?.addSubview(imgContainer)
+//        
+//        let topImg:UIImage = UIImage (named: "WM")!
+//        topButtonImage = UIImageView (image: topImg)
+//        var f = topButtonImage?.frame
+//        let r = (view.frame.width-CGFloat(2*padding) - 4)/(f?.size.width)!
+//        f?.size.width = view.frame.width-CGFloat(2*padding) - 4
+//        f?.size.height = r*(f?.size.height)!
+//        f?.origin.x = 0
+//        f?.origin.y = 0
+//        topButtonImage?.frame = f!
+//        imgContainer.addSubview(topButtonImage!)
+//        
+//        topButton = UIButton (frame: topButtonView!.frame)
+//        topButton?.addTarget(self, action: #selector(gotoInstructorPage), forControlEvents: .TouchUpInside)
+//        topButton?.tag = 6
+//        scroll?.addSubview(topButton!)
         
-        let imgContainer:UIView = UIView (frame: CGRectMake(2, 2, (topButtonView?.frame.width)!-4, 200))
-        imgContainer.clipsToBounds = true
-        topButtonView?.addSubview(imgContainer)
+//        applyPlainShadow(topButtonView!)
         
-        let topImg:UIImage = UIImage (named: "WM")!
-        topButtonImage = UIImageView (image: topImg)
-        var f = topButtonImage?.frame
-        let r = (view.frame.width-CGFloat(2*padding) - 4)/(f?.size.width)!
-        f?.size.width = view.frame.width-CGFloat(2*padding) - 4
-        f?.size.height = r*(f?.size.height)!
-        f?.origin.x = 0
-        f?.origin.y = 0
-        topButtonImage?.frame = f!
-        imgContainer.addSubview(topButtonImage!)
-        
-        topButton = UIButton (frame: topButtonView!.frame)
-        topButton?.addTarget(self, action: #selector(gotoInstructorPage), forControlEvents: .TouchUpInside)
-        topButton?.tag = 6
-        scroll?.addSubview(topButton!)
-        
-        applyPlainShadow(topButtonView!)
-        
-        let tc:Int = 6
         var i:Int = 0
-        while i < tc {
+        while i < instrNames.count {
             addView(i)
             
             i += 1
@@ -74,7 +117,7 @@ class TeachersController: UIViewController {
     func addView (i:Int) {
         let w = (Float(view.frame.size.width) - padding*3)/2
         let x = padding + Float(i%2) * (w+padding) + 5
-        var y = Float((topButtonView?.frame.maxY)!)
+        var y = (padding)//Float((topButtonView?.frame.maxY)!)
         y = y + padding + floor (Float(i/2)) * (w+padding)
         let v:UIView = UIView (frame: CGRectMake(CGFloat(x), CGFloat(y), CGFloat(w), CGFloat(w)))
         

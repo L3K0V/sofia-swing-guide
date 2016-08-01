@@ -11,7 +11,7 @@ import AFOAuth2Manager
 
 class NewsController: UITableViewController {
 
-    let baseURL = NSURL(string: "http://ssdf.tempest.bg")
+    let baseURL = NSURL(string: "http://swingaout.lekov.me")
     var credentianls:AFOAuthCredential = AFOAuthCredential()
     var alert:UIAlertController = UIAlertController()
     
@@ -28,18 +28,22 @@ class NewsController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         
-        let iv:UIImageView = UIImageView (image: UIImage(named: "Logo"))
-        iv.frame.size.width = 40
-        iv.frame.size.height = 40
-        iv.contentMode = .ScaleAspectFit
-        self.navigationItem.titleView = iv
+//        let iv:UIImageView = UIImageView (image: UIImage(named: "Logo"))
+//        iv.frame.size.width = 40
+//        iv.frame.size.height = 40
+//        iv.contentMode = .ScaleAspectFit
+//        self.navigationItem.titleView = iv
+
+        
+        
+        self.navigationItem.title = "Swing Aout"
         
         alert = UIAlertController(title: nil, message: "Loading...", preferredStyle: .Alert)
         presentViewController(alert, animated: true, completion: nil)
         
         let manager:AFOAuth2Manager = AFOAuth2Manager(baseURL: baseURL!,
-                                      clientID: "RUjQF9EH2wnDjcVFGEQ2AiWpKjELGyvChvUCA7Xc",
-                                      secret: "JyS5oZecZYJEQOHJjboEJjsdoxNK1ORzA883kLYQyWO8EQycMByStASmKEPXjhujMsj4wPLjyruKhrZQxrdVSU25b7dHECp41ro5uIlzSeUqY9zNAAQvSbHfNbOJz1E2")
+                                      clientID: "yT7aeVcUkjGTgq2sh2XEM2Q5myiUpbPxhQk1C0eR",
+                                      secret: "vF02VqGHQJfwvnhSq0UPSwBS8GgwHzxcV5qsBwohLjYRygVlMAJyRMyicgvrzmfPKdNbsrbVVFP7Lya7zCYjzYfLSam2b18e4tpqPtRjFsUMQT4KRQGbtHuqRIVHwGDT")
         
         let parameters:[String:String] = ["grant_type": "client_credentials"]
         manager.authenticateUsingOAuthWithURLString("/oauth2/token/",

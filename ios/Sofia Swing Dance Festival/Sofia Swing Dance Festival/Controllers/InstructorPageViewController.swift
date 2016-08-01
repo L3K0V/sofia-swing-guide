@@ -22,11 +22,13 @@ class InstructorPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let iv:UIImageView = UIImageView (image: UIImage(named: "Logo"))
-        iv.frame.size.width = 40
-        iv.frame.size.height = 40
-        iv.contentMode = .ScaleAspectFit
-        self.navigationItem.titleView = iv
+//        let iv:UIImageView = UIImageView (image: UIImage(named: "Logo"))
+//        iv.frame.size.width = 40
+//        iv.frame.size.height = 40
+//        iv.contentMode = .ScaleAspectFit
+//        self.navigationItem.titleView = iv
+
+        self.navigationItem.title = "Swing Aout"
         
         self.titleLabel?.text = titleText
         self.descrionLabel?.text = descriptionText
