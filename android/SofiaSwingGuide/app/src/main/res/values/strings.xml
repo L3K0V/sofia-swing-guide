@@ -5,104 +5,14 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-
-    <string name="large_text">
-        "Material is the metaphor.\n\n"
-
-        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
-        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
-        "technologically advanced and open to imagination and magic.\n"
-        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
-        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
-        "flexibility of the material creates new affordances that supercede those in the physical "
-        "world, without breaking the rules of physics.\n"
-        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
-        "interact, and exist in space and in relation to each other. Realistic lighting shows "
-        "seams, divides space, and indicates moving parts.\n\n"
-
-        "Bold, graphic, intentional.\n\n"
-
-        "The foundational elements of print based design typography, grids, space, scale, color, "
-        "and use of imagery guide visual treatments. These elements do far more than please the "
-        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
-        "imagery, large scale typography, and intentional white space create a bold and graphic "
-        "interface that immerse the user in the experience.\n"
-        "An emphasis on user actions makes core functionality immediately apparent and provides "
-        "waypoints for the user.\n\n"
-
-        "Motion provides meaning.\n\n"
-
-        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
-        "inflection points that initiate motion, transforming the whole design.\n"
-        "All action takes place in a single environment. Objects are presented to the user without "
-        "breaking the continuity of experience even as they transform and reorganize.\n"
-        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
-        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
-
-        "3D world.\n\n"
-
-        "The material environment is a 3D space, which means all objects have x, y, and z "
-        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
-        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
-        "position along the z-axis and has a standard 1dp thickness.\n"
-        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
-        "emulated by manipulating the y-axis.\n\n"
-
-        "Light and shadow.\n\n"
-
-        "Within the material environment, virtual lights illuminate the scene. Key lights create "
-        "directional shadows, while ambient light creates soft shadows from all angles.\n"
-        "Shadows in the material environment are cast by these two light sources. In Android "
-        "development, shadows occur when light sources are blocked by sheets of material at "
-        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
-        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
-
-        "Resting elevation.\n\n"
-
-        "All material objects, regardless of size, have a resting elevation, or default elevation "
-        "that does not change. If an object changes elevation, it should return to its resting "
-        "elevation as soon as possible.\n\n"
-
-        "Component elevations.\n\n"
-
-        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
-        "does not vary from 6dp in one app to 16dp in another app).\n"
-        "Components may have different resting elevations across platforms, depending on the depth "
-        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
-
-        "Responsive elevation and dynamic elevation offsets.\n\n"
-
-        "Some component types have responsive elevation, meaning they change elevation in response "
-        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
-        "changes are consistently implemented using dynamic elevation offsets.\n"
-        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
-        "to the component’s resting state. They ensure that elevation changes are consistent "
-        "across actions and component types. For example, all components that lift on press have "
-        "the same elevation change relative to their resting elevation.\n"
-        "Once the input event is completed or cancelled, the component will return to its resting "
-        "elevation.\n\n"
-
-        "Avoiding elevation interference.\n\n"
-
-        "Components with responsive elevations may encounter other components as they move between "
-        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
-        "through other material, components avoid interfering with one another any number of ways, "
-        "whether on a per component basis or using the entire app layout.\n"
-        "On a component level, components can move or be removed before they cause interference. "
-        "For example, a floating action button (FAB) can disappear or move off screen before a "
-        "user picks up a card, or it can move if a snackbar appears.\n"
-        "On the layout level, design your app layout to minimize opportunities for interference. "
-        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
-        "when a user tries to pick up one of cards.\n\n"
-    </string>
     <string name="title_activity_feed_item">Feed Details</string>
 
-    <string name="contacts_lindyhop_facebook">https://www.facebook.com/LindyHopBulgaria/</string>
-    <string name="contacts_ssdf_facebook">https://www.facebook.com/SofiaSwing/</string>
-    <string name="contacts_lindyhop_web">http://www.lindyhop.bg/</string>
-    <string name="contacts_ssdf_web">http://sofiaswing.com/</string>
-    <string name="contacts_lindyhop_email">lindyhop@mail.bg</string>
-    <string name="contacts_ssdf_email">lindyhop@mail.bg</string>
+    <string name="contacts_lindyhop_facebook">https://www.facebook.com/events/845806628881838/</string>
+    <string name="contacts_ssdf_facebook">https://www.facebook.com/swingaoutfestival2015/</string>
+    <string name="contacts_lindyhop_web">http://www.swingaout.com</string>
+    <string name="contacts_ssdf_web">http://www.swingaout.com</string>
+    <string name="contacts_lindyhop_email">swingaoutcontact@gmail.com</string>
+    <string name="contacts_ssdf_email">swingaoutcontact@gmail.com</string>
 
     <string name="open_jnj">Open Jack n Jill</string>
     <string name="advanced_jnj">Advanced Jack n Jill</string>
@@ -131,48 +41,5 @@
         Here dancers have to register as couples – no change in partners throughout the competition.
         Dancing with a partner you know and are used to, should deliver something extraordinary on the dance floor.
         Prepare well and show us what you got!
-    </string>
-
-    <string name="alice_description">
-        We have all read/watched or at least heard of “Alice in Wonderland”. There is something really special about this heroine with her specific charm and fascinating personality. Alice Meï is probably this girl come true in the real world… but with dancing shoes.
-
-Alice started dancing at the age of 4. By the time she turned 14 she had the honor of interpreting almost every single Disney character from “Dopey” to “Tinker-Bell”. She eventually joined a national dance school for another 4 years where she practiced ballet, contemporary and jazz dance daily. Slowly burning out with these dance styles, she began to look for something new. After a few unsuccessful attempts at African dancing, flamenco, and kick boxing she eventually met her true love – Lindy Hop!
-
-Alice is definitely at her happiest when she is swingin’ it on the dance floor. You will most likely hear her giggling from the other side of the room when she is social dancing. Alice enjoys keeping her dancing simple and natural. It seems like her silliness has reached enough people since she won the “dancers choice award” at ULHS in 2006. In class, she teaches the same principals that she cherishes as a dancer and she mainly focuses on keeping things simple and in a nice rhythm.
-    </string>
-
-    <string name="william_and_maeva_description">
-        Alright. Okay. We are in love with them! Yes, seriously. If you say `William` and not continue with `and Maeva` or vise-a-versa, it is like the sentence is not complete and something is wrong. When you look at them, you see this complex of both their energies and it is working as one finished perfection. True, their story started long ago with Boogie Woogie, but they have proven that Lindy Hop suits them very well, too!
-
-A bit more than a decade ago, at the age of 14 years old, there in France, the dance floor appeared to be the magic glue that gathered them together. While putting their efforts in the Boogie Woogie, they did a great job by winning the WRRC Boogie-Woogie World Championship four times. In 2011 Lindy Hop took their attention and with their talent and creativity they successfully won quite a good number of competitions during their first year in this dance style. Of course, they have not forgotten their original passion. Nowadays, you can see William and Maeva at the biggest international swing festivals. They teach, they dance and spread the joy!
-    </string>
-
-    <string name="ryan_description">
-        Ladies, you might as well get a pen and a piece of paper so that you can have an autograph – we got a real star in here! Gentlemen, you can learn really a lot from that British one. Ryan Francois is such an exciting dancer, that it is hard to decide where to start from. He has devoted more than 30 years to all dances related to the Jazz and Swing era, including Lindy Hop, Jitterbug, Jive, Charleston, Tap, Be Bop and Blues.
-
-With such a stable experience and with many occurrences and contributions to TV shows, movies and music videos, Ryan is a great professional and always puts his soul in his work. He is popularly known for his choreography for “Strictly Come dancing” and “So You Think You Can Dance”, also  a two time winner of the U.S. Open and American Swing Dance Championships and if that is not enough –some of his best works to date are for the Broadway show “Swing”, nominated for 7 Tony Awards – including best choreography. As you can figure out, the list of other credits is long-long, so the best thing we can do is just experience his genius.
-    </string>
-
-    <string name="evgenia_description">
-        Did you know that St. Petersburg in Russia has more bridges than any city in Europe? About 800 bridges! No, this is not just a random fact. Actually one of our main teachers is from that astonishing place and she is as special as the town itself. Evgenia Salakhutdinova is such an energetic and charming lady, she is like the perfect detail for every dance floor.
-
-Through the years, she has been dancing Boogie Woogie, Charleston, Authentic jazz, West Coast Swing and Salsa. In 2002 Lindy Hop strikes again and makes another dancer fall in love with it. This is how it all started for her – enjoying social dancing. Further on she joined a performance group, taking part of different competitions, both in Russia and Europe. With the years of experience, Evgenia started to compete internationally as a part of Finnish National team in 2014 and is currently a Finnish champion in Lindy Hop and Boogie Woogie. Teaches Lindy Hop and Boogie Woogie regularly in several schools in St. Petersburg.
-    </string>
-
-    <string name="max_description">
-        Well… you know how no matter what the occasion is, there is always that one guy that everyone has noticed and in the end you are all watching with your mouth open. Yeap, this shall be Max Pitruzzella. The amazing Max!
-
-He is originally from Montpellier (France), but now he is teaching every weekend in a different city worldwide. He is passionate about sharing his understanding of all the details that create a good connection between partners and give the most energy to the Lindy Hop. He is dedicated to spread the passion of swing all over the world, pursuing Frankie Manning’s vision. Max Pitruzzella has been a strong influence in international swing dancing in the past decade. One of the world’s top competitors, Max holds countless competition titles to his name. With a powerful and distinct style, Max is known for his innovation, precision and sharpness.
-    </string>
-
-    <string name="audrey_description">
-        Who would say that dancing wasn’t her one and only path? Audrey has actually studied Fashion and Environment in Duperré School of Applied Arts. For her and our happiness, though, dancing seems to be what also truly moves her. With a joyful smile and dynamic movements, she is always ready to amaze!
-After dancing Street Jazz, Rock’n’roll and Salsa for years, she found out  Swing dance for herself in 2007. Today, Audrey is doing what she loves: teaching  Lindy Hop, Charleston and  Authentic Jazz in Paris,  she dances, performs, competes and also – coaches and makes choreographies for her solo jazz girls’ team “The Shimmy Army”. They actually won first place in their very first competition!
-    </string>
-
-    <string name="felipe_description">
-        Do you feel some kind of a Brazilian breeze passing by? Quite unusual occurrence for the Balkans, isn’t it? Oh, but yes – it is Felipe Braga! He was born in Brazil and maybe that is part of the reason he is such a passionate dancer. At some point, he was amazed by the dancing movements that Jazz music can create and ever since, he is unstoppable.
-
-His whole life path is like a recipe for reaching that current moment. Theatrical acting, playing drums, party-animator for a live music club in Brazil – these activities, quite different from each other, actually helped him a lot! He is very enthusiastic for social dancing and even if you are just watching him, you can feel how much fun it is! Felipe loves to exchange energy in the jam circles, as well as in the competitions or professional performances. Now, he lives in Munich, Germany so he can teach Lindy Hop and Authentic Jazz at Vintage Club. Also, this year you can see his name in the Herrang Dance Camp schedule. We can’t wait to meet him at our dance floor!
     </string>
 </resources>

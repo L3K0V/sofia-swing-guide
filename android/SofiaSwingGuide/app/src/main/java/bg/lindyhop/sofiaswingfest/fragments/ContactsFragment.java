@@ -59,7 +59,7 @@ public class ContactsFragment extends Fragment implements ContactClickCallbacks 
 
     @Override
     public void handlePhone(View v) {
-        Uri number = Uri.parse("tel:0896878308");
+        Uri number = Uri.parse("tel:+33678834569");
         Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
         startActivity(Intent.createChooser(callIntent, "Call..."));
     }

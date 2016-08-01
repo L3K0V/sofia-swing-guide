@@ -13,13 +13,13 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="6dp"
             android:layout_marginLeft="12dp"
             android:layout_marginRight="12dp"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardElevation="6dp"
             style="?android:attr/borderlessButtonStyle">
 
             <ImageView
@@ -27,7 +27,7 @@
                 android:layout_height="200dp"
                 android:paddingBottom="48dp"
                 android:scaleType="centerInside"
-                android:background="@color/accent" />
+                android:background="@color/contact_pink" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -41,7 +41,7 @@
                     android:paddingRight="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Lindyhop Bulgaria"
+                    android:text="SWING'AOUT"
                     android:textColor="@android:color/white"
                     style="@style/TextAppearance.AppCompat.Headline"/>
 
@@ -50,7 +50,6 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/facebook_lindyhop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -60,7 +59,6 @@
                         android:onClick="handleFacebookPage"/>
 
                     <ImageView
-                        android:id="@+id/web_lindyhop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -91,12 +89,13 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardElevation="6dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginBottom="12dp"
             style="?android:attr/borderlessButtonStyle">
 
             <ImageView
@@ -104,7 +103,7 @@
                 android:layout_height="200dp"
                 android:paddingBottom="48dp"
                 android:scaleType="centerInside"
-                android:background="@color/contact_pink" />
+                android:background="@color/accent" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -118,7 +117,7 @@
                     android:paddingRight="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Sofia Swing Dance Festival"
+                    android:text="SWING'AOUT Facebook Event"
                     android:textColor="@android:color/white"
                     style="@style/TextAppearance.AppCompat.Headline"/>
 
@@ -127,6 +126,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/facebook_lindyhop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -136,6 +136,8 @@
                         android:onClick="handleFacebookPage"/>
 
                     <ImageView
+                        android:visibility="gone"
+                        android:id="@+id/web_lindyhop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -145,6 +147,7 @@
                         android:onClick="handleWebPage"/>
 
                     <ImageView
+                        android:visibility="gone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -154,6 +157,7 @@
                         android:onClick="handleEmail"/>
 
                     <ImageView
+                        android:visibility="gone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
