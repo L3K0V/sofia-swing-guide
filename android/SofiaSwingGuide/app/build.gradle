@@ -15,11 +15,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "bg.lindyhop.sofiaswingfest"
+        applicationId "fr.swingaout.app"
         minSdkVersion 15
         targetSdkVersion 24
-        versionCode 3
-        versionName "1.2.0"
+        versionCode 1
+        versionName "1.0.0"
     }
     buildTypes {
         release {
