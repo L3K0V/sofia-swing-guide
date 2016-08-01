@@ -3,24 +3,28 @@ package bg.lindyhop.sofiaswingfest.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.alamkanak.weekview.MonthLoader;
+import com.alamkanak.weekview.WeekView;
+import com.alamkanak.weekview.WeekViewEvent;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import bg.lindyhop.sofiaswingfest.R;
-import bg.lindyhop.sofiaswingfest.adapters.SchedulePagerAdapter;
 
 /**
  * Created by mmironov on 1/21/16.
  */
-public class ScheduleFragment extends Fragment {
+public class ScheduleFragment extends Fragment implements MonthLoader.MonthChangeListener {
 
     public static final String TAG = "ScheduleFragment";
-
-    private SchedulePagerAdapter adapter;
 
     @Nullable
     @Override
@@ -30,56 +34,24 @@ public class ScheduleFragment extends Fragment {
         final AppBarLayout collapsing = (AppBarLayout) getActivity().findViewById(R.id.app_bar);
         collapsing.setExpanded(false);
 
-        TabLayout tabs = (TabLayout) view.findViewById(R.id.tabs);
-        ViewPager schedulePager = (ViewPager) view.findViewById(R.id.schedulePager);
-
-        adapter = new SchedulePagerAdapter(getFragmentManager());
-
-        addFragments();
-
-        schedulePager.setAdapter(adapter);
-
-        tabs.setupWithViewPager(schedulePager);
+        WeekView agenda = (WeekView) view.findViewById(R.id.weekView);
+        agenda.setMonthChangeListener(this);
+        agenda.setHorizontalFlingEnabled(false);
 
         return view;
     }
 
-    public void addFragments() {
-        Bundle args = new Bundle();
-        args.putString(SchedulePageFragment.PAGE_TITLE, "Int");
-        SchedulePageFragment page1 = new SchedulePageFragment();
-        page1.setArguments(args);
+    @Override
+    public List<? extends WeekViewEvent> onMonthChange(int newYear, int newMonth) {
 
-        Bundle args2 = new Bundle();
-        args2.putString(SchedulePageFragment.PAGE_TITLE, "Int-Adv-1");
-        SchedulePageFragment page2 = new SchedulePageFragment();
-        page2.setArguments(args2);
+        WeekViewEvent event = new WeekViewEvent(1, "Party", 2016, 7, 26, 12, 30, 2016, 7, 26, 23, 0);
+        event.setLocation("Stadion Lazur");
+        event.setColor(ContextCompat.getColor(getContext(), R.color.accent));
 
-        Bundle args3 = new Bundle();
-        args3.putString(SchedulePageFragment.PAGE_TITLE, "Int-Adv-2");
-        SchedulePageFragment page3 = new SchedulePageFragment();
-        page3.setArguments(args3);
+        WeekViewEvent event2 = new WeekViewEvent(2, "Party", 2016, 7, 26, 9, 0, 2016, 7, 26, 14, 30);
+        event2.setLocation("NDK");
+        event2.setColor(ContextCompat.getColor(getContext(), R.color.primary_dark));
 
-        Bundle args4 = new Bundle();
-        args4.putString(SchedulePageFragment.PAGE_TITLE, "Adv");
-        SchedulePageFragment page4 = new SchedulePageFragment();
-        page4.setArguments(args4);
-
-        Bundle args5 = new Bundle();
-        args5.putString(SchedulePageFragment.PAGE_TITLE, "Adv+");
-        SchedulePageFragment page5 = new SchedulePageFragment();
-        page5.setArguments(args5);
-
-        Bundle args6 = new Bundle();
-        args6.putString(SchedulePageFragment.PAGE_TITLE, "Inv");
-        SchedulePageFragment page6 = new SchedulePageFragment();
-        page6.setArguments(args6);
-
-        adapter.addFragment(page1, "Int");
-        adapter.addFragment(page2, "IA-1");
-        adapter.addFragment(page3, "IA-2");
-        adapter.addFragment(page4, "Adv");
-        adapter.addFragment(page5, "Adv+");
-        adapter.addFragment(page6, "Inv");
+        return newMonth == 7 ? Arrays.asList(event, event2) : Collections.EMPTY_LIST;
     }
 }
