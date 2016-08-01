@@ -19,7 +19,7 @@
             android:focusable="true"
             android:scrollbars="vertical"
             card_view:elevation="6dp"
-            app:cardBackgroundColor="#303F9F"
+            app:cardBackgroundColor="@color/accent"
             card_view:cardCornerRadius="8dp"
             style="?android:attr/borderlessButtonStyle">
 
@@ -27,7 +27,7 @@
                 android:id="@+id/infoButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right|top"
+                android:layout_gravity="end|top"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="12dp"
                 android:tint="@android:color/white"
@@ -48,7 +48,7 @@
                 android:id="@+id/anotherName"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_gravity="top|left"
+                android:layout_gravity="top|start"
                 android:layout_marginTop="12dp"
                 android:layout_marginLeft="12dp"
                 android:visibility="invisible"

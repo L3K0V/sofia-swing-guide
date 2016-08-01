@@ -25,9 +25,6 @@ public class CompetitionsFragment extends Fragment {
 
     public static final String TAG = "CompetitionsFragment";
 
-    private RecyclerView competitionsView;
-    private CompetitionsAdapter adapter;
-
     public CompetitionsFragment() {
 
     }
@@ -38,7 +35,7 @@ public class CompetitionsFragment extends Fragment {
 
         final View view =  inflater.inflate(R.layout.fragment_competitions, container, false);
 
-        competitionsView = (RecyclerView) view.findViewById(R.id.competitions);
+        RecyclerView competitionsView = (RecyclerView) view.findViewById(R.id.competitions);
 
         int currentOrientation = getResources().getConfiguration().orientation;
         if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -50,28 +47,25 @@ public class CompetitionsFragment extends Fragment {
 
         List<Competition> competitions = new ArrayList<>();
 
+        Competition solojazz = new Competition();
+        solojazz.setName("Solo Jazz Competition");
+        solojazz.setDescription("Open to dancers of all levels.\n" +
+                "Dancers are required to dance on various music that will be suitable for Solo Jazz such\n" +
+                "as Charleston, Blues , Shim Sham etc etc\n" +
+                "Prelims : All Skate\n" +
+                "Final : Crowd Judged");
+
         Competition openJnJ = new Competition();
-        openJnJ.setName(getResources().getString(R.string.open_jnj));
-        openJnJ.setDescription(getResources().getString(R.string.open_jnj_description));
+        openJnJ.setName("Open J`NJ Competition");
+        openJnJ.setDescription("Swing Dancing with a random partner.\n" +
+                "Registrations will be on the spot.\n" +
+                "All Levels");
 
-        Competition advancedJnJ = new Competition();
-        advancedJnJ.setName(getResources().getString(R.string.advanced_jnj));
-        advancedJnJ.setDescription(getResources().getString(R.string.advanced_jnj_description));
-
-        Competition swingOutDropOut = new Competition();
-        swingOutDropOut.setName(getResources().getString(R.string.swing_out_drop_out));
-        swingOutDropOut.setDescription(getResources().getString(R.string.swing_out_drop_out_description));
-
-        Competition strictly = new Competition();
-        strictly.setName(getResources().getString(R.string.strictly));
-        strictly.setDescription(getResources().getString(R.string.strictly_description));
 
         competitions.add(openJnJ);
-        competitions.add(advancedJnJ);
-        competitions.add(swingOutDropOut);
-        competitions.add(strictly);
+        competitions.add(solojazz);
 
-        adapter = new CompetitionsAdapter(competitions);
+        CompetitionsAdapter adapter = new CompetitionsAdapter(competitions);
 
         competitionsView.setAdapter(adapter);
 
