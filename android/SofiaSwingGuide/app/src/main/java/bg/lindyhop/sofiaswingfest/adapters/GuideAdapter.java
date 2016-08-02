@@ -21,10 +21,8 @@ import bg.lindyhop.sofiaswingfest.R;
 public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> {
 
     private JSONArray guide;
-    private final Activity mActivity;
 
-    public  GuideAdapter(Activity activity, Guide guide) throws JSONException {
-        this.mActivity = activity;
+    public  GuideAdapter(Guide guide) throws JSONException {
         this.guide = new JSONArray(guide.getGeo());
     }
 
@@ -36,18 +34,23 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
         TextView text = (TextView) holder.itemView.findViewById(R.id.type);
+        TextView address = (TextView) holder.itemView.findViewById(R.id.description);
+
         try {
-            text.setText(guide.getJSONObject(position).getJSONObject("properties").getString("name"));
+            address.setText(guide.getJSONObject(holder.getAdapterPosition()).getJSONObject("properties").getString("description"));
+            text.setText(String.format("%s - %s",
+                    guide.getJSONObject(holder.getAdapterPosition()).getJSONObject("properties").getString("name"),
+                    guide.getJSONObject(holder.getAdapterPosition()).getJSONObject("properties").getString("address")));
 
             text.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     try {
-                        JSONArray coordinates = guide.getJSONObject(position).getJSONObject("geometry").getJSONArray("coordinates");
+                        JSONArray coordinates = guide.getJSONObject(holder.getAdapterPosition()).getJSONObject("geometry").getJSONArray("coordinates");
                         double lon = coordinates.getDouble(0);
                         double lat = coordinates.getDouble(1);
 
