@@ -51,6 +51,6 @@ public class PartiesFragment extends android.support.v4.app.Fragment implements 
         event2.setLocation("NDK");
         event2.setColor(ContextCompat.getColor(getContext(), R.color.primary_dark));
 
-        return newMonth == 7 ? Arrays.asList(event, event2) : Collections.EMPTY_LIST;
+        return newMonth == 8 ? Arrays.asList(event, event2) : Collections.EMPTY_LIST;
     }
 }
