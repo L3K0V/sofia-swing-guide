@@ -27,7 +27,7 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate, UITable
         
         self.navigationItem.title = "Swing Aout"
         
-        let camera = GMSCameraPosition.cameraWithLatitude(42.6847251, longitude: 23.3189384, zoom: 15)
+        let camera = GMSCameraPosition.cameraWithLatitude(44.9677325, longitude: 2.1883318, zoom: 15)
         mapView.camera = camera
         mapView.settings.myLocationButton = true
         mapView.myLocationEnabled = true
@@ -66,6 +66,8 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate, UITable
     func loadLocations () {
         let manager:AFHTTPSessionManager = AFHTTPSessionManager(baseURL: baseURL)
         manager.requestSerializer.setAuthorizationHeaderFieldWithCredential(AFOAuthCredential.retrieveCredentialWithIdentifier("credential"))
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept")
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         manager.GET("/events/1/guide/",
                     parameters: nil,
@@ -115,7 +117,7 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate, UITable
             if let navAdd = NSURL(string:"comgooglemaps://?saddr=Current+Location&daddr=\(locations[sender.tag].lat),\(locations[sender.tag].lon)&directionsmode=walking") {
                 UIApplication.sharedApplication().openURL(navAdd)
             }
-            print ("loc \(locations[sender.tag].lon)")
+//            print ("loc \(locations[sender.tag].lon)")
 //            UIApplication.sharedApplication().openURL(NSURL(string:"google.com")!)
         } else {
             print("Can't use comgooglemaps://");

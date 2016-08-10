@@ -30,7 +30,7 @@ class ProgramaTableViewController: UITableViewController {
     }
 
     
-    let types:[String] = ["boggie", "lindy"]
+    let types:[String] = ["boggie", "lindy", "boogieParty", "lindyParty", "boogieOff", "lindyOff"]
     
     // MARK: - Table view data source
 
@@ -41,7 +41,7 @@ class ProgramaTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 6
     }
 
     
@@ -50,10 +50,22 @@ class ProgramaTableViewController: UITableViewController {
 
         switch indexPath.row {
         case 0:
-            cell.textLabel!.text = "Boggie"
+            cell.textLabel!.text = "Boogie Woogie"
             break
         case 1:
-            cell.textLabel!.text = "Lindy hop"
+            cell.textLabel!.text = "Lindy"
+            break
+        case 2:
+            cell.textLabel!.text = "PARTY SCHEDULE ( BOOGIE WOOGIE )"
+            break
+        case 3:
+            cell.textLabel!.text = "PARTY SCHEDULE ( LINDY WEEK )"
+            break
+        case 4:
+            cell.textLabel!.text = "Boogie Woogie \\ OFF"
+            break
+        case 5:
+            cell.textLabel!.text = "LINDYHOP/SOLOJAZZ \\ OFF"
             break
         default: break
             

@@ -14,8 +14,10 @@ class ProgramaPageTableViewController: UITableViewController {
     
     let sections:[String] = ["Jeudi / 11.08", "Vendredi / 12.08", "Samedi / 13.08", "Lundi / 15.08", "Mardi / 16.08", "Jeudi / 18.08", "Vendredi / 19.08", "Samedi / 20.09"]
     
+    let sectionsOff:[String] = ["Lundi / 15.08", "Mardi / 16.08", "Mercredi / 17.08", "Jeudi / 18.08", "Vendredi / 19.08", "Samedi / 20.09"]
     
-    // Boggie
+    
+    // Boogie Woogie
     let boggieHoursT:[Programa] = [Programa(h: "11:00-12:00", hl: "Chapiteau 1", t: "Cours Découverte Gratuit\r\nNicolas & Irene"),
                                    Programa(h: "11:00-12:00", hl: "Chapiteau 2", t: "Boogie Competition ( en couple )\nThobjorn & Flora"),
                                    Programa(h: "12:10-13:10", hl: "Chapiteau 1", t: "Boogie Intermediaire\nThobjorn & Flora"),
@@ -48,6 +50,31 @@ class ProgramaPageTableViewController: UITableViewController {
                                     Programa(h: "14:30-15:30", hl: "Chapiteau 2", t: "Boogie Novices\nMartin & Cathy"),
                                     Programa(h: "15:40-16:40", hl: "Chapiteau 1", t: "Boogie Débutant\nSondre & Tanya"),
                                     Programa(h: "15:40-16:40", hl: "Chapiteau 2", t: "Boogie Novices\nMartin & Cathy")]
+    
+    // Boogie Woogie OFF
+    let boggieOffHoursT:[Programa] = [Programa(h: "11:00-16:40", hl: "", t: "Cours de Danses"),
+                                   Programa(h: "17:00", hl: "De la place de l’Eglise au chapiteau", t: "LES ROLLING DOMINOS"),
+                                   Programa(h: "18:00", hl: "Inauguration chapiteau", t: "LES ROLLING DOMINOS"),
+                                   Programa(h: "18:00", hl: "BAL SWING BOOGIE", t: "DJ LO, DJ Patrick"),
+                                   Programa(h: "19:00", hl: "Place de l’Eglise", t: "LES ROLLING DOMINOS")]
+    
+    let boggieOffHoursF:[Programa] = [Programa(h: "11:00-16:40", hl: "", t: "Cours de Danses"),
+                                   Programa(h: "16:30", hl: "Place de l’église au restaurant de la Gare", t: "ALFRED AND HIS GANG"),
+                                   Programa(h: "16:30", hl: "Place de l’église au restaurant de la Gare", t: "Exposition photographique de Pierrick Delobelle"),
+                                   Programa(h: "18:00", hl: "Place Sabatier", t: "LES ROLLING DOMINOS"),
+                                   Programa(h: "18:00", hl: "BAL SWING BOOGIE", t: "DJ LO, DJ Patrick"),
+                                   Programa(h: "19:00", hl: "Place de l’Eglise", t: "ALFRED AND HIS GANG"),
+                                   Programa(h: "19:00", hl: "Espace salle polyvalente", t: "LES ROLLING DOMINOS")]
+    
+    let boggieOffHoursSt:[Programa] = [Programa(h: "11:00-16:40", hl: "", t: "Cours de Danses"),
+                                    Programa(h: "16:00", hl: "Place de l’Eglise", t: "BOOGIE PHIL AND THE WISE GUYS"),
+                                    Programa(h: "17:00", hl: "RDV Place de l’église pour une balade musicale à travers le village", t: "LES ROLLING DOMINOS"),
+                                    Programa(h: "17:30", hl: "Place de l’Eglise", t: "Le Rouget – ALFRED AND HIS GANG"),
+                                    Programa(h: "18:00", hl: "", t: "BATTLE BOOGIE WOOGIE & Bal Swing"),
+                                    Programa(h: "18:15", hl: "Place de l’église", t: "BOOGIE PHIL AND THE WISE GUYS"),
+                                    Programa(h: "19:15", hl: "", t: "LES ROLLING DOMINOS déambuleront aux terrasses des bars"),
+                                    Programa(h: "19:30", hl: "Place de l’église", t: "ALFRED AND HIS GANG")]
+    
     
     // Lindy hop
     let lindyHoursM:[Programa] = [Programa(h: "11:00-12:00", hl: "Salle Polyvalente", t: "Lindy Hop Inter\nMax & Audrey"),
@@ -140,6 +167,116 @@ class ProgramaPageTableViewController: UITableViewController {
                                   Programa(h: "16:20-17:20", hl: "Salle Polyvalente", t: "Solo Jazz Avancé\nOliv Wan"),
                                   Programa(h: "16:20-17:20", hl: "Chapiteau 1", t: "Solo Jazz Avancé +\nJb Mino")]
     
+    // Lindy hop Off
+    let lindyOffHoursM:[Programa] = [Programa(h: "18:00", hl: "La salle Polyvalente", t: "Welcome Drink with Live music ( The Swing Shouters )"),
+                                  Programa(h: "22:00", hl: "", t: "Party with The Swing Shouters at The Salle Polyvalente")
+                                  ]
+    
+    let lindyOffHoursTu:[Programa] = [Programa(h: "18:00", hl: "The bar le Joker", t: "Drinks and Social Dancing with the Rhythm Gamblers"),
+                                      Programa(h: "22:00", hl: "The Salle Polyvalente", t: "Party with The Rhythm Gamblers")]
+    
+    let lindyOffHoursW:[Programa] = [Programa(h: "10:00-12:00", hl: "", t: "Petanque Tournament near the River ( only 30 spots available )"),
+                                      Programa(h: "14:00-16:00", hl: "", t: "Petanque Tournament near the River"),
+                                      Programa(h: "17:00", hl: "", t: "Parade from the Castel to the Chapiteau. ( Live music )"),
+                                      Programa(h: "18:00", hl: "", t: "Prelims Jack ‘N’Jill & Solo Jazz Competition at the Chapiteau"),
+                                      Programa(h: "22:00", hl: "", t: "Party with The Rhythm Gamblers"),
+                                      Programa(h: "00:30", hl: "", t: "Jack ‘N’Jill & Solo Jazz Finals"),
+                                      Programa(h: "02:00-04:00", hl: "The Joker", t: "After Party")]
+    
+    let lindyOffHoursTh:[Programa] = [Programa(h: "18:00", hl: "", t: "Apéro Swing Aout sur le Parvis de la salle polyvalente"),
+                                   Programa(h: "21:00-22:00", hl: "", t: "Musicality Class with Oliv Wan ( Open )"),
+                                   Programa(h: "22:00", hl: "The Salle Polyvalente", t: "Party with Emilie Cole & The Rhythm Band")
+                                   ]
+    
+    let lindyOffHoursF:[Programa] = [Programa(h: "18:00", hl: "The Joker", t: "Apero Swing with The Rhythm Gamblers"),
+                                  Programa(h: "22:00", hl: "The Salle Polyvalente", t: "Party with Emilie Cole & The Rhythm Band"),
+                                  Programa(h: "02:00-04:00", hl: "The Joker", t: "After Party")]
+    
+    let lindyOffHoursS:[Programa] = [Programa(h: "18:00", hl: "The Camping Municipal", t: "Drinks & Jam Session"),
+                                  Programa(h: "22:00", hl: "The Salle Polyvalente", t: "Party with Emilie Cole & The Rhythm Band"),
+                                  Programa(h: "02:00-04:00", hl: "The Joker", t: "After Party")]
+    
+    // Parties
+    let partiesHoursTh1:[Programa] = [Programa(h: "22:30-23:00", hl: "", t: "DJ William"),
+                                     Programa(h: "23:00-23:30", hl: "", t: "DJ Nicolas Rodriguez"),
+                                     Programa(h: "22:30-00:30", hl: "", t: "DJ El Cerf"),
+                                     Programa(h: "00:30-00:45", hl: "", t: "Presentation Boogie Woogie Teachers"),
+                                     Programa(h: "00:45-01:30", hl: "", t: "DJ Battle ( 2 songs per DJ Willian / Jeff / Nicolas )"),
+                                     Programa(h: "01:30-02:00", hl: "", t: "DJ El Cerf"),
+                                     Programa(h: "02:00-03:00", hl: "", t: "DJ Battle ( 2 songs per DJ -William / Jeff / Nicolas- )")]
+    
+    let partiesHoursF1:[Programa] = [Programa(h: "22:30-23:00", hl: "", t: "DJ William"),
+                                     Programa(h: "23:00-23:30", hl: "", t: "Live Music with The Swing Shouters"),
+                                     Programa(h: "22:30-00:30", hl: "", t: "DJ El Cerf"),
+                                     Programa(h: "00:30-00:45", hl: "", t: "Live music with The Swing Shouters"),
+                                     Programa(h: "00:45-01:30", hl: "", t: "DJ Nicolas Rodriguez"),
+                                     Programa(h: "01:30-02:00", hl: "", t: "Live music with The Swing Shouters"),
+                                     Programa(h: "02:00-03:00", hl: "", t: "DJ El Cerf")]
+    
+    let partiesHoursS1:[Programa] = [Programa(h: "22:30-23:00", hl: "", t: "DJ William"),
+                                     Programa(h: "23:00-23:30", hl: "", t: "Live Music with The Swing Shouters"),
+                                     Programa(h: "22:30-00:30", hl: "", t: "DJ Nicolas Rodriguez"),
+                                     Programa(h: "00:30-00:45", hl: "", t: "Live music with The Swing Shouters"),
+                                     Programa(h: "00:45-01:30", hl: "", t: "DJ El Cerf"),
+                                     Programa(h: "01:30-02:00", hl: "", t: "Live music with The Swing Shouters"),
+                                     Programa(h: "02:00-03:00", hl: "", t: "DJ Battle ( 2 songs per DJ -William / Jeff / Nicolas- )")]
+    
+    let partiesHoursM:[Programa] = [Programa(h: "22:00-22:30", hl: "", t: "DJ Nicolas Rodriguez"),
+                                    Programa(h: "22:30-23:15", hl: "", t: "Live Music with The Swing Shouters"),
+                                    Programa(h: "23:15-23:45", hl: "", t: "DJ Nicolas Rodriguez"),
+                                    Programa(h: "23:45-00:30", hl: "", t: "Live music with The Swing Shouters"),
+                                    Programa(h: "00:30-01:00", hl: "", t: "DJ William"),
+                                    Programa(h: "01:00-01:45", hl: "", t: "Live music with The Swing Shouters"),
+                                    Programa(h: "01:45-02:30", hl: "", t: "DJ Nicolas Rodriguez")]
+    
+    let partiesHoursTu:[Programa] = [Programa(h: "22:00-22:30", hl: "", t: "DJ Andy"),
+                                     Programa(h: "22:30-23:15", hl: "", t: "Live with The Rhythm Gamblers tribute to Count Basie"),
+                                     Programa(h: "23:15-23:45", hl: "", t: "DJ Nicolas Rodriguez"),
+                                     Programa(h: "23:45-00:30", hl: "", t: "Live with The Rhythm Gamblers tribute to Count Basie"),
+                                     Programa(h: "00:30-01:00", hl: "", t: "DJ William"),
+                                     Programa(h: "01:00-01:45", hl: "", t: "Live with The Rhythm Gamblers tribute to Count Basie"),
+                                     Programa(h: "01:45-02:30", hl: "", t: "DJ El Cerf"),
+                                     Programa(h: "02:30-03:30", hl: "", t: "DJ Nicolas Rodriguez")]
+    
+    let partiesHoursW:[Programa] = [Programa(h: "22:00-22:30", hl: "", t: "DJ Andy Spitz"),
+                                    Programa(h: "22:30-23:15", hl: "", t: "Live with The Rhythm Gamblers"),
+                                    Programa(h: "23:15-23:45", hl: "", t: "Teachers Cabaret ( DJ Nicolas Rodriguez )"),
+                                    Programa(h: "23:45-00:30", hl: "", t: "Live with The Rhythm Gamblers"),
+                                    Programa(h: "00:30-01:00", hl: "", t: "Final Jack’N’Jill & Solo Jazz Competition"),
+                                    Programa(h: "01:00-01:45", hl: "", t: "Live with The Rhythm Gamblers"),
+                                    Programa(h: "01:45-02:30", hl: "", t: "DJWilliam&NicolasRodriguez(RhythmNBlues)"),
+                                    Programa(h: "02:30-04:00", hl: "", t: "AFTER PARTY au Bar Le Joker")]
+    
+    let partiesHoursTh:[Programa] = [Programa(h: "21:00-22:00", hl: "", t: "Cour Musicalité avec Oliv Wan"),
+                                     Programa(h: "22:00-22:30", hl: "", t: "Début de soirée DJ Andy"),
+                                     Programa(h: "22:30-23:15", hl: "", t: "Live with The Rhythm Gamblers"),
+                                     Programa(h: "23:15-23:45", hl: "", t: "DJ Nicolas Rodriguez"),
+                                     Programa(h: "23:45-00:30", hl: "", t: "Live with The Rhythm Gamblers"),
+                                     Programa(h: "00:30-01:00", hl: "", t: "DJ William"),
+                                     Programa(h: "01:00-01:45", hl: "", t: "Live with The Rhythm Gamblers"),
+                                     Programa(h: "01:45-02:30", hl: "", t: "DJ El Cerf"),
+                                     Programa(h: "02:30-03:30", hl: "", t: "DJ Damien Verron « New Orleans »")]
+    
+    let partiesHoursF:[Programa] = [Programa(h: "22:00-22:30", hl: "", t: "Début de soirée DJ William"),
+                                    Programa(h: "22:30-23:15", hl: "", t: "Live with Emilie Cole & The Rhythm Gamblers"),
+                                    Programa(h: "23:15-23:45", hl: "", t: "DJ Nicolas Rodriguez"),
+                                    Programa(h: "23:45-00:30", hl: "", t: "Live with Emilie Cole & The Rhythm Gamblers"),
+                                    Programa(h: "00:30-01:00", hl: "", t: "DJ Andy Spitz"),
+                                    Programa(h: "01:00-01:45", hl: "", t: "Live with Emilie Cole & The Rhythm Gamblers"),
+                                    Programa(h: "01:45-02:30", hl: "", t: "DJ Nicolas Rodriguez"),
+                                    Programa(h: "02:30-03:30", hl: "", t: "DJ Damien Verron « New Orleans »"),
+                                    Programa(h: "02:00-04:00", hl: "", t: "AFTER PARTY au Bar Le Joker")]
+    
+    let partiesHoursS:[Programa] = [Programa(h: "22:00-22:30", hl: "", t: "Début de soirée DJ William"),
+                                    Programa(h: "22:30-23:15", hl: "", t: "Live with Emilie Cole & The Rhythm Gamblers"),
+                                    Programa(h: "23:15-23:45", hl: "", t: "DJ Nicolas Rodriguez"),
+                                    Programa(h: "23:45-00:30", hl: "", t: "Live with Emilie Cole & The Rhythm Gamblers"),
+                                    Programa(h: "00:30-01:00", hl: "", t: "DJ Andy Spitz"),
+                                    Programa(h: "01:00-01:45", hl: "", t: "Live with Emilie Cole & The Rhythm Gamblers"),
+                                    Programa(h: "01:45-02:30", hl: "", t: "DJ El Cerf"),
+                                    Programa(h: "02:30-03:30", hl: "", t: "DJ Nicolas Rodriguez & William"),
+                                    Programa(h: "02:00-04:00", hl: "", t: "AFTER PARTY au Bar Le Joker")]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,10 +285,22 @@ class ProgramaPageTableViewController: UITableViewController {
         
         switch type {
         case "lindy":
-            title = "Lindy hop"
+            title = "Lindy"
             break
         case "boggie":
-            title = "Boggie"
+            title = "Boogie Woogie"
+            break
+        case "boogieOff":
+            title = "Boogie Woogie / OFF"
+            break
+        case "lindyOff":
+            title = "LINDYHOP/SOLOJAZZ \\ OFF"
+            break
+        case "boogieParty":
+            title = "PARTY SCHEDULE ( BOOGIE WOOGIE )"
+            break
+        case "lindyParty":
+            title = "PARTY SCHEDULE ( LINDY WEEK )"
             break
             
         default:
@@ -160,8 +309,11 @@ class ProgramaPageTableViewController: UITableViewController {
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if (type == "boggie") {
+        if (type == "boggie" || type == "boogieOff" || type == "boogieParty") {
             return 3
+        }
+        if (type == "lindyOff" || type == "lindyParty") {
+            return 6
         }
         
         return 5;
@@ -174,12 +326,38 @@ class ProgramaPageTableViewController: UITableViewController {
             if (section == 1) {return boggieHoursF.count}
             if (section == 2) {return boggieHoursSt.count}
             break
+        case "boogieOff":
+            if (section == 0) {return boggieOffHoursT.count}
+            if (section == 1) {return boggieOffHoursF.count}
+            if (section == 2) {return boggieOffHoursSt.count}
+            break
         case "lindy":
             if (section == 0) {return lindyHoursM.count}
             if (section == 1) {return lindyHoursTu.count}
             if (section == 2) {return lindyHoursTh.count}
             if (section == 3) {return lindyHoursF.count}
             if (section == 4) {return lindyHoursS.count}
+            break
+        case "lindyOff":
+            if (section == 0) {return lindyOffHoursM.count}
+            if (section == 1) {return lindyOffHoursTu.count}
+            if (section == 2) {return lindyOffHoursW.count}
+            if (section == 3) {return lindyOffHoursTh.count}
+            if (section == 4) {return lindyOffHoursF.count}
+            if (section == 5) {return lindyOffHoursS.count}
+            break
+        case "boogieParty":
+            if (section == 0) {return partiesHoursTh1.count}
+            if (section == 1) {return partiesHoursF1.count}
+            if (section == 2) {return partiesHoursS1.count}
+            break
+        case "lindyParty":
+            if (section == 0) {return partiesHoursM.count}
+            if (section == 1) {return partiesHoursTu.count}
+            if (section == 2) {return partiesHoursW.count}
+            if (section == 3) {return partiesHoursTh.count}
+            if (section == 4) {return partiesHoursF.count}
+            if (section == 5) {return partiesHoursS.count}
             break
         default:
             break
@@ -199,12 +377,38 @@ class ProgramaPageTableViewController: UITableViewController {
             if (indexPath.section == 1) {pg = boggieHoursF[indexPath.row]}
             if (indexPath.section == 2) {pg = boggieHoursSt[indexPath.row]}
             break
+        case "boogieOff":
+            if (indexPath.section == 0) {pg = boggieOffHoursT[indexPath.row]}
+            if (indexPath.section == 1) {pg = boggieOffHoursF[indexPath.row]}
+            if (indexPath.section == 2) {pg = boggieOffHoursSt[indexPath.row]}
+            break
         case "lindy":
             if (indexPath.section == 0) {pg = lindyHoursM[indexPath.row]}
             if (indexPath.section == 1) {pg = lindyHoursTu[indexPath.row]}
             if (indexPath.section == 2) {pg = lindyHoursTh[indexPath.row]}
             if (indexPath.section == 3) {pg = lindyHoursF[indexPath.row]}
             if (indexPath.section == 4) {pg = lindyHoursS[indexPath.row]}
+            break
+        case "lindyOff":
+            if (indexPath.section == 0) {pg = lindyOffHoursM[indexPath.row]}
+            if (indexPath.section == 1) {pg = lindyOffHoursTu[indexPath.row]}
+            if (indexPath.section == 2) {pg = lindyOffHoursW[indexPath.row]}
+            if (indexPath.section == 3) {pg = lindyOffHoursTh[indexPath.row]}
+            if (indexPath.section == 4) {pg = lindyOffHoursF[indexPath.row]}
+            if (indexPath.section == 5) {pg = lindyOffHoursS[indexPath.row]}
+            break
+        case "boogieParty":
+            if (indexPath.section == 0) {pg = partiesHoursTh1[indexPath.row]}
+            if (indexPath.section == 1) {pg = partiesHoursF1[indexPath.row]}
+            if (indexPath.section == 2) {pg = partiesHoursS1[indexPath.row]}
+            break
+        case "lindyParty":
+            if (indexPath.section == 0) {pg = partiesHoursM[indexPath.row]}
+            if (indexPath.section == 1) {pg = partiesHoursTu[indexPath.row]}
+            if (indexPath.section == 2) {pg = partiesHoursW[indexPath.row]}
+            if (indexPath.section == 3) {pg = partiesHoursTh[indexPath.row]}
+            if (indexPath.section == 4) {pg = partiesHoursF[indexPath.row]}
+            if (indexPath.section == 5) {pg = partiesHoursS[indexPath.row]}
             break
             
         default:
@@ -239,10 +443,13 @@ class ProgramaPageTableViewController: UITableViewController {
     {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor.lightGrayColor()
-        if (type == "boggie") {
+        if (type == "boggie" || type == "boogieOff" || type == "boogieParty") {
             header.textLabel?.text = sections[section]
         }
-        else {
+        if (type == "lindyOff" || type == "lindyParty") {
+            header.textLabel?.text = sectionsOff[section]
+        }
+        if (type == "lindy") {
             header.textLabel?.text = sections[section+3]
         }
     }

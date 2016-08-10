@@ -11,7 +11,7 @@ import AFOAuth2Manager
 
 class NewsController: UITableViewController {
 
-    let baseURL = NSURL(string: "http://swingaout.lekov.me")
+    let baseURL = NSURL(string: "http://swingaout.lekov.me/")
     var credentianls:AFOAuthCredential = AFOAuthCredential()
     var alert:UIAlertController = UIAlertController()
     
@@ -52,6 +52,7 @@ class NewsController: UITableViewController {
                                                         AFOAuthCredential.storeCredential(cr, withIdentifier: "credential")
                                                         self.credentianls = cr
                                                         self.loadNews()
+                                                        self.registerNotifacationToken ()
             }) { (error) in
                 self.dismissViewControllerAnimated(false, completion: {
                     
@@ -64,6 +65,8 @@ class NewsController: UITableViewController {
     func loadNews () {
         let manager:AFHTTPSessionManager = AFHTTPSessionManager(baseURL: baseURL)
         manager.requestSerializer.setAuthorizationHeaderFieldWithCredential(credentianls)
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept")
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         manager.GET("/feed/",
                    parameters: nil,
@@ -71,7 +74,7 @@ class NewsController: UITableViewController {
                     
             }, success: { (task, res) in
                 let json = JSON(res!)
-//                print("daaa \(json["results"])")
+                print("daaa \(json["results"])")
                 for (_, item) in json["results"] {
                     self.feed.append(Feed(item: item))
                 }
@@ -83,6 +86,44 @@ class NewsController: UITableViewController {
             self.dismissViewControllerAnimated(false, completion: {
                 
             })
+            print ("neee \(error)")
+        }
+    }
+    
+    static var token = "";
+    func registerNotifacationToken () {
+        let manager:AFHTTPSessionManager = AFHTTPSessionManager(baseURL: baseURL)
+        manager.requestSerializer.setAuthorizationHeaderFieldWithCredential(credentianls)
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept")
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if (defaults.stringForKey("token") == NewsController.token){
+            return;
+        }
+        
+        let param = ["name":UIDevice.currentDevice().name,
+                     "registration_id": NewsController.token,
+                     "active": true]
+        
+//        manager.POST("/device/apns/",
+//                     parameters: param,
+//                    progress: { (pro) in
+//                        
+//            }, success: { (task, res) in
+//                defaults.setValue(NewsController.token, forKey: "token")
+//                print ("token registered")
+//        }) { (task, error) in
+//            
+//            print ("neee \(error)")
+//        }
+        manager.PUT("/device/apns/",
+                     parameters: param,
+                     success: { (task, res) in
+                defaults.setValue(NewsController.token, forKey: "token")
+                print ("token registered")
+        }) { (task, error) in
+            
             print ("neee \(error)")
         }
     }
