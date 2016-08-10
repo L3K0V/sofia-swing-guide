@@ -124,7 +124,6 @@ public class GuideActivity extends AppCompatActivity implements OnMapReadyCallba
 
 
     public void onEventMainThread(FetchedGuideEvent event) {
-
         GuideModel model = GuideModel.getInstance();
 
         try {
@@ -136,7 +135,7 @@ public class GuideActivity extends AppCompatActivity implements OnMapReadyCallba
 
             GeoJsonLayer guideLayer = new GeoJsonLayer(map, obj);
             guideLayer.addLayerToMap();
-            guide.setAdapter(new GuideAdapter(this, guideItem));
+            guide.setAdapter(new GuideAdapter(guideItem));
         } catch (JSONException e) {
             e.printStackTrace();
         }
