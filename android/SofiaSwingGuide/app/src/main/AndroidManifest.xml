@@ -13,10 +13,10 @@
     <uses-permission-sdk-23 android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <permission
-        android:name="com.softavail.scg.push.permission.C2D_MESSAGE"
+        android:name="fr.swingaout.app.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.softavail.scg.push.permission.C2D_MESSAGE" />
+    <uses-permission android:name="fr.swingaout.app.permission.C2D_MESSAGE" />
 
     <application
         android:name=".SofiaSwingFestApplication"
