@@ -37,13 +37,13 @@ public class GuideAdapter extends RecyclerView.Adapter<GuideAdapter.ViewHolder> 
     public void onBindViewHolder(final ViewHolder holder, final int position) {
 
         TextView text = (TextView) holder.itemView.findViewById(R.id.type);
-        TextView address = (TextView) holder.itemView.findViewById(R.id.description);
+        TextView description = (TextView) holder.itemView.findViewById(R.id.description);
+        TextView address = (TextView) holder.itemView.findViewById(R.id.address);
 
         try {
-            address.setText(guide.getJSONObject(holder.getAdapterPosition()).getJSONObject("properties").getString("description"));
-            text.setText(String.format("%s - %s",
-                    guide.getJSONObject(holder.getAdapterPosition()).getJSONObject("properties").getString("name"),
-                    guide.getJSONObject(holder.getAdapterPosition()).getJSONObject("properties").getString("address")));
+            address.setText(guide.getJSONObject(holder.getAdapterPosition()).getJSONObject("properties").getString("address"));
+            text.setText(guide.getJSONObject(holder.getAdapterPosition()).getJSONObject("properties").getString("name"));
+            description.setText(guide.getJSONObject(holder.getAdapterPosition()).getJSONObject("properties").getString("description"));
 
             text.setOnClickListener(new View.OnClickListener() {
                 @Override
