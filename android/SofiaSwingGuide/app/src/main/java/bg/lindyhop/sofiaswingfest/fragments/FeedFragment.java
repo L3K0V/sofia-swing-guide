@@ -60,10 +60,10 @@ public class FeedFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         Prefs.putNextPage(FeedItemsPage.FIRST_PAGE_INDEX);
 
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh);
-        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
-                android.R.color.holo_green_light,
-                android.R.color.holo_orange_light,
-                android.R.color.holo_red_light);
+        swipeRefreshLayout.setColorSchemeResources(R.color.primary,
+                R.color.accent,
+                R.color.primary_dark,
+                R.color.contact_pink);
         swipeRefreshLayout.setOnRefreshListener(this);
 
         final RecyclerView feed = (RecyclerView) view.findViewById(R.id.feed);
@@ -71,8 +71,7 @@ public class FeedFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         int currentOrientation = getResources().getConfiguration().orientation;
         if (currentOrientation == Configuration.ORIENTATION_LANDSCAPE) {
             feed.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-        }
-        else {
+        } else {
             feed.setLayoutManager(new LinearLayoutManager(getActivity()));
         }
 
@@ -115,6 +114,12 @@ public class FeedFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         jobManager.addJobInBackground(new FetchFeedJob());
 
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        onRefresh();
     }
 
     @Override

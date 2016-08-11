@@ -30,9 +30,12 @@
         <TextView
             android:id="@+id/name"
             style="@style/TextAppearance.AppCompat.Headline"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:text='@{item.isFeatured ? item.name : ""}' />
+            android:background="@{item.isFeatured ? @color/featured_item : @color/default_item}"
+            android:padding="8dp"
+            android:text='@{item.isFeatured ? item.name : ""}'
+            android:textColor="@android:color/white" />
     </bg.lindyhop.sofiaswingfest.views.SquareCardView>
 </layout>
