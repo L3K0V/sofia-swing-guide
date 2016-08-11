@@ -168,4 +168,19 @@ public class MainActivity extends AppCompatActivity
             }
         }
     }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+
+        // Update feed news on push notification clicked
+        for (Fragment fragment : getSupportFragmentManager().getFragments()) {
+            if (fragment instanceof FeedFragment) {
+                FeedFragment feed = (FeedFragment) fragment;
+                feed.onRefresh();
+                break;
+            }
+        }
+    }
 }
