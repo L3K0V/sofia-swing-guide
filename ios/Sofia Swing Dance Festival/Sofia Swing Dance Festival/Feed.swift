@@ -28,6 +28,6 @@ class Feed: NSObject {
             imgURL = item["cover"].asString!
         }
         let d = item["updated_at"].asString!
-        date = "\(d[d.startIndex.advancedBy(11)..<d.startIndex.advancedBy(16)]), \(d[d.startIndex.advancedBy(0)..<d.startIndex.advancedBy(10)])"
+        date = "\(d[d.characters.index(d.startIndex, offsetBy: 11)..<d.characters.index(d.startIndex, offsetBy: 16)]), \(d[d.characters.index(d.startIndex, offsetBy: 0)..<d.characters.index(d.startIndex, offsetBy: 10)])"
     }
 }

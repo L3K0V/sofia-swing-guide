@@ -36,7 +36,7 @@ class NewsPageController: UIViewController {
         
         self.descrionLabel!.sizeToFit()
         self.descrionLabel!.layoutIfNeeded()
-        let height = self.descrionLabel!.sizeThatFits(CGSizeMake(self.descrionLabel!.frame.size.width, CGFloat.max)).height
+        let height = self.descrionLabel!.sizeThatFits(CGSize(width: self.descrionLabel!.frame.size.width, height: CGFloat.greatestFiniteMagnitude)).height
         descriptionHeightConstraint.constant = height
         self.descrionLabel!.layoutIfNeeded()
         contentHeightConstraint.constant = self.descrionLabel!.frame.maxY + 20
@@ -44,11 +44,11 @@ class NewsPageController: UIViewController {
         
         if (feed.imgURL == "") {
             self.image?.image = UIImage(named: "Logo")
-            self.image?.contentMode = .ScaleAspectFit
+            self.image?.contentMode = .scaleAspectFit
             self.image?.backgroundColor = UIColor(red: 21/255, green: 117/255, blue: 191/255, alpha: 1.0)
         }
         else {
-            self.image!.sd_setImageWithURL(NSURL(string: feed.imgURL))
+            self.image!.sd_setImage(with: URL(string: feed.imgURL))
         }
     }
     

@@ -308,7 +308,7 @@ class ProgramaPageTableViewController: UITableViewController {
         }
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         if (type == "boggie" || type == "boogieOff" || type == "boogieParty") {
             return 3
         }
@@ -319,7 +319,7 @@ class ProgramaPageTableViewController: UITableViewController {
         return 5;
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch type {
         case "boggie":
             if (section == 0) {return boggieHoursT.count}
@@ -367,48 +367,48 @@ class ProgramaPageTableViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:ProgaramaPageTableViewCell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! ProgaramaPageTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:ProgaramaPageTableViewCell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! ProgaramaPageTableViewCell
 
         var pg:Programa = Programa()
         switch type {
         case "boggie":
-            if (indexPath.section == 0) {pg = boggieHoursT[indexPath.row]}
-            if (indexPath.section == 1) {pg = boggieHoursF[indexPath.row]}
-            if (indexPath.section == 2) {pg = boggieHoursSt[indexPath.row]}
+            if ((indexPath as NSIndexPath).section == 0) {pg = boggieHoursT[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 1) {pg = boggieHoursF[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 2) {pg = boggieHoursSt[(indexPath as NSIndexPath).row]}
             break
         case "boogieOff":
-            if (indexPath.section == 0) {pg = boggieOffHoursT[indexPath.row]}
-            if (indexPath.section == 1) {pg = boggieOffHoursF[indexPath.row]}
-            if (indexPath.section == 2) {pg = boggieOffHoursSt[indexPath.row]}
+            if ((indexPath as NSIndexPath).section == 0) {pg = boggieOffHoursT[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 1) {pg = boggieOffHoursF[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 2) {pg = boggieOffHoursSt[(indexPath as NSIndexPath).row]}
             break
         case "lindy":
-            if (indexPath.section == 0) {pg = lindyHoursM[indexPath.row]}
-            if (indexPath.section == 1) {pg = lindyHoursTu[indexPath.row]}
-            if (indexPath.section == 2) {pg = lindyHoursTh[indexPath.row]}
-            if (indexPath.section == 3) {pg = lindyHoursF[indexPath.row]}
-            if (indexPath.section == 4) {pg = lindyHoursS[indexPath.row]}
+            if ((indexPath as NSIndexPath).section == 0) {pg = lindyHoursM[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 1) {pg = lindyHoursTu[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 2) {pg = lindyHoursTh[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 3) {pg = lindyHoursF[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 4) {pg = lindyHoursS[(indexPath as NSIndexPath).row]}
             break
         case "lindyOff":
-            if (indexPath.section == 0) {pg = lindyOffHoursM[indexPath.row]}
-            if (indexPath.section == 1) {pg = lindyOffHoursTu[indexPath.row]}
-            if (indexPath.section == 2) {pg = lindyOffHoursW[indexPath.row]}
-            if (indexPath.section == 3) {pg = lindyOffHoursTh[indexPath.row]}
-            if (indexPath.section == 4) {pg = lindyOffHoursF[indexPath.row]}
-            if (indexPath.section == 5) {pg = lindyOffHoursS[indexPath.row]}
+            if ((indexPath as NSIndexPath).section == 0) {pg = lindyOffHoursM[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 1) {pg = lindyOffHoursTu[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 2) {pg = lindyOffHoursW[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 3) {pg = lindyOffHoursTh[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 4) {pg = lindyOffHoursF[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 5) {pg = lindyOffHoursS[(indexPath as NSIndexPath).row]}
             break
         case "boogieParty":
-            if (indexPath.section == 0) {pg = partiesHoursTh1[indexPath.row]}
-            if (indexPath.section == 1) {pg = partiesHoursF1[indexPath.row]}
-            if (indexPath.section == 2) {pg = partiesHoursS1[indexPath.row]}
+            if ((indexPath as NSIndexPath).section == 0) {pg = partiesHoursTh1[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 1) {pg = partiesHoursF1[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 2) {pg = partiesHoursS1[(indexPath as NSIndexPath).row]}
             break
         case "lindyParty":
-            if (indexPath.section == 0) {pg = partiesHoursM[indexPath.row]}
-            if (indexPath.section == 1) {pg = partiesHoursTu[indexPath.row]}
-            if (indexPath.section == 2) {pg = partiesHoursW[indexPath.row]}
-            if (indexPath.section == 3) {pg = partiesHoursTh[indexPath.row]}
-            if (indexPath.section == 4) {pg = partiesHoursF[indexPath.row]}
-            if (indexPath.section == 5) {pg = partiesHoursS[indexPath.row]}
+            if ((indexPath as NSIndexPath).section == 0) {pg = partiesHoursM[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 1) {pg = partiesHoursTu[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 2) {pg = partiesHoursW[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 3) {pg = partiesHoursTh[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 4) {pg = partiesHoursF[(indexPath as NSIndexPath).row]}
+            if ((indexPath as NSIndexPath).section == 5) {pg = partiesHoursS[(indexPath as NSIndexPath).row]}
             break
             
         default:
@@ -418,7 +418,7 @@ class ProgramaPageTableViewController: UITableViewController {
         cell.titleLabel?.text = pg.title
         cell.hourLabel?.text = pg.hour
         cell.hallLabel?.text = pg.hall
-        cell.hallLabel?.backgroundColor = UIColor.whiteColor()
+        cell.hallLabel?.backgroundColor = UIColor.white
         if (pg.hall == "Salle Polyvalente") {
             cell.hallLabel?.backgroundColor = UIColor(red: 102.0/255.0, green: 1, blue: 0, alpha: 1.0)
         }
@@ -434,15 +434,15 @@ class ProgramaPageTableViewController: UITableViewController {
     }
  
 
-    override func tableView(tableView: UITableView,
+    override func tableView(_ tableView: UITableView,
                             heightForHeaderInSection section: Int) -> CGFloat{
         return 30
     }
     
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
     {
         let header = view as! UITableViewHeaderFooterView
-        header.textLabel?.textColor = UIColor.lightGrayColor()
+        header.textLabel?.textColor = UIColor.lightGray
         if (type == "boggie" || type == "boogieOff" || type == "boogieParty") {
             header.textLabel?.text = sections[section]
         }

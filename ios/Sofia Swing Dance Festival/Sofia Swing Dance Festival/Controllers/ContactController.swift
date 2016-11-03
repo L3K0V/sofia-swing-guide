@@ -28,41 +28,41 @@ class ContactController: UIViewController {
         applyPlainShadow(view2!)
     }
 
-    func applyPlainShadow(v: UIView) {
+    func applyPlainShadow(_ v: UIView) {
         let layer = v.layer
         
-        layer.shadowColor = UIColor.blackColor().CGColor
-        layer.shadowOffset = CGSizeZero
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize.zero
         layer.shadowOpacity = 0.4
         layer.shadowRadius = 3
     }
-    @IBAction func fbLH(sender: AnyObject) {
-        if let requestUrl = NSURL(string: "https://www.facebook.com/swingaoutfestival2015/") {
-            UIApplication.sharedApplication().openURL(requestUrl)
+    @IBAction func fbLH(_ sender: AnyObject) {
+        if let requestUrl = URL(string: "https://www.facebook.com/swingaoutfestival2015/") {
+            UIApplication.shared.openURL(requestUrl)
         }
     }
-    @IBAction func webLH(sender: AnyObject) {
-        if let requestUrl = NSURL(string: "www.swingaout.com") {
-            UIApplication.sharedApplication().openURL(requestUrl)
+    @IBAction func webLH(_ sender: AnyObject) {
+        if let requestUrl = URL(string: "www.swingaout.com") {
+            UIApplication.shared.openURL(requestUrl)
         }
     }
-    @IBAction func phone(sender: AnyObject) {
-        if let url = NSURL(string: "tel://+33678834569") {
-            UIApplication.sharedApplication().openURL(url)
+    @IBAction func phone(_ sender: AnyObject) {
+        if let url = URL(string: "tel://+33678834569") {
+            UIApplication.shared.openURL(url)
         }
     }
-    @IBAction func mailLH(sender: AnyObject) {
-        let url = NSURL(string: "mailto:swingaoutcontact@gmail.com")
-        UIApplication.sharedApplication().openURL(url!)
+    @IBAction func mailLH(_ sender: AnyObject) {
+        let url = URL(string: "mailto:swingaoutcontact@gmail.com")
+        UIApplication.shared.openURL(url!)
     }
-    @IBAction func fbSF(sender: AnyObject) {
-        if let requestUrl = NSURL(string: "https://www.facebook.com/events/845806628881838/") {
-            UIApplication.sharedApplication().openURL(requestUrl)
+    @IBAction func fbSF(_ sender: AnyObject) {
+        if let requestUrl = URL(string: "https://www.facebook.com/events/845806628881838/") {
+            UIApplication.shared.openURL(requestUrl)
         }
     }
-    @IBAction func webSF(sender: AnyObject) {
-        if let requestUrl = NSURL(string: "http://sofiaswing.com/contact/") {
-            UIApplication.sharedApplication().openURL(requestUrl)
+    @IBAction func webSF(_ sender: AnyObject) {
+        if let requestUrl = URL(string: "http://sofiaswing.com/contact/") {
+            UIApplication.shared.openURL(requestUrl)
         }
     }
 }

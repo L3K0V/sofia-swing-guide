@@ -27,10 +27,10 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate, UITable
         
         self.navigationItem.title = "Swing Aout"
         
-        let camera = GMSCameraPosition.cameraWithLatitude(44.9677325, longitude: 2.1883318, zoom: 15)
+        let camera = GMSCameraPosition.camera(withLatitude: 44.9677325, longitude: 2.1883318, zoom: 15)
         mapView.camera = camera
         mapView.settings.myLocationButton = true
-        mapView.myLocationEnabled = true
+        mapView.isMyLocationEnabled = true
         
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -40,9 +40,9 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate, UITable
         loadLocations()
     }
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == CLAuthorizationStatus.AuthorizedWhenInUse {
-            mapView.myLocationEnabled = true
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.authorizedWhenInUse {
+            mapView.isMyLocationEnabled = true
             mapView.settings.myLocationButton = true
         }
     }
@@ -62,14 +62,14 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate, UITable
     }
     
     var locations:[Location] = []
-    let baseURL = NSURL(string: "http://swingaout.lekov.me")
+    let baseURL = URL(string: "http://swingaout.lekov.me")
     func loadLocations () {
         let manager:AFHTTPSessionManager = AFHTTPSessionManager(baseURL: baseURL)
-        manager.requestSerializer.setAuthorizationHeaderFieldWithCredential(AFOAuthCredential.retrieveCredentialWithIdentifier("credential"))
+        manager.requestSerializer.setAuthorizationHeaderFieldWith(AFOAuthCredential.retrieveCredential(withIdentifier: "credential"))
         manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept")
         manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        manager.GET("/events/1/guide/",
+        manager.get("/events/1/guide/",
                     parameters: nil,
                     progress: { (pro) in
                         
@@ -86,36 +86,36 @@ class PlacesViewController: UIViewController, CLLocationManagerDelegate, UITable
         }
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return locations.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:LocationCellTableViewCell = tableView.dequeueReusableCellWithIdentifier("locationsIdentifier", forIndexPath: indexPath) as! LocationCellTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:LocationCellTableViewCell = tableView.dequeueReusableCell(withIdentifier: "locationsIdentifier", for: indexPath) as! LocationCellTableViewCell
         
-        cell.titleLabel!.text = locations[indexPath.row].title
-        cell.descrionLabel!.text = locations[indexPath.row].text
-        cell.button!.tag = indexPath.row
-        cell.button!.addTarget(self, action: #selector(gotoGoogleMap(_:)), forControlEvents: .TouchUpInside)
+        cell.titleLabel!.text = locations[(indexPath as NSIndexPath).row].title
+        cell.descrionLabel!.text = locations[(indexPath as NSIndexPath).row].text
+        cell.button!.tag = (indexPath as NSIndexPath).row
+        cell.button!.addTarget(self, action: #selector(gotoGoogleMap(_:)), for: .touchUpInside)
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let camera = GMSCameraPosition.cameraWithLatitude(locations[indexPath.row].lat, longitude: locations[indexPath.row].lon, zoom: mapView.camera.zoom)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let camera = GMSCameraPosition.camera(withLatitude: locations[(indexPath as NSIndexPath).row].lat, longitude: locations[(indexPath as NSIndexPath).row].lon, zoom: mapView.camera.zoom)
         mapView.camera = camera
-        mapView.selectedMarker = markers[indexPath.row]
+        mapView.selectedMarker = markers[(indexPath as NSIndexPath).row]
     }
     
-    func gotoGoogleMap(sender: AnyObject) {
-        if (UIApplication.sharedApplication().canOpenURL(NSURL(string:"comgooglemaps://")!)) {
-            if let navAdd = NSURL(string:"comgooglemaps://?saddr=Current+Location&daddr=\(locations[sender.tag].lat),\(locations[sender.tag].lon)&directionsmode=walking") {
-                UIApplication.sharedApplication().openURL(navAdd)
+    func gotoGoogleMap(_ sender: AnyObject) {
+        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
+            if let navAdd = URL(string:"comgooglemaps://?saddr=Current+Location&daddr=\(locations[sender.tag].lat),\(locations[sender.tag].lon)&directionsmode=walking") {
+                UIApplication.shared.openURL(navAdd)
             }
 //            print ("loc \(locations[sender.tag].lon)")
 //            UIApplication.sharedApplication().openURL(NSURL(string:"google.com")!)

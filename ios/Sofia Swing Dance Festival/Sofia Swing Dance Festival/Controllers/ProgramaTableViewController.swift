@@ -34,21 +34,21 @@ class ProgramaTableViewController: UITableViewController {
     
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 6
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        switch indexPath.row {
+        switch (indexPath as NSIndexPath).row {
         case 0:
             cell.textLabel!.text = "Boogie Woogie"
             break
@@ -75,11 +75,11 @@ class ProgramaTableViewController: UITableViewController {
         return cell
     }
  
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        (segue.destinationViewController as! ProgramaPageTableViewController).type = types[self.tableView.indexPathForSelectedRow!.row]
+        (segue.destination as! ProgramaPageTableViewController).type = types[(self.tableView.indexPathForSelectedRow! as NSIndexPath).row]
         
     }
  

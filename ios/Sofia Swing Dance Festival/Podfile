@@ -2,18 +2,11 @@
 # platform :ios, '6.0'
 use_frameworks!
 
-target 'Sofia Swing Dance Festival' do
+target 'SwingAout Festival' do
     pod 'AFOAuth2Manager'
     pod 'SDWebImage'
     pod 'GoogleMaps'
     pod 'MBAutoGrowingTextView', '~> 0.1.0'
 end
 
-target 'Sofia Swing Dance FestivalTests' do
-
-end
-
-target 'Sofia Swing Dance FestivalUITests' do
-
-end
 

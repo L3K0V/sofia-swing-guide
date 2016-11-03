@@ -1,695 +1,1684 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		413AABDFE1E219E7AA361EDF /* Pods_Sofia_Swing_Dance_Festival.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEA7C3340BF4BD43AB6C81DB /* Pods_Sofia_Swing_Dance_Festival.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		F7089E0F1D411EEA00637998 /* LogoSwingAOut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F7089E0E1D411EEA00637998 /* LogoSwingAOut.jpg */; };
-		F7089E111D4129AB00637998 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = F7089E101D4129AB00637998 /* Logo.png */; };
-		F733BA991D4B6BE6007A013E /* Teachers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F733BA981D4B6BE6007A013E /* Teachers.xcassets */; };
-		F7601F2C1CF5C8EB00C91186 /* lindyhop.bg-logo 2.png in Resources */ = {isa = PBXBuildFile; fileRef = F7601F2B1CF5C8EB00C91186 /* lindyhop.bg-logo 2.png */; };
-		F7601F2E1CF5C9A000C91186 /* lindyhop.bg-logo 3.png in Resources */ = {isa = PBXBuildFile; fileRef = F7601F2D1CF5C9A000C91186 /* lindyhop.bg-logo 3.png */; };
-		F793B9CC1CE8B397003DA653 /* NewsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F793B9CB1CE8B397003DA653 /* NewsPageController.swift */; };
-		F793B9CE1CE8B514003DA653 /* header.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F793B9CD1CE8B514003DA653 /* header.jpg */; };
-		F7A9DC861CE737270086297E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9DC851CE737270086297E /* AppDelegate.swift */; };
-		F7A9DC8D1CE737270086297E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A9DC8B1CE737270086297E /* Main.storyboard */; };
-		F7A9DC921CE737270086297E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A9DC901CE737270086297E /* LaunchScreen.storyboard */; };
-		F7A9DC9D1CE737270086297E /* Sofia_Swing_Dance_FestivalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9DC9C1CE737270086297E /* Sofia_Swing_Dance_FestivalTests.swift */; };
-		F7A9DCA81CE737270086297E /* Sofia_Swing_Dance_FestivalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9DCA71CE737270086297E /* Sofia_Swing_Dance_FestivalUITests.swift */; };
-		F7A9DCB71CE73D6D0086297E /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9DCB61CE73D6D0086297E /* NewsController.swift */; };
-		F7A9DCBD1CE752950086297E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A9DCBC1CE752950086297E /* Media.xcassets */; };
-		F7A9DCC51CE76C7D0086297E /* TeachersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9DCC41CE76C7D0086297E /* TeachersController.swift */; };
-		F7E14CE11CE79B4D009F24A2 /* InstructorPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E14CE01CE79B4D009F24A2 /* InstructorPageViewController.swift */; };
-		F7E14CE31CE8A08E009F24A2 /* ContactController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E14CE21CE8A08E009F24A2 /* ContactController.swift */; };
-		F7E14CE51CE8A4EB009F24A2 /* CompetitionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E14CE41CE8A4EB009F24A2 /* CompetitionsController.swift */; };
-		F7F29E821CEC691A00A1BC9A /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F29E811CEC691A00A1BC9A /* json.swift */; };
-		F7F29E841CEC69D200A1BC9A /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F29E831CEC69D200A1BC9A /* Feed.swift */; };
-		F7F29E861CECA9FB00A1BC9A /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F29E851CECA9FB00A1BC9A /* PlacesViewController.swift */; };
-		F7F29E881CECB08E00A1BC9A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F29E871CECB08E00A1BC9A /* CoreLocation.framework */; };
-		F7F29E8A1CECBA8900A1BC9A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F29E891CECBA8900A1BC9A /* Location.swift */; };
-		F7F29E8C1CECC9B200A1BC9A /* LocationCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F29E8B1CECC9B200A1BC9A /* LocationCellTableViewCell.swift */; };
-		F7F29E8E1CED2BD300A1BC9A /* ProgramaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F29E8D1CED2BD300A1BC9A /* ProgramaTableViewController.swift */; };
-		F7F29E901CED2E2A00A1BC9A /* ProgramaPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F29E8F1CED2E2A00A1BC9A /* ProgramaPageTableViewController.swift */; };
-		F7F29E921CED2EF600A1BC9A /* ProgaramaPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F29E911CED2EF600A1BC9A /* ProgaramaPageTableViewCell.swift */; };
-		F7F29E941CED2F0B00A1BC9A /* Programa.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F29E931CED2F0B00A1BC9A /* Programa.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F7A9DC991CE737270086297E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F7A9DC7A1CE737260086297E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F7A9DC811CE737260086297E;
-			remoteInfo = "Sofia Swing Dance Festival";
-		};
-		F7A9DCA41CE737270086297E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F7A9DC7A1CE737260086297E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F7A9DC811CE737260086297E;
-			remoteInfo = "Sofia Swing Dance Festival";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		B372A6F7199827D8D5717F00 /* Pods-Sofia Swing Dance Festival.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sofia Swing Dance Festival.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sofia Swing Dance Festival/Pods-Sofia Swing Dance Festival.release.xcconfig"; sourceTree = "<group>"; };
-		BAB720FAE395888114033DFC /* Pods-Sofia Swing Dance Festival.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sofia Swing Dance Festival.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sofia Swing Dance Festival/Pods-Sofia Swing Dance Festival.debug.xcconfig"; sourceTree = "<group>"; };
-		F7089E0E1D411EEA00637998 /* LogoSwingAOut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LogoSwingAOut.jpg; sourceTree = "<group>"; };
-		F7089E101D4129AB00637998 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
-		F720B0BE1CEB5F4A00BD10E4 /* SSDF-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SSDF-Bridging-Header.h"; sourceTree = "<group>"; };
-		F733BA981D4B6BE6007A013E /* Teachers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Teachers.xcassets; sourceTree = "<group>"; };
-		F7601F2B1CF5C8EB00C91186 /* lindyhop.bg-logo 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lindyhop.bg-logo 2.png"; sourceTree = "<group>"; };
-		F7601F2D1CF5C9A000C91186 /* lindyhop.bg-logo 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lindyhop.bg-logo 3.png"; sourceTree = "<group>"; };
-		F793B9CB1CE8B397003DA653 /* NewsPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsPageController.swift; sourceTree = "<group>"; };
-		F793B9CD1CE8B514003DA653 /* header.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = header.jpg; sourceTree = "<group>"; };
-		F7A9DC821CE737260086297E /* SwingAout Festival.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwingAout Festival.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7A9DC851CE737270086297E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F7A9DC8C1CE737270086297E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F7A9DC911CE737270086297E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		F7A9DC931CE737270086297E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7A9DC981CE737270086297E /* SwingAout Festival.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwingAout Festival.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7A9DC9C1CE737270086297E /* Sofia_Swing_Dance_FestivalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sofia_Swing_Dance_FestivalTests.swift; sourceTree = "<group>"; };
-		F7A9DC9E1CE737270086297E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7A9DCA31CE737270086297E /* SwingAout Festival.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwingAout Festival.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7A9DCA71CE737270086297E /* Sofia_Swing_Dance_FestivalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sofia_Swing_Dance_FestivalUITests.swift; sourceTree = "<group>"; };
-		F7A9DCA91CE737270086297E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7A9DCB61CE73D6D0086297E /* NewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
-		F7A9DCBC1CE752950086297E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		F7A9DCC41CE76C7D0086297E /* TeachersController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachersController.swift; sourceTree = "<group>"; };
-		F7E14CE01CE79B4D009F24A2 /* InstructorPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructorPageViewController.swift; sourceTree = "<group>"; };
-		F7E14CE21CE8A08E009F24A2 /* ContactController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactController.swift; sourceTree = "<group>"; };
-		F7E14CE41CE8A4EB009F24A2 /* CompetitionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompetitionsController.swift; sourceTree = "<group>"; };
-		F7F29E811CEC691A00A1BC9A /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
-		F7F29E831CEC69D200A1BC9A /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
-		F7F29E851CECA9FB00A1BC9A /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
-		F7F29E871CECB08E00A1BC9A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		F7F29E891CECBA8900A1BC9A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		F7F29E8B1CECC9B200A1BC9A /* LocationCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCellTableViewCell.swift; sourceTree = "<group>"; };
-		F7F29E8D1CED2BD300A1BC9A /* ProgramaTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramaTableViewController.swift; sourceTree = "<group>"; };
-		F7F29E8F1CED2E2A00A1BC9A /* ProgramaPageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramaPageTableViewController.swift; sourceTree = "<group>"; };
-		F7F29E911CED2EF600A1BC9A /* ProgaramaPageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgaramaPageTableViewCell.swift; sourceTree = "<group>"; };
-		F7F29E931CED2F0B00A1BC9A /* Programa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Programa.swift; sourceTree = "<group>"; };
-		FEA7C3340BF4BD43AB6C81DB /* Pods_Sofia_Swing_Dance_Festival.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sofia_Swing_Dance_Festival.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		F7A9DC7F1CE737260086297E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F7F29E881CECB08E00A1BC9A /* CoreLocation.framework in Frameworks */,
-				413AABDFE1E219E7AA361EDF /* Pods_Sofia_Swing_Dance_Festival.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7A9DC951CE737270086297E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7A9DCA01CE737270086297E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		12E3A81D47BE86ED3D1C33C7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F7F29E871CECB08E00A1BC9A /* CoreLocation.framework */,
-				FEA7C3340BF4BD43AB6C81DB /* Pods_Sofia_Swing_Dance_Festival.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9578AE2EA7F90872CF603D52 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BAB720FAE395888114033DFC /* Pods-Sofia Swing Dance Festival.debug.xcconfig */,
-				B372A6F7199827D8D5717F00 /* Pods-Sofia Swing Dance Festival.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		F7A9DC791CE737260086297E = {
-			isa = PBXGroup;
-			children = (
-				F7601F2B1CF5C8EB00C91186 /* lindyhop.bg-logo 2.png */,
-				F7601F2D1CF5C9A000C91186 /* lindyhop.bg-logo 3.png */,
-				F793B9CD1CE8B514003DA653 /* header.jpg */,
-				F7089E0E1D411EEA00637998 /* LogoSwingAOut.jpg */,
-				F7089E101D4129AB00637998 /* Logo.png */,
-				F7A9DCB51CE73CE00086297E /* Controllers */,
-				F7A9DC841CE737260086297E /* SwingAout Festival */,
-				F7A9DC9B1CE737270086297E /* Sofia Swing Dance FestivalTests */,
-				F7A9DCA61CE737270086297E /* Sofia Swing Dance FestivalUITests */,
-				F7A9DC831CE737260086297E /* Products */,
-				9578AE2EA7F90872CF603D52 /* Pods */,
-				12E3A81D47BE86ED3D1C33C7 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		F7A9DC831CE737260086297E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F7A9DC821CE737260086297E /* SwingAout Festival.app */,
-				F7A9DC981CE737270086297E /* SwingAout Festival.xctest */,
-				F7A9DCA31CE737270086297E /* SwingAout Festival.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F7A9DC841CE737260086297E /* SwingAout Festival */ = {
-			isa = PBXGroup;
-			children = (
-				F7F29E831CEC69D200A1BC9A /* Feed.swift */,
-				F7F29E891CECBA8900A1BC9A /* Location.swift */,
-				F7F29E931CED2F0B00A1BC9A /* Programa.swift */,
-				F7F29E811CEC691A00A1BC9A /* json.swift */,
-				F7A9DC851CE737270086297E /* AppDelegate.swift */,
-				F7A9DC8B1CE737270086297E /* Main.storyboard */,
-				F7A9DC901CE737270086297E /* LaunchScreen.storyboard */,
-				F7A9DC931CE737270086297E /* Info.plist */,
-				F7A9DCBC1CE752950086297E /* Media.xcassets */,
-				F733BA981D4B6BE6007A013E /* Teachers.xcassets */,
-				F720B0BE1CEB5F4A00BD10E4 /* SSDF-Bridging-Header.h */,
-			);
-			name = "SwingAout Festival";
-			path = "Sofia Swing Dance Festival";
-			sourceTree = "<group>";
-		};
-		F7A9DC9B1CE737270086297E /* Sofia Swing Dance FestivalTests */ = {
-			isa = PBXGroup;
-			children = (
-				F7A9DC9C1CE737270086297E /* Sofia_Swing_Dance_FestivalTests.swift */,
-				F7A9DC9E1CE737270086297E /* Info.plist */,
-			);
-			path = "Sofia Swing Dance FestivalTests";
-			sourceTree = "<group>";
-		};
-		F7A9DCA61CE737270086297E /* Sofia Swing Dance FestivalUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F7A9DCA71CE737270086297E /* Sofia_Swing_Dance_FestivalUITests.swift */,
-				F7A9DCA91CE737270086297E /* Info.plist */,
-			);
-			path = "Sofia Swing Dance FestivalUITests";
-			sourceTree = "<group>";
-		};
-		F7A9DCB51CE73CE00086297E /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				F7A9DCB61CE73D6D0086297E /* NewsController.swift */,
-				F793B9CB1CE8B397003DA653 /* NewsPageController.swift */,
-				F7A9DCC41CE76C7D0086297E /* TeachersController.swift */,
-				F7E14CE01CE79B4D009F24A2 /* InstructorPageViewController.swift */,
-				F7E14CE21CE8A08E009F24A2 /* ContactController.swift */,
-				F7E14CE41CE8A4EB009F24A2 /* CompetitionsController.swift */,
-				F7F29E851CECA9FB00A1BC9A /* PlacesViewController.swift */,
-				F7F29E8B1CECC9B200A1BC9A /* LocationCellTableViewCell.swift */,
-				F7F29E8D1CED2BD300A1BC9A /* ProgramaTableViewController.swift */,
-				F7F29E8F1CED2E2A00A1BC9A /* ProgramaPageTableViewController.swift */,
-				F7F29E911CED2EF600A1BC9A /* ProgaramaPageTableViewCell.swift */,
-			);
-			name = Controllers;
-			path = "Sofia Swing Dance Festival/Controllers";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		F7A9DC811CE737260086297E /* SwingAout Festival */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F7A9DCAC1CE737270086297E /* Build configuration list for PBXNativeTarget "SwingAout Festival" */;
-			buildPhases = (
-				D17A808AB0DE7642BC5B35F2 /* Check Pods Manifest.lock */,
-				F7A9DC7E1CE737260086297E /* Sources */,
-				F7A9DC7F1CE737260086297E /* Frameworks */,
-				F7A9DC801CE737260086297E /* Resources */,
-				D828D1706CE4E94836AFE692 /* Copy Pods Resources */,
-				1BB85A91BEC3CCF230E51F08 /* Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "SwingAout Festival";
-			productName = "Sofia Swing Dance Festival";
-			productReference = F7A9DC821CE737260086297E /* SwingAout Festival.app */;
-			productType = "com.apple.product-type.application";
-		};
-		F7A9DC971CE737270086297E /* SwingAout FestivalTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F7A9DCAF1CE737270086297E /* Build configuration list for PBXNativeTarget "SwingAout FestivalTests" */;
-			buildPhases = (
-				F7A9DC941CE737270086297E /* Sources */,
-				F7A9DC951CE737270086297E /* Frameworks */,
-				F7A9DC961CE737270086297E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F7A9DC9A1CE737270086297E /* PBXTargetDependency */,
-			);
-			name = "SwingAout FestivalTests";
-			productName = "Sofia Swing Dance FestivalTests";
-			productReference = F7A9DC981CE737270086297E /* SwingAout Festival.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		F7A9DCA21CE737270086297E /* SwingAout FestivalUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F7A9DCB21CE737270086297E /* Build configuration list for PBXNativeTarget "SwingAout FestivalUITests" */;
-			buildPhases = (
-				F7A9DC9F1CE737270086297E /* Sources */,
-				F7A9DCA01CE737270086297E /* Frameworks */,
-				F7A9DCA11CE737270086297E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F7A9DCA51CE737270086297E /* PBXTargetDependency */,
-			);
-			name = "SwingAout FestivalUITests";
-			productName = "Sofia Swing Dance FestivalUITests";
-			productReference = F7A9DCA31CE737270086297E /* SwingAout Festival.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		F7A9DC7A1CE737260086297E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "Spirit Invoker";
-				TargetAttributes = {
-					F7A9DC811CE737260086297E = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = Y2G2D8HFRU;
-						SystemCapabilities = {
-							com.apple.Push = {
-								enabled = 1;
-							};
-						};
-					};
-					F7A9DC971CE737270086297E = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = F7A9DC811CE737260086297E;
-					};
-					F7A9DCA21CE737270086297E = {
-						CreatedOnToolsVersion = 7.3.1;
-						TestTargetID = F7A9DC811CE737260086297E;
-					};
-				};
-			};
-			buildConfigurationList = F7A9DC7D1CE737260086297E /* Build configuration list for PBXProject "SwingAout Festival" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = F7A9DC791CE737260086297E;
-			productRefGroup = F7A9DC831CE737260086297E /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				F7A9DC811CE737260086297E /* SwingAout Festival */,
-				F7A9DC971CE737270086297E /* SwingAout FestivalTests */,
-				F7A9DCA21CE737270086297E /* SwingAout FestivalUITests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		F7A9DC801CE737260086297E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F7089E111D4129AB00637998 /* Logo.png in Resources */,
-				F7A9DC921CE737270086297E /* LaunchScreen.storyboard in Resources */,
-				F7089E0F1D411EEA00637998 /* LogoSwingAOut.jpg in Resources */,
-				F7A9DC8D1CE737270086297E /* Main.storyboard in Resources */,
-				F733BA991D4B6BE6007A013E /* Teachers.xcassets in Resources */,
-				F7601F2C1CF5C8EB00C91186 /* lindyhop.bg-logo 2.png in Resources */,
-				F793B9CE1CE8B514003DA653 /* header.jpg in Resources */,
-				F7A9DCBD1CE752950086297E /* Media.xcassets in Resources */,
-				F7601F2E1CF5C9A000C91186 /* lindyhop.bg-logo 3.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7A9DC961CE737270086297E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7A9DCA11CE737270086297E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1BB85A91BEC3CCF230E51F08 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sofia Swing Dance Festival/Pods-Sofia Swing Dance Festival-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D17A808AB0DE7642BC5B35F2 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		D828D1706CE4E94836AFE692 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sofia Swing Dance Festival/Pods-Sofia Swing Dance Festival-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		F7A9DC7E1CE737260086297E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F793B9CC1CE8B397003DA653 /* NewsPageController.swift in Sources */,
-				F7F29E8A1CECBA8900A1BC9A /* Location.swift in Sources */,
-				F7F29E941CED2F0B00A1BC9A /* Programa.swift in Sources */,
-				F7F29E8C1CECC9B200A1BC9A /* LocationCellTableViewCell.swift in Sources */,
-				F7F29E8E1CED2BD300A1BC9A /* ProgramaTableViewController.swift in Sources */,
-				F7F29E841CEC69D200A1BC9A /* Feed.swift in Sources */,
-				F7F29E861CECA9FB00A1BC9A /* PlacesViewController.swift in Sources */,
-				F7A9DCB71CE73D6D0086297E /* NewsController.swift in Sources */,
-				F7E14CE51CE8A4EB009F24A2 /* CompetitionsController.swift in Sources */,
-				F7E14CE31CE8A08E009F24A2 /* ContactController.swift in Sources */,
-				F7F29E901CED2E2A00A1BC9A /* ProgramaPageTableViewController.swift in Sources */,
-				F7A9DC861CE737270086297E /* AppDelegate.swift in Sources */,
-				F7E14CE11CE79B4D009F24A2 /* InstructorPageViewController.swift in Sources */,
-				F7A9DCC51CE76C7D0086297E /* TeachersController.swift in Sources */,
-				F7F29E821CEC691A00A1BC9A /* json.swift in Sources */,
-				F7F29E921CED2EF600A1BC9A /* ProgaramaPageTableViewCell.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7A9DC941CE737270086297E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F7A9DC9D1CE737270086297E /* Sofia_Swing_Dance_FestivalTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F7A9DC9F1CE737270086297E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F7A9DCA81CE737270086297E /* Sofia_Swing_Dance_FestivalUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F7A9DC9A1CE737270086297E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F7A9DC811CE737260086297E /* SwingAout Festival */;
-			targetProxy = F7A9DC991CE737270086297E /* PBXContainerItemProxy */;
-		};
-		F7A9DCA51CE737270086297E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F7A9DC811CE737260086297E /* SwingAout Festival */;
-			targetProxy = F7A9DCA41CE737270086297E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F7A9DC8B1CE737270086297E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F7A9DC8C1CE737270086297E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F7A9DC901CE737270086297E /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F7A9DC911CE737270086297E /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		F7A9DCAA1CE737270086297E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		F7A9DCAB1CE737270086297E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		F7A9DCAD1CE737270086297E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BAB720FAE395888114033DFC /* Pods-Sofia Swing Dance Festival.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "Sofia Swing Dance Festival/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.spiritinvoker.swingfestival.swingaout;
-				PRODUCT_NAME = "SwingAout Festival";
-				SWIFT_OBJC_BRIDGING_HEADER = "SSDF-Bridging-Header.h";
-			};
-			name = Debug;
-		};
-		F7A9DCAE1CE737270086297E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B372A6F7199827D8D5717F00 /* Pods-Sofia Swing Dance Festival.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "Sofia Swing Dance Festival/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.spiritinvoker.swingfestival.swingaout;
-				PRODUCT_NAME = "SwingAout Festival";
-				SWIFT_OBJC_BRIDGING_HEADER = "SSDF-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		F7A9DCB01CE737270086297E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Sofia Swing Dance FestivalTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.spiritinvoker.Sofia-Swing-Dance-FestivalTests";
-				PRODUCT_NAME = "SwingAout Festival";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwingAout Festival.app/SwingAout Festival";
-			};
-			name = Debug;
-		};
-		F7A9DCB11CE737270086297E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Sofia Swing Dance FestivalTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.spiritinvoker.Sofia-Swing-Dance-FestivalTests";
-				PRODUCT_NAME = "SwingAout Festival";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwingAout Festival.app/SwingAout Festival";
-			};
-			name = Release;
-		};
-		F7A9DCB31CE737270086297E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Sofia Swing Dance FestivalUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.spiritinvoker.Sofia-Swing-Dance-FestivalUITests";
-				PRODUCT_NAME = "SwingAout Festival";
-				TEST_TARGET_NAME = "Sofia Swing Dance Festival";
-			};
-			name = Debug;
-		};
-		F7A9DCB41CE737270086297E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "Sofia Swing Dance FestivalUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.spiritinvoker.Sofia-Swing-Dance-FestivalUITests";
-				PRODUCT_NAME = "SwingAout Festival";
-				TEST_TARGET_NAME = "Sofia Swing Dance Festival";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		F7A9DC7D1CE737260086297E /* Build configuration list for PBXProject "SwingAout Festival" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F7A9DCAA1CE737270086297E /* Debug */,
-				F7A9DCAB1CE737270086297E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F7A9DCAC1CE737270086297E /* Build configuration list for PBXNativeTarget "SwingAout Festival" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F7A9DCAD1CE737270086297E /* Debug */,
-				F7A9DCAE1CE737270086297E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F7A9DCAF1CE737270086297E /* Build configuration list for PBXNativeTarget "SwingAout FestivalTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F7A9DCB01CE737270086297E /* Debug */,
-				F7A9DCB11CE737270086297E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F7A9DCB21CE737270086297E /* Build configuration list for PBXNativeTarget "SwingAout FestivalUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F7A9DCB31CE737270086297E /* Debug */,
-				F7A9DCB41CE737270086297E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = F7A9DC7A1CE737260086297E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>0EA19A278DB6A06D59EFC79F</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_SwingAout_Festival.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>12E3A81D47BE86ED3D1C33C7</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F7F29E871CECB08E00A1BC9A</string>
+				<string>FEA7C3340BF4BD43AB6C81DB</string>
+				<string>0EA19A278DB6A06D59EFC79F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1BB85A91BEC3CCF230E51F08</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-SwingAout Festival/Pods-SwingAout Festival-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>26CA1BABE5403073E4BCA65E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0EA19A278DB6A06D59EFC79F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Weak</string>
+				</array>
+			</dict>
+		</dict>
+		<key>413AABDFE1E219E7AA361EDF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FEA7C3340BF4BD43AB6C81DB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Weak</string>
+				</array>
+			</dict>
+		</dict>
+		<key>9578AE2EA7F90872CF603D52</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BAB720FAE395888114033DFC</string>
+				<string>B372A6F7199827D8D5717F00</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B372A6F7199827D8D5717F00</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Sofia Swing Dance Festival.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Sofia Swing Dance Festival/Pods-Sofia Swing Dance Festival.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BAB720FAE395888114033DFC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-Sofia Swing Dance Festival.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-Sofia Swing Dance Festival/Pods-Sofia Swing Dance Festival.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D17A808AB0DE7642BC5B35F2</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>D828D1706CE4E94836AFE692</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-SwingAout Festival/Pods-SwingAout Festival-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>F7089E0E1D411EEA00637998</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.jpeg</string>
+			<key>path</key>
+			<string>LogoSwingAOut.jpg</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7089E0F1D411EEA00637998</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7089E0E1D411EEA00637998</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7089E101D4129AB00637998</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>Logo.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7089E111D4129AB00637998</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7089E101D4129AB00637998</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F720B0BE1CEB5F4A00BD10E4</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>SSDF-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F733BA981D4B6BE6007A013E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Teachers.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F733BA991D4B6BE6007A013E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F733BA981D4B6BE6007A013E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7601F2B1CF5C8EB00C91186</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>lindyhop.bg-logo 2.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7601F2C1CF5C8EB00C91186</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7601F2B1CF5C8EB00C91186</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7601F2D1CF5C9A000C91186</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>path</key>
+			<string>lindyhop.bg-logo 3.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7601F2E1CF5C9A000C91186</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7601F2D1CF5C9A000C91186</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F793B9CB1CE8B397003DA653</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>NewsPageController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F793B9CC1CE8B397003DA653</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F793B9CB1CE8B397003DA653</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F793B9CD1CE8B514003DA653</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.jpeg</string>
+			<key>path</key>
+			<string>header.jpg</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F793B9CE1CE8B514003DA653</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F793B9CD1CE8B514003DA653</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7A9DC791CE737260086297E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F7601F2B1CF5C8EB00C91186</string>
+				<string>F7601F2D1CF5C9A000C91186</string>
+				<string>F793B9CD1CE8B514003DA653</string>
+				<string>F7089E0E1D411EEA00637998</string>
+				<string>F7089E101D4129AB00637998</string>
+				<string>F7A9DCB51CE73CE00086297E</string>
+				<string>F7A9DC841CE737260086297E</string>
+				<string>F7A9DC9B1CE737270086297E</string>
+				<string>F7A9DCA61CE737270086297E</string>
+				<string>F7A9DC831CE737260086297E</string>
+				<string>9578AE2EA7F90872CF603D52</string>
+				<string>12E3A81D47BE86ED3D1C33C7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DC7A1CE737260086297E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0730</string>
+				<key>LastUpgradeCheck</key>
+				<string>0730</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Spirit Invoker</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>F7A9DC811CE737260086297E</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+						<key>DevelopmentTeam</key>
+						<string>Y2G2D8HFRU</string>
+						<key>LastSwiftMigration</key>
+						<string>0800</string>
+						<key>SystemCapabilities</key>
+						<dict>
+							<key>com.apple.Push</key>
+							<dict>
+								<key>enabled</key>
+								<string>1</string>
+							</dict>
+						</dict>
+					</dict>
+					<key>F7A9DC971CE737270086297E</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+						<key>LastSwiftMigration</key>
+						<string>0800</string>
+						<key>TestTargetID</key>
+						<string>F7A9DC811CE737260086297E</string>
+					</dict>
+					<key>F7A9DCA21CE737270086297E</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.3.1</string>
+						<key>LastSwiftMigration</key>
+						<string>0800</string>
+						<key>TestTargetID</key>
+						<string>F7A9DC811CE737260086297E</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>F7A9DC7D1CE737260086297E</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>F7A9DC791CE737260086297E</string>
+			<key>productRefGroup</key>
+			<string>F7A9DC831CE737260086297E</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>F7A9DC811CE737260086297E</string>
+				<string>F7A9DC971CE737270086297E</string>
+				<string>F7A9DCA21CE737270086297E</string>
+			</array>
+		</dict>
+		<key>F7A9DC7D1CE737260086297E</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>F7A9DCAA1CE737270086297E</string>
+				<string>F7A9DCAB1CE737270086297E</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>F7A9DC7E1CE737260086297E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F793B9CC1CE8B397003DA653</string>
+				<string>F7F29E8A1CECBA8900A1BC9A</string>
+				<string>F7F29E941CED2F0B00A1BC9A</string>
+				<string>F7F29E8C1CECC9B200A1BC9A</string>
+				<string>F7F29E8E1CED2BD300A1BC9A</string>
+				<string>F7F29E841CEC69D200A1BC9A</string>
+				<string>F7F29E861CECA9FB00A1BC9A</string>
+				<string>F7A9DCB71CE73D6D0086297E</string>
+				<string>F7E14CE51CE8A4EB009F24A2</string>
+				<string>F7E14CE31CE8A08E009F24A2</string>
+				<string>F7F29E901CED2E2A00A1BC9A</string>
+				<string>F7A9DC861CE737270086297E</string>
+				<string>F7E14CE11CE79B4D009F24A2</string>
+				<string>F7A9DCC51CE76C7D0086297E</string>
+				<string>F7F29E821CEC691A00A1BC9A</string>
+				<string>F7F29E921CED2EF600A1BC9A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F7A9DC7F1CE737260086297E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F7F29E881CECB08E00A1BC9A</string>
+				<string>413AABDFE1E219E7AA361EDF</string>
+				<string>26CA1BABE5403073E4BCA65E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F7A9DC801CE737260086297E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F7089E111D4129AB00637998</string>
+				<string>F7A9DC921CE737270086297E</string>
+				<string>F7089E0F1D411EEA00637998</string>
+				<string>F7A9DC8D1CE737270086297E</string>
+				<string>F733BA991D4B6BE6007A013E</string>
+				<string>F7601F2C1CF5C8EB00C91186</string>
+				<string>F793B9CE1CE8B514003DA653</string>
+				<string>F7A9DCBD1CE752950086297E</string>
+				<string>F7601F2E1CF5C9A000C91186</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F7A9DC811CE737260086297E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>F7A9DCAC1CE737270086297E</string>
+			<key>buildPhases</key>
+			<array>
+				<string>D17A808AB0DE7642BC5B35F2</string>
+				<string>F7A9DC7E1CE737260086297E</string>
+				<string>F7A9DC7F1CE737260086297E</string>
+				<string>F7A9DC801CE737260086297E</string>
+				<string>D828D1706CE4E94836AFE692</string>
+				<string>1BB85A91BEC3CCF230E51F08</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>SwingAout Festival</string>
+			<key>productName</key>
+			<string>Sofia Swing Dance Festival</string>
+			<key>productReference</key>
+			<string>F7A9DC821CE737260086297E</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>F7A9DC821CE737260086297E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>SwingAout Festival.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>F7A9DC831CE737260086297E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F7A9DC821CE737260086297E</string>
+				<string>F7A9DC981CE737270086297E</string>
+				<string>F7A9DCA31CE737270086297E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DC841CE737260086297E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F7F29E831CEC69D200A1BC9A</string>
+				<string>F7F29E891CECBA8900A1BC9A</string>
+				<string>F7F29E931CED2F0B00A1BC9A</string>
+				<string>F7F29E811CEC691A00A1BC9A</string>
+				<string>F7A9DC851CE737270086297E</string>
+				<string>F7A9DC8B1CE737270086297E</string>
+				<string>F7A9DC901CE737270086297E</string>
+				<string>F7A9DC931CE737270086297E</string>
+				<string>F7A9DCBC1CE752950086297E</string>
+				<string>F733BA981D4B6BE6007A013E</string>
+				<string>F720B0BE1CEB5F4A00BD10E4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>SwingAout Festival</string>
+			<key>path</key>
+			<string>Sofia Swing Dance Festival</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DC851CE737270086297E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DC861CE737270086297E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7A9DC851CE737270086297E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7A9DC8B1CE737270086297E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F7A9DC8C1CE737270086297E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DC8C1CE737270086297E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DC8D1CE737270086297E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7A9DC8B1CE737270086297E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7A9DC901CE737270086297E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F7A9DC911CE737270086297E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DC911CE737270086297E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DC921CE737270086297E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7A9DC901CE737270086297E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7A9DC931CE737270086297E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DC941CE737270086297E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F7A9DC9D1CE737270086297E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F7A9DC951CE737270086297E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F7A9DC961CE737270086297E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F7A9DC971CE737270086297E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>F7A9DCAF1CE737270086297E</string>
+			<key>buildPhases</key>
+			<array>
+				<string>F7A9DC941CE737270086297E</string>
+				<string>F7A9DC951CE737270086297E</string>
+				<string>F7A9DC961CE737270086297E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>F7A9DC9A1CE737270086297E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>SwingAout FestivalTests</string>
+			<key>productName</key>
+			<string>Sofia Swing Dance FestivalTests</string>
+			<key>productReference</key>
+			<string>F7A9DC981CE737270086297E</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>F7A9DC981CE737270086297E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>SwingAout Festival.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>F7A9DC991CE737270086297E</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>F7A9DC7A1CE737260086297E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>F7A9DC811CE737260086297E</string>
+			<key>remoteInfo</key>
+			<string>Sofia Swing Dance Festival</string>
+		</dict>
+		<key>F7A9DC9A1CE737270086297E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>F7A9DC811CE737260086297E</string>
+			<key>targetProxy</key>
+			<string>F7A9DC991CE737270086297E</string>
+		</dict>
+		<key>F7A9DC9B1CE737270086297E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F7A9DC9C1CE737270086297E</string>
+				<string>F7A9DC9E1CE737270086297E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Sofia Swing Dance FestivalTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DC9C1CE737270086297E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Sofia_Swing_Dance_FestivalTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DC9D1CE737270086297E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7A9DC9C1CE737270086297E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7A9DC9E1CE737270086297E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DC9F1CE737270086297E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F7A9DCA81CE737270086297E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F7A9DCA01CE737270086297E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F7A9DCA11CE737270086297E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F7A9DCA21CE737270086297E</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>F7A9DCB21CE737270086297E</string>
+			<key>buildPhases</key>
+			<array>
+				<string>F7A9DC9F1CE737270086297E</string>
+				<string>F7A9DCA01CE737270086297E</string>
+				<string>F7A9DCA11CE737270086297E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>F7A9DCA51CE737270086297E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>SwingAout FestivalUITests</string>
+			<key>productName</key>
+			<string>Sofia Swing Dance FestivalUITests</string>
+			<key>productReference</key>
+			<string>F7A9DCA31CE737270086297E</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.ui-testing</string>
+		</dict>
+		<key>F7A9DCA31CE737270086297E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>SwingAout Festival.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>F7A9DCA41CE737270086297E</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>F7A9DC7A1CE737260086297E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>F7A9DC811CE737260086297E</string>
+			<key>remoteInfo</key>
+			<string>Sofia Swing Dance Festival</string>
+		</dict>
+		<key>F7A9DCA51CE737270086297E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>F7A9DC811CE737260086297E</string>
+			<key>targetProxy</key>
+			<string>F7A9DCA41CE737270086297E</string>
+		</dict>
+		<key>F7A9DCA61CE737270086297E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F7A9DCA71CE737270086297E</string>
+				<string>F7A9DCA91CE737270086297E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Sofia Swing Dance FestivalUITests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DCA71CE737270086297E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Sofia_Swing_Dance_FestivalUITests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DCA81CE737270086297E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7A9DCA71CE737270086297E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7A9DCA91CE737270086297E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DCAA1CE737270086297E</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>F7A9DCAB1CE737270086297E</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_ANALYZER_NONNULL</key>
+				<string>YES</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.3</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>F7A9DCAC1CE737270086297E</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>F7A9DCAD1CE737270086297E</string>
+				<string>F7A9DCAE1CE737270086297E</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>F7A9DCAD1CE737270086297E</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>BAB720FAE395888114033DFC</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Sofia Swing Dance Festival/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.spiritinvoker.swingfestival.swingaout</string>
+				<key>PRODUCT_NAME</key>
+				<string>SwingAout Festival</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>SSDF-Bridging-Header.h</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>F7A9DCAE1CE737270086297E</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>B372A6F7199827D8D5717F00</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Sofia Swing Dance Festival/Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.spiritinvoker.swingfestival.swingaout</string>
+				<key>PRODUCT_NAME</key>
+				<string>SwingAout Festival</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>SSDF-Bridging-Header.h</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>F7A9DCAF1CE737270086297E</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>F7A9DCB01CE737270086297E</string>
+				<string>F7A9DCB11CE737270086297E</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>F7A9DCB01CE737270086297E</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Sofia Swing Dance FestivalTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.spiritinvoker.Sofia-Swing-Dance-FestivalTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>SwingAout Festival</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/SwingAout Festival.app/SwingAout Festival</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>F7A9DCB11CE737270086297E</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Sofia Swing Dance FestivalTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.spiritinvoker.Sofia-Swing-Dance-FestivalTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>SwingAout Festival</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/SwingAout Festival.app/SwingAout Festival</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>F7A9DCB21CE737270086297E</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>F7A9DCB31CE737270086297E</string>
+				<string>F7A9DCB41CE737270086297E</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>F7A9DCB31CE737270086297E</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>Sofia Swing Dance FestivalUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.spiritinvoker.Sofia-Swing-Dance-FestivalUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>SwingAout Festival</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>Sofia Swing Dance Festival</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>F7A9DCB41CE737270086297E</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>Sofia Swing Dance FestivalUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>com.spiritinvoker.Sofia-Swing-Dance-FestivalUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>SwingAout Festival</string>
+				<key>SWIFT_VERSION</key>
+				<string>3.0</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>Sofia Swing Dance Festival</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>F7A9DCB51CE73CE00086297E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F7A9DCB61CE73D6D0086297E</string>
+				<string>F793B9CB1CE8B397003DA653</string>
+				<string>F7A9DCC41CE76C7D0086297E</string>
+				<string>F7E14CE01CE79B4D009F24A2</string>
+				<string>F7E14CE21CE8A08E009F24A2</string>
+				<string>F7E14CE41CE8A4EB009F24A2</string>
+				<string>F7F29E851CECA9FB00A1BC9A</string>
+				<string>F7F29E8B1CECC9B200A1BC9A</string>
+				<string>F7F29E8D1CED2BD300A1BC9A</string>
+				<string>F7F29E8F1CED2E2A00A1BC9A</string>
+				<string>F7F29E911CED2EF600A1BC9A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Controllers</string>
+			<key>path</key>
+			<string>Sofia Swing Dance Festival/Controllers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DCB61CE73D6D0086297E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>NewsController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DCB71CE73D6D0086297E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7A9DCB61CE73D6D0086297E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7A9DCBC1CE752950086297E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Media.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DCBD1CE752950086297E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7A9DCBC1CE752950086297E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7A9DCC41CE76C7D0086297E</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TeachersController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7A9DCC51CE76C7D0086297E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7A9DCC41CE76C7D0086297E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7E14CE01CE79B4D009F24A2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>InstructorPageViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7E14CE11CE79B4D009F24A2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7E14CE01CE79B4D009F24A2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7E14CE21CE8A08E009F24A2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ContactController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7E14CE31CE8A08E009F24A2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7E14CE21CE8A08E009F24A2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7E14CE41CE8A4EB009F24A2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CompetitionsController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7E14CE51CE8A4EB009F24A2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7E14CE41CE8A4EB009F24A2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7F29E811CEC691A00A1BC9A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>json.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7F29E821CEC691A00A1BC9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7F29E811CEC691A00A1BC9A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7F29E831CEC69D200A1BC9A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Feed.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7F29E841CEC69D200A1BC9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7F29E831CEC69D200A1BC9A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7F29E851CECA9FB00A1BC9A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PlacesViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7F29E861CECA9FB00A1BC9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7F29E851CECA9FB00A1BC9A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7F29E871CECB08E00A1BC9A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreLocation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreLocation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>F7F29E881CECB08E00A1BC9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7F29E871CECB08E00A1BC9A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7F29E891CECBA8900A1BC9A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Location.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7F29E8A1CECBA8900A1BC9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7F29E891CECBA8900A1BC9A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7F29E8B1CECC9B200A1BC9A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LocationCellTableViewCell.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7F29E8C1CECC9B200A1BC9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7F29E8B1CECC9B200A1BC9A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7F29E8D1CED2BD300A1BC9A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ProgramaTableViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7F29E8E1CED2BD300A1BC9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7F29E8D1CED2BD300A1BC9A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7F29E8F1CED2E2A00A1BC9A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ProgramaPageTableViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7F29E901CED2E2A00A1BC9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7F29E8F1CED2E2A00A1BC9A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7F29E911CED2EF600A1BC9A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ProgaramaPageTableViewCell.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7F29E921CED2EF600A1BC9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7F29E911CED2EF600A1BC9A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F7F29E931CED2F0B00A1BC9A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Programa.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7F29E941CED2F0B00A1BC9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F7F29E931CED2F0B00A1BC9A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FEA7C3340BF4BD43AB6C81DB</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_Sofia_Swing_Dance_Festival.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>F7A9DC7A1CE737260086297E</string>
+</dict>
+</plist>

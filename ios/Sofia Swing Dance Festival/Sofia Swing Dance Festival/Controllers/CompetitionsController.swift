@@ -37,11 +37,11 @@ class CompetitionsController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func applyPlainShadow(v: UIView) {
+    func applyPlainShadow(_ v: UIView) {
         let layer = v.layer
         
-        layer.shadowColor = UIColor.blackColor().CGColor
-        layer.shadowOffset = CGSizeZero
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize.zero
         layer.shadowOpacity = 0.4
         layer.shadowRadius = 3
     }

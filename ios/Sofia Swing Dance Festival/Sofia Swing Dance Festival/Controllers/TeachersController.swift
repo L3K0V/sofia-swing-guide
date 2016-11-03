@@ -114,25 +114,25 @@ class TeachersController: UIViewController {
         }
     }
 
-    func addView (i:Int) {
+    func addView (_ i:Int) {
         let w = (Float(view.frame.size.width) - padding*3)/2
         let x = padding + Float(i%2) * (w+padding) + 5
         var y = (padding)//Float((topButtonView?.frame.maxY)!)
         y = y + padding + floor (Float(i/2)) * (w+padding)
-        let v:UIView = UIView (frame: CGRectMake(CGFloat(x), CGFloat(y), CGFloat(w), CGFloat(w)))
+        let v:UIView = UIView (frame: CGRect(x: CGFloat(x), y: CGFloat(y), width: CGFloat(w), height: CGFloat(w)))
         
         let iv:UIImageView  = UIImageView (image: UIImage (named: instrImages[i]))
-        iv.frame = CGRectMake (2, 2, CGFloat(w-4), CGFloat(w-4))
-        iv.contentMode = .ScaleAspectFill
+        iv.frame = CGRect (x: 2, y: 2, width: CGFloat(w-4), height: CGFloat(w-4))
+        iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         v.addSubview (iv)
         
         applyPlainShadow(v)
-        v.backgroundColor = UIColor.whiteColor ()
+        v.backgroundColor = UIColor.white
         
-        let b:UIButton = UIButton (frame: CGRectMake(CGFloat(0), CGFloat(0), CGFloat(w), CGFloat(w)))
+        let b:UIButton = UIButton (frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(w), height: CGFloat(w)))
         b.tag = i
-        b.addTarget(self, action: #selector(gotoInstructorPage), forControlEvents: .TouchUpInside)
+        b.addTarget(self, action: #selector(gotoInstructorPage), for: .touchUpInside)
         v.addSubview(b)
         
         scroll!.addSubview(v)
@@ -140,18 +140,18 @@ class TeachersController: UIViewController {
         scroll!.contentSize = CGSize (width: view.frame.size.width, height: v.frame.maxY + CGFloat(padding))
     }
 
-    func applyPlainShadow(v: UIView) {
+    func applyPlainShadow(_ v: UIView) {
         let layer = v.layer
         
-        layer.shadowColor = UIColor.blackColor().CGColor
-        layer.shadowOffset = CGSizeZero
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize.zero
         layer.shadowOpacity = 0.4
         layer.shadowRadius = 3
     }
     
-    func gotoInstructorPage (sender: UIButton!) {
+    func gotoInstructorPage (_ sender: UIButton!) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc:InstructorPageViewController = storyboard.instantiateViewControllerWithIdentifier("InstructorPage") as! InstructorPageViewController
+        let vc:InstructorPageViewController = storyboard.instantiateViewController(withIdentifier: "InstructorPage") as! InstructorPageViewController
         vc.titleText = instrNames[sender.tag]
         vc.descriptionText = instrDescr[sender.tag]
         vc.imageName = instrImages[sender.tag]
